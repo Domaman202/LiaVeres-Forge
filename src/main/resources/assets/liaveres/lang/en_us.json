@@ -1,0 +1,8 @@
+{
+  "_comment": "Items",
+  "item.liaveres.matter_crystal": "Matter Crystal",
+
+  "_comment": "Blocks",
+  "block.liaveres.matter_crystal_block": "Matter Crystal Block",
+  "block.liaveres.energy_storage_block": "Energy Storage"
+}
