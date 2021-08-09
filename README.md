@@ -1,7 +1,7 @@
 # LiaVeres Forge
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](https://www.gnu.org/licenses/agpl-3.0)
-[![Latest Release](https://img.shields.io/github/v/release/IgroGames2227/LiaVeres?style=for-the-badge&label=Release)](https://github.com/IgroGames2227/LiaVeres/releases)
-[![Latest PreRelease](https://img.shields.io/github/v/release/IgroGames2227/LiaVeres?include_prereleases&style=for-the-badge&label=Pre)](https://github.com/IgroGames2227/LiaVeres/releases)
+[![Latest Release](https://img.shields.io/github/v/release/AlgorithmLX-Team/LiaVeres-Forge?style=for-the-badge&label=Release)](https://github.com/AlgorithmLX-Team/LiaVeres-Forge/releases)
+[![Latest PreRelease](https://img.shields.io/github/v/release/AlgorithmLX-Team/LiaVeres-Forge?include_prereleases&style=for-the-badge&label=Pre)](https://github.com/AlgorithmLX-Team/LiaVeres-Forge/releases)
 [![](https://img.shields.io/badge/Discord-AlgoTeam-738bd7?style=flat-square.svg)](https://discord.gg/e2Abs6XAYW)
 
 This is Forge version, are you looking for Fabric? See: [LiaVeres Fabric Source Code](https://github.com/IgroGames2227/LiaVeres-Fabric)
