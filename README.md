@@ -22,4 +22,4 @@ Textures(Rest): [AlgorithmLX](https://github.com/IgroGames2227/).
 
 Models: [AlgorithmLX](https://github.com/IgroGames2227/) 
 
-Dependency(A4): [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/GeckoLib
+Dependency(A4): [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/GeckoLib)
