@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures":
+  {
+    "layer0": "liaveres:items/matter_crystal_shovel"
+  }
+}

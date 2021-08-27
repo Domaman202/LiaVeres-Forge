@@ -9,7 +9,7 @@ public class MatterCrystalBlock extends Block {
         super(Properties.create(Material.ROCK)
                 .doesNotBlockMovement()
                 .tickRandomly()
-                .hardnessAndResistance(80.0F)
+                .hardnessAndResistance(340282356779733661637539395458142568447F)
                 .sound(SoundType.STONE)
                 .setLightLevel((state) -> 11));
         this.setRegistryName(name);

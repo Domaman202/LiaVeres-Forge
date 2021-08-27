@@ -1,11 +1,12 @@
 package com.algorithmlx.liaveres.common.registry;
 
-import com.algorithmlx.liaveres.common.object.blocks.EnergyStorageBlock;
+import com.algorithmlx.liaveres.LiaVeres;
+
 import com.algorithmlx.liaveres.common.object.blocks.MatterCrystalBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,19 +21,14 @@ public class ModBlocks {
     @ObjectHolder(ModId + ":matter_crystal_block")
     public static Block MatterCrystalBlock = null;
 
-    @ObjectHolder(ModId + ":energy_storage_block")
-    public static Block EnergyStorageBlock = null;
-
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> e) {
         registerBlock(e, new MatterCrystalBlock("matter_crystal_block"));
-        registerBlock(e, new EnergyStorageBlock("energy_storage_block"));
     }
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> e) {
         registerItem(e, MatterCrystalBlock);
-        registerItem(e, EnergyStorageBlock);
     }
 
 
@@ -42,6 +38,8 @@ public class ModBlocks {
 
     private static void registerItem(RegistryEvent.Register<Item> event, Block block) {
         event.getRegistry().register(new BlockItem(block, new Item.Properties()
-                .group(ItemGroup.MISC)).setRegistryName(Objects.requireNonNull(block.getRegistryName())));
+                .group(LiaVeres.lv_itemgroup))
+                .setRegistryName(Objects.requireNonNull(block.getRegistryName())));
     }
+
 }

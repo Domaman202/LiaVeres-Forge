@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "BMB",
+    "ABA"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:nether_star"
+    },
+    "A": {
+      "item": "minecraft:end_crystal"
+    },
+    "B": {
+      "item": "minecraft:shulker_shell"
+    }
+  },
+  "result": {
+    "item": "liaveres:crystalline",
+    "count": 16
+  }
+}

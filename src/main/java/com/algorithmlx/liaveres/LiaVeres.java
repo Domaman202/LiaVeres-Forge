@@ -1,30 +1,29 @@
 package com.algorithmlx.liaveres;
 
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+//FML
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
+//Log
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-//Hollow, help pls
-import software.bernie.example.registry.BlockRegistry;
-import software.bernie.geckolib3.GeckoLib;
+//LiaVeres Imports
+import com.algorithmlx.liaveres.common.object.itemgroups.*;
 
 
 @Mod("liaveres")
 public class LiaVeres {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String ModId = "liaveres";
+    //ItemGroups
+    public static final ItemGroup lv_itemgroup = new lv_itemgroup(LiaVeres.ModId);
 
     public LiaVeres() {
-        GeckoLib.initialize();
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 

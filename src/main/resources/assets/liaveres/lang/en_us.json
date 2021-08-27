@@ -1,8 +1,14 @@
 {
-  "_comment": "Items",
-  "item.liaveres.matter_crystal": "Matter Crystal",
+  "item.liaveres.matter_crystal": "Crystal Matter",
+  "item.liaveres.matter": "Matter",
+  "item.liaveres.crystalline": "Crystalline",
 
-  "_comment": "Blocks",
-  "block.liaveres.matter_crystal_block": "Matter Crystal Block",
-  "block.liaveres.energy_storage_block": "Energy Storage"
+  "block.liaveres.matter_crystal_block": "Block Crystal Matter",
+
+  "itemGroup.liaveres": "LiaVeres",
+
+  "item.liaveres.matter_crystal_pickaxe": "Matter Crystal Pickaxe",
+  "item.liaveres.matter_crystal_sword": "Matter Crystal Sword",
+  "item.liaveres.matter_crystal_axe": "Matter Crystal Axe",
+  "item.liaveres.matter_crystal_shovel": "Matter Crystal Shovel"
 }

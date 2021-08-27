@@ -1,8 +1,14 @@
 {
-  "_comment": "Предметы",
-  "item.liaveres.matter_crystal": "Кристалл Материи",
+  "item.liaveres.matter_crystal": "Кристалл материи",
+  "item.liaveres.matter": "Материя",
+  "item.liaveres.crystalline": "Кристаллин",
 
-  "_comment": "Блоки",
-  "block.liaveres.matter_crystal_block": "Блок Кристалла Матреии",
-  "block.liaveres.energy_storage_block": "Хранилище Энергии"
+  "block.liaveres.matter_crystal_block": "Блок Кристалла матреии",
+
+  "itemGroup.liaveres": "LiaVeres",
+
+  "item.liaveres.matter_crystal_pickaxe": "Кирка из Кристалла материи",
+  "item.liaveres.matter_crystal_sword": "Меч из Кристалла материи",
+  "item.liaveres.matter_crystal_axe": "Топор из Кристалла материи",
+  "item.liaveres.matter_crystal_shovel": "Лопата из Кристалла материи"
 }

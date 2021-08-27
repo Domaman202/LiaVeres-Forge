@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EAE",
+    "ALA",
+    "EAE"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:end_crystal"
+    },
+    "A": {
+      "item": "minecraft:netherite_block"
+    },
+    "E": {
+      "item": "minecraft:end_rod"
+    }
+  },
+  "result": {
+    "item": "liaveres:matter",
+    "count": 4
+  }
+}
