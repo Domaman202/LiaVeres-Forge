@@ -16,7 +16,7 @@ Dev: [AlgorithmLX](https://github.com/IgroGames2227/)
 
 Deving Helper: [HollowHorizon](https://github.com/HollowHorizon/) 
 
-Textures(Matter, Matter Crystal, Matter Crystal block and Matter sword): DeltaRXT.
+Textures(Matter Crystal block): DeltaRXT.
 
 Textures(Rest): [AlgorithmLX](https://github.com/IgroGames2227/).
 
