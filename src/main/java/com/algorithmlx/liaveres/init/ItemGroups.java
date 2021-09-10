@@ -1,13 +1,13 @@
-package com.algorithmlx.liaveres.common.object.itemgroups;
+package com.algorithmlx.liaveres.init;
 
-import com.algorithmlx.liaveres.common.registry.ModItems;
+import com.algorithmlx.liaveres.registry.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class lv_itemgroup extends ItemGroup {
-    public lv_itemgroup(String name)
+public class ItemGroups extends ItemGroup {
+    public ItemGroups(String name)
     {
         super(name);
     }

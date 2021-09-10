@@ -1,23 +1,19 @@
-package com.algorithmlx.liaveres.common.registry;
+package com.algorithmlx.liaveres.registry;
 
-import com.algorithmlx.liaveres.common.object.armor.MatterCrystalArmor;
-import com.algorithmlx.liaveres.common.object.items.item.Crystalline;
-import com.algorithmlx.liaveres.common.object.items.item.Matter;
-import com.algorithmlx.liaveres.common.object.items.tools.MatterCrystalAxe;
-import com.algorithmlx.liaveres.common.object.items.tools.MatterCrystalPickaxe;
-import com.algorithmlx.liaveres.common.object.items.tools.MatterCrystalShovel;
-import com.algorithmlx.liaveres.common.object.items.tools.MatterCrystalSword;
-import com.algorithmlx.liaveres.common.object.items.item.MatterCrystal;
+import com.algorithmlx.liaveres.items.Crystalline;
+import com.algorithmlx.liaveres.items.Matter;
+import com.algorithmlx.liaveres.items.MatterCrystalAxe;
+import com.algorithmlx.liaveres.items.MatterCrystalPickaxe;
+import com.algorithmlx.liaveres.items.MatterCrystalShovel;
+import com.algorithmlx.liaveres.items.MatterCrystalSword;
+import com.algorithmlx.liaveres.items.MatterCrystal;
 
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
 import static com.algorithmlx.liaveres.LiaVeres.ModId;
-import static net.minecraftforge.registries.ForgeRegistries.ITEMS;
 
 @Mod.EventBusSubscriber(modid = ModId, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems {

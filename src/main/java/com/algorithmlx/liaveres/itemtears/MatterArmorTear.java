@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.common.object.itemtears;
+package com.algorithmlx.liaveres.itemtears;
 
-import com.algorithmlx.liaveres.common.registry.ModItems;
+import com.algorithmlx.liaveres.registry.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;

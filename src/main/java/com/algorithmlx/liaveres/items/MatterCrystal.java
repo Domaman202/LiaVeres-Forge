@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.object.items.item;
+package com.algorithmlx.liaveres.items;
 
 import com.algorithmlx.liaveres.LiaVeres;
 import net.minecraft.entity.player.PlayerEntity;
@@ -8,11 +8,12 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 
-public class Crystalline extends Item {
 
-    public Crystalline() {
+public class MatterCrystal extends Item {
+
+    public MatterCrystal() {
         super(new Item.Properties().group(LiaVeres.lv_itemgroup));
-        setRegistryName("crystalline");
+        setRegistryName("matter_crystal");
     }
 
     @Override

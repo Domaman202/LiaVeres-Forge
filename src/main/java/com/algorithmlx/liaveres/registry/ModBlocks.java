@@ -1,8 +1,8 @@
-package com.algorithmlx.liaveres.common.registry;
+package com.algorithmlx.liaveres.registry;
 
 import com.algorithmlx.liaveres.LiaVeres;
 
-import com.algorithmlx.liaveres.common.object.blocks.MatterCrystalBlock;
+import com.algorithmlx.liaveres.blocks.MatterCrystalBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;

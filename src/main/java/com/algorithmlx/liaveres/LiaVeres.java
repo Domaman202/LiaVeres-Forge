@@ -1,5 +1,6 @@
 package com.algorithmlx.liaveres;
 
+import com.algorithmlx.liaveres.init.ItemGroups;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,7 +13,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 //LiaVeres Imports
-import com.algorithmlx.liaveres.common.object.itemgroups.*;
 
 
 @Mod("liaveres")
@@ -21,7 +21,7 @@ public class LiaVeres {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String ModId = "liaveres";
     //ItemGroups
-    public static final ItemGroup lv_itemgroup = new lv_itemgroup(LiaVeres.ModId);
+    public static final ItemGroup lv_itemgroup = new ItemGroups(LiaVeres.ModId);
 
     public LiaVeres() {
 

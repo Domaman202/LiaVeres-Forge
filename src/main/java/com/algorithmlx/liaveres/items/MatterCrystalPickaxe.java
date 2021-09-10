@@ -1,18 +1,15 @@
-package com.algorithmlx.liaveres.common.object.items.tools;
+package com.algorithmlx.liaveres.items;
 
 import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.common.object.itemtears.MatterTear;
+import com.algorithmlx.liaveres.itemtears.MatterTear;
 import net.minecraft.block.BlockState;
-import net.minecraft.data.NBTToSNBTConverter;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.NBTTextComponent;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;

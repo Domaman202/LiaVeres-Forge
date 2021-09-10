@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.common.object.items.tools;
+package com.algorithmlx.liaveres.items;
 
 import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.common.object.itemtears.MatterTear;
+import com.algorithmlx.liaveres.itemtears.MatterTear;
 import net.minecraft.item.ShovelItem;
 
 public class MatterCrystalShovel extends ShovelItem

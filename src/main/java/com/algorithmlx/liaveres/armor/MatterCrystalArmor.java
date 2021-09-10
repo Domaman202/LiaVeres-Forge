@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.common.object.armor;
+package com.algorithmlx.liaveres.armor;
 
-import com.algorithmlx.liaveres.common.object.itemtears.MatterArmorTear;
+import com.algorithmlx.liaveres.itemtears.MatterArmorTear;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 
