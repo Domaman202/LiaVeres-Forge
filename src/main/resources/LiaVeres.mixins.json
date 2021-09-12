@@ -7,7 +7,7 @@
   "mixins": [
   ],
   "client": [
-    "client.MixinGoodbyeExperementalSettings"
+    "client.MixinGoodbyeExperimentalSettings"
   ],
   "injectors": {
     "defaultRequire": 1
