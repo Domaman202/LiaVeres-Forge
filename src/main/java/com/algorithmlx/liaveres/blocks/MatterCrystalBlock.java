@@ -1,20 +1,21 @@
 package com.algorithmlx.liaveres.blocks;
 
-import net.minecraft.block.Block;
+import com.algorithmlx.liaveres.registry.ModItems;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootContext;
 
-public class MatterCrystalBlock extends BlockBase {
+import java.util.List;
+
+public class MatterCrystalBlock extends MatterBlockBase {
     public MatterCrystalBlock(String name, int lvl){
         super(name, lvl);
     }
-    protected static final VoxelShape MATTERCRYSTALBLOCK = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 4.0D, 12.0D);
 
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
+    @Override
+    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
     {
-        return MATTERCRYSTALBLOCK;
+        return ImmutableList.of(new ItemStack(ModItems.MatterCrystal, 9));
     }
 }

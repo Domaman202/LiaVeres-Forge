@@ -5,15 +5,17 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
-public class BlockBase extends Block {
 
-    public BlockBase(String name, int lvl){
+public class MatterBlockBase extends Block {
+
+    public MatterBlockBase(String name, int lvl){
         super(Block.Properties
                 .create(Material.ROCK)
-                .hardnessAndResistance(1.0f, 1.0f)
+                .hardnessAndResistance(500f, 500f)
                 .harvestLevel(lvl)
                 .harvestTool(ToolType.PICKAXE)
         );
         setRegistryName(LiaVeres.ModId, name);
     }
+
 }

@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres.registry;
 
 import com.algorithmlx.liaveres.LiaVeres;
 
-import com.algorithmlx.liaveres.blocks.MatterCrystalBlock;
+import com.algorithmlx.liaveres.blocks.MatterBlockBase;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -23,7 +23,7 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> e) {
-        registerBlock(e, new MatterCrystalBlock("matter_crystal_block", 3));
+        registerBlock(e, new MatterBlockBase("matter_crystal_block", 3));
     }
 
     @SubscribeEvent
@@ -39,7 +39,8 @@ public class ModBlocks {
     private static void registerItem(RegistryEvent.Register<Item> event, Block block) {
         event.getRegistry().register(new BlockItem(block, new Item.Properties()
                 .group(LiaVeres.lv_itemgroup))
-                .setRegistryName(Objects.requireNonNull(block.getRegistryName())));
+                .setRegistryName(Objects.requireNonNull(block.getRegistryName()))
+        );
     }
 
 }
