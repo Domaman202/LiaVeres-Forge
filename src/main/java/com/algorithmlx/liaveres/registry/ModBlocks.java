@@ -23,7 +23,7 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> e) {
-        registerBlock(e, new MatterCrystalBlock("matter_crystal_block"));
+        registerBlock(e, new MatterCrystalBlock("matter_crystal_block", 3));
     }
 
     @SubscribeEvent

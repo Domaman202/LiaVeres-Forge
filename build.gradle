@@ -2,7 +2,6 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        //maven { url = 'https://maven.blamejared.com' }
         mavenCentral()
     }
     dependencies {
@@ -10,12 +9,11 @@ buildscript {
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
-//MTR_
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'com.algorithmlx'
-version = 'A5_1.16.5'
+version = 'A7_1.16.5'
 archivesBaseName = 'LiaVeres'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.

@@ -39,7 +39,7 @@ public enum MatterArmorTear implements IArmorMaterial
     @Override public SoundEvent getSoundEvent()                             { return this.soundEvent;                                            }
     @Override public Ingredient getRepairMaterial()                         { return this.repairMaterial;                                        }
     @Override public float getToughness()                                   { return this.toughness;                                             }
-    @Override public float getKnockbackResistance()                         { return this.getKnockbackResistance();                                   }
+    @Override public float getKnockbackResistance()                         { return 2147483647;                                                 }
 
     @OnlyIn(Dist.CLIENT)
     @Override public String getName() { return this.name; }
