@@ -10,5 +10,10 @@
   "item.liaveres.matter_crystal_pickaxe": "Кирка из Кристалла материи",
   "item.liaveres.matter_crystal_sword": "Меч из Кристалла материи",
   "item.liaveres.matter_crystal_axe": "Топор из Кристалла материи",
-  "item.liaveres.matter_crystal_shovel": "Лопата из Кристалла материи"
+  "item.liaveres.matter_crystal_shovel": "Лопата из Кристалла материи",
+
+  "item.liaveres.matter_crystal_helmet": "Шлем из Кристалла материи",
+  "item.liaveres.matter_crystal_chest": "Нагрудник из Кристалла материи",
+  "item.liaveres.matter_crystal_legs": "Поножи из Кристалла материи",
+  "item.liaveres.matter_crystal_boots": "Ботинки из Кристалла материи"
 }
