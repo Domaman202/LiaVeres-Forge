@@ -1,24 +1,15 @@
 package com.algorithmlx.liaveres.itemtears;
 
-import com.algorithmlx.liaveres.registry.ModItems;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
-import java.util.List;
 import java.util.function.Supplier;
 
 public enum MatterArmorTear implements IArmorMaterial {
@@ -36,7 +27,7 @@ public enum MatterArmorTear implements IArmorMaterial {
     private final float knockbackResistance;
     private final LazyValue<Ingredient> repairMaterial;
 
-    private MatterArmorTear(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
+    MatterArmorTear(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
         this.damageReductionAmountArray = damageReductionAmountArray;
@@ -47,6 +38,7 @@ public enum MatterArmorTear implements IArmorMaterial {
         this.repairMaterial = new LazyValue<>(repairMaterial);
 
     }
+
     public int getDurability(EquipmentSlotType slotIn) {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
     }
@@ -71,6 +63,7 @@ public enum MatterArmorTear implements IArmorMaterial {
     public String getName() {
         return this.name;
     }
+
     public float getToughness() {
         return this.toughness;
     }

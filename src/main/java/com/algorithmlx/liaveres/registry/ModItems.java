@@ -1,9 +1,7 @@
 package com.algorithmlx.liaveres.registry;
 
 import com.algorithmlx.liaveres.items.*;
-import com.algorithmlx.liaveres.itemtears.MatterArmorTear;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,15 +18,15 @@ public class ModItems {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 //#######################################################ARMOR#############################################################################################
-    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.CHEST, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.LEGS, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.FEET, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new MatterCrystalArmor(EquipmentSlotType.HEAD, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new MatterCrystalArmor(EquipmentSlotType.CHEST, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new MatterCrystalArmor(EquipmentSlotType.LEGS, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new MatterCrystalArmor(EquipmentSlotType.FEET, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
 //#######################################################ITEMS############################################################################################
     public static final RegistryObject<Crystalline> CRYSTALLINE = ITEMS.register("crystalline", Crystalline::new);
     public static final RegistryObject<MatterCrystal> MATTER_CRYSTAL = ITEMS.register("matter_crystal", MatterCrystal::new);
     public static final RegistryObject<Matter> MATTER = ITEMS.register("matter", Matter::new);
-    public static final RegistryObject<MatterCrystalAxe> MATTER_CRYSTAl_AXE = ITEMS.register("matter_crystal_axe", MatterCrystalAxe::new);
+    public static final RegistryObject<MatterCrystalAxe> MATTER_CRYSTAL_AXE = ITEMS.register("matter_crystal_axe", MatterCrystalAxe::new);
     public static final RegistryObject<MatterCrystalPickaxe> MATTER_CRYSTAL_PICKAXE = ITEMS.register("matter_crystal_pickaxe", MatterCrystalPickaxe::new);
     public static final RegistryObject<MatterCrystalShovel> MATTER_CRYSTAL_SHOVEL = ITEMS.register("matter_crystal_shovel", MatterCrystalShovel::new);
     public static final RegistryObject<MatterCrystalSword> MATTER_CRYSTAL_SWORD = ITEMS.register("matter_crystal_sword", MatterCrystalSword::new);
