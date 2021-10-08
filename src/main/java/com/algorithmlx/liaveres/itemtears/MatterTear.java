@@ -7,7 +7,7 @@ import net.minecraft.item.crafting.Ingredient;
 
 public enum MatterTear implements IItemTier {
 
-        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.fromStacks(new ItemStack(ModItems.MatterCrystal, 2147483647)));
+        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.fromStacks(new ItemStack(ModItems.MATTER_CRYSTAL.get(), 2147483647)));
 
         private final int harvestLevel;
         private final int maxUses;

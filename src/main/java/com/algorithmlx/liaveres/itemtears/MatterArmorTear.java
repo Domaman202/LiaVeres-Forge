@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public enum MatterArmorTear implements IArmorMaterial
 {
     MatterCrystalArm("matter_crystal_arm", 2147483647, new int[]{2147483647, 2147483647, 2147483647, 2147483647},
-            2147483647, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 339999999999999999999999999999999999999F, Ingredient.fromItems(ModItems.MatterCrystal));
+            2147483647, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 339999999999999999999999999999999999999F, Ingredient.fromItems(ModItems.MATTER_CRYSTAL.get()));
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{2147483647, 2147483647, 2147483647, 2147483647};
     private final String name;
     private final int maxDamageFactor;

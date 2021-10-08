@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres;
 
 import com.algorithmlx.liaveres.init.ItemGroups;
 import com.algorithmlx.liaveres.registry.BlockInit;
-import com.algorithmlx.liaveres.registry.ModArmor;
+import com.algorithmlx.liaveres.registry.ModItems;
 import com.algorithmlx.liaveres.registry.TileRegistry;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,8 +14,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 //Log
 import org.apache.logging.log4j.LogManager;
@@ -23,21 +21,21 @@ import org.apache.logging.log4j.Logger;
 //LiaVeres Imports
 
 
-@Mod("liaveres")
+@Mod(LiaVeres.ModId)
 public class LiaVeres {
 
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String ModId = "liaveres";
-    //ItemGroups
+    public static final String NAME = "LiaVeres";
     public static final ItemGroup lv_itemgroup = new ItemGroups(LiaVeres.ModId);
 
     public LiaVeres() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModArmor.ITEMS.register(bus);
-        TileRegistry.TILE_ENTITY_TYPE.register(bus);
-        BlockInit.BLOCKS.register(bus);
-
+        bus.register(this);
+        bus.register(new ModItems());
+        bus.register(new TileRegistry());
+        bus.register(new BlockInit());
         MinecraftForge.EVENT_BUS.register(this);
     }
 

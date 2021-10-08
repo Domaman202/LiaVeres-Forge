@@ -19,7 +19,7 @@ public class EnergyFurnace extends Block {
     }
     @Override
     public boolean hasTileEntity(BlockState state) {
-        return  true;
+        return true;
     }
 
     @Nullable
