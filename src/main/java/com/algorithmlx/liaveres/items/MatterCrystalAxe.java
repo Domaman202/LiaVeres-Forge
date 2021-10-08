@@ -9,6 +9,6 @@ import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 public class MatterCrystalAxe extends AxeItem {
     public MatterCrystalAxe()
     {
-        super(MatterTear.MatterTear, 901239.0F, 300F, new Properties().group(LIAVERES_ALL));
+        super(MatterTear.MatterTear, 901239.0F, 300F, new Properties().isImmuneToFire().group(LIAVERES_ALL));
     }
 }

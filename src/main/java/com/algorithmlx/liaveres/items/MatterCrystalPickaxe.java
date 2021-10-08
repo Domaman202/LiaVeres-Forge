@@ -22,7 +22,7 @@ public class MatterCrystalPickaxe extends PickaxeItem {
     public static boolean skip = false;
 
     public MatterCrystalPickaxe() {
-        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().group(LIAVERES_ALL));
+        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().isImmuneToFire().group(LIAVERES_ALL));
     }
 
     @Override

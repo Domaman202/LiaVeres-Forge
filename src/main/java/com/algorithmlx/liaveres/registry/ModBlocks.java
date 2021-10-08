@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.registry;
 
 import com.algorithmlx.liaveres.blocks.EnergyFurnace;
 import com.algorithmlx.liaveres.blocks.MatterCrystalBlock;
+import com.algorithmlx.liaveres.setup.ModSetup;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import static com.algorithmlx.liaveres.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 
 
 public class ModBlocks {
@@ -25,9 +27,13 @@ public class ModBlocks {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    public static final RegistryObject<Block> ENERGY_FURNACE = BLOCKS.register("energy_furnace", () -> new EnergyFurnace());
-
+    //block
+    public static final RegistryObject<EnergyFurnace> ENERGY_FURNACE = BLOCKS.register("energy_furnace", () -> new EnergyFurnace());
     public static final RegistryObject<MatterCrystalBlock/*hahaha*/> MATTER_CRYSTAL_BLOCK = BLOCKS.register("matter_crystal_block", MatterCrystalBlock::new);
+
+    //blockItem
+    public static final RegistryObject<Item> MATTER_CRYSTAL_BLOCK_ITEM = ITEMS.register("matter_crystal_block", () -> new BlockItem(MATTER_CRYSTAL_BLOCK.get(), new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> ENERGY_FURNACE_ITEM = ITEMS.register("energy_furnace", () -> new BlockItem(ENERGY_FURNACE.get(), new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
 
     @SubscribeEvent
     public static void onRegisterItems(final RegistryEvent.Register<Item> event)

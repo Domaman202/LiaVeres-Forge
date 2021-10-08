@@ -11,7 +11,7 @@ public class EnergyFurnaceTile extends TileEntity implements ITickableTileEntity
         super(tileEntityTypeIn);
     }
     public EnergyFurnaceTile() {
-        this(TileRegistry.ENERGY_FURNACE_TILE_TYPE.get());
+        this(TileRegistry.ENERGY_FURNACE_TILE.get());
     }
     @Override
     public void tick() {

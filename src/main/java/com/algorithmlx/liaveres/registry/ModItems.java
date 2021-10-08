@@ -20,10 +20,10 @@ public class ModItems {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 //#######################################################ARMOR#############################################################################################
-    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.HEAD, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.CHEST, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.LEGS, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new ArmorItem(MatterArmorTear.MatterCrystalArm, EquipmentSlotType.FEET, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
 //#######################################################ITEMS############################################################################################
     public static final RegistryObject<Crystalline> CRYSTALLINE = ITEMS.register("crystalline", Crystalline::new);
     public static final RegistryObject<MatterCrystal> MATTER_CRYSTAL = ITEMS.register("matter_crystal", MatterCrystal::new);

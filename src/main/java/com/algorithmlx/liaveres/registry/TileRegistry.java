@@ -18,5 +18,5 @@ public class TileRegistry {
         TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    public static final RegistryObject<TileEntityType<EnergyFurnaceTile>> ENERGY_FURNACE_TILE_TYPE = TILES.register("ef_tile", () -> TileEntityType.Builder.create(EnergyFurnaceTile::new, ModBlocks.ENERGY_FURNACE.get()).build(null));
+    public static final RegistryObject<TileEntityType<EnergyFurnaceTile>> ENERGY_FURNACE_TILE = TILES.register("ef_tile", () -> TileEntityType.Builder.create(EnergyFurnaceTile::new, ModBlocks.ENERGY_FURNACE.get()).build(null));
 }

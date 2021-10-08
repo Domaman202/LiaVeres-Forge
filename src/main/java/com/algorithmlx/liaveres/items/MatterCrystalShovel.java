@@ -9,6 +9,6 @@ import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 public class MatterCrystalShovel extends ShovelItem {
     public MatterCrystalShovel()
     {
-        super(MatterTear.MatterTear, 3000,99999999999999999999999999999999999999F, new Properties().group(LIAVERES_ALL));
+        super(MatterTear.MatterTear, 3000,99999999999999999999999999999999999999F, new Properties().isImmuneToFire().group(LIAVERES_ALL));
     }
 }

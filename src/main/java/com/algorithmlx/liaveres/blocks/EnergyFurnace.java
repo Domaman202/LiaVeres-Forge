@@ -25,6 +25,6 @@ public class EnergyFurnace extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return TileRegistry.ENERGY_FURNACE_TILE_TYPE.get().create();
+        return TileRegistry.ENERGY_FURNACE_TILE.get().create();
     }
 }

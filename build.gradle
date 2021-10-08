@@ -2,6 +2,7 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -11,6 +12,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'idea'
 
 group = 'com.algorithmlx'
 version = 'A8_1.16.5'
@@ -91,9 +93,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.8'
-
-    //compileOnly fg.deobf("vazkii.botania:Botania:1.16.5-419:api")
-    //runtimeOnly fg.deobf("vazkii.botania:Botania:1.16.5-419")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
