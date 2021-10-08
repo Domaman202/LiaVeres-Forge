@@ -3,6 +3,7 @@ package com.algorithmlx.liaveres.itemtears;
 import com.algorithmlx.liaveres.registry.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -12,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public enum MatterArmorTear implements IArmorMaterial
 {
     MatterCrystalArm("matter_crystal_arm", 2147483647, new int[]{2147483647, 2147483647, 2147483647, 2147483647},
-            2147483647, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 339999999999999999999999999999999999999F, Ingredient.fromItems(ModItems.MATTER_CRYSTAL.get()));
+            2147483647, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 339999999999999999999999999999999999999F, Ingredient.fromItems(Items.AIR));
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{2147483647, 2147483647, 2147483647, 2147483647};
     private final String name;
     private final int maxDamageFactor;
@@ -33,13 +34,34 @@ public enum MatterArmorTear implements IArmorMaterial
         this.repairMaterial = repairMaterial;
     }
 
-    @Override public int getDurability(EquipmentSlotType slotIn)            { return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor; }
-    @Override public int getDamageReductionAmount(EquipmentSlotType slotIn) { return this.damageReductionAmount[slotIn.getIndex()];              }
-    @Override public int getEnchantability()                                { return this.enchantability;                                        }
-    @Override public SoundEvent getSoundEvent()                             { return this.soundEvent;                                            }
-    @Override public Ingredient getRepairMaterial()                         { return this.repairMaterial;                                        }
-    @Override public float getToughness()                                   { return this.toughness;                                             }
-    @Override public float getKnockbackResistance()                         { return 2147483647;                                                 }
+    @Override public int getDurability(EquipmentSlotType slotIn) {
+        return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+    }
+
+    @Override public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+        return this.damageReductionAmount[slotIn.getIndex()];
+    }
+
+    @Override public int getEnchantability() {
+        return this.enchantability;
+    }
+
+    @Override public SoundEvent getSoundEvent() {
+        return this.soundEvent;
+    }
+
+    @Override public Ingredient getRepairMaterial() {
+        return this.repairMaterial;
+    }
+
+    @Override public float getToughness() {
+        return this.toughness;
+    }
+
+    @Override public float getKnockbackResistance() {
+        return 2147483647;
+    }
+    
 
     @OnlyIn(Dist.CLIENT)
     @Override public String getName() { return this.name; }

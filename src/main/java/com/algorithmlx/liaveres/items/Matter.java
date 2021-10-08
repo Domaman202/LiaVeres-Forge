@@ -8,11 +8,12 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 
+import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
+
 public class Matter extends Item {
 
     public Matter() {
-        super(new Item.Properties().group(LiaVeres.lv_itemgroup));
-        setRegistryName("matter");
+        super(new Item.Properties().group(LIAVERES_ALL));
     }
 
     @Override

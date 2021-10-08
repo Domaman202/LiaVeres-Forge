@@ -15,13 +15,14 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
+
 
 public class MatterCrystalPickaxe extends PickaxeItem {
     public static boolean skip = false;
 
     public MatterCrystalPickaxe() {
-        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().group(LiaVeres.lv_itemgroup));
-        setRegistryName("matter_crystal_pickaxe");
+        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().group(LIAVERES_ALL));
     }
 
     @Override

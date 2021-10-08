@@ -90,7 +90,7 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.2'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.8'
 
     //compileOnly fg.deobf("vazkii.botania:Botania:1.16.5-419:api")
     //runtimeOnly fg.deobf("vazkii.botania:Botania:1.16.5-419")
