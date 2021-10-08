@@ -16,7 +16,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 
-public class BlockInit {
+public class ModBlocks {
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModId);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModId);
 
@@ -33,7 +33,7 @@ public class BlockInit {
     public static void onRegisterItems(final RegistryEvent.Register<Item> event)
     {
         final IForgeRegistry<Item> registry = event.getRegistry();
-        BlockInit.BLOCKS.getEntries().stream()
+        ModBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
                 .forEach(block -> {
                     final Item.Properties prop = new Item.Properties();
