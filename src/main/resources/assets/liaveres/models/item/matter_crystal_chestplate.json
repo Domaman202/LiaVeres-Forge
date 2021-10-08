@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "liaveres:items/matter_crystal_chesplate"
-  }
+    "parent": "item/generated",
+    "textures": 
+    {
+        "layer0": "liaveres:items/matter_crystal_chestplate"
+    }
 }

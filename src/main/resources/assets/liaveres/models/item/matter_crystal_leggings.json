@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "liaveres:items/matter_crystal_leggings"
-  }
+    "parent": "item/generated",
+    "textures": 
+    {
+        "layer0": "liaveres:items/matter_crystal_leggings"
+    }
 }
