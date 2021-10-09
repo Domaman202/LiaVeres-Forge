@@ -1,6 +1,5 @@
 package com.algorithmlx.liaveres.items;
 
-import com.algorithmlx.liaveres.LiaVeres;
 import com.algorithmlx.liaveres.itemtears.MatterTear;
 import net.minecraft.item.SwordItem;
 

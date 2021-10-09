@@ -1,19 +1,21 @@
 {
-  "item.liaveres.matter_crystal": "Кристалл материи",
+  "item.liaveres.matter_crystal": "§3Кристалл материи",
   "item.liaveres.matter": "Материя",
-  "item.liaveres.crystalline": "Кристаллин",
+  "item.liaveres.crystalline": "§dКристаллин",
+  "item.liaveres.flying_catalyst": "§3Каталист Полёта",
+  "item.liaveres.matter_crystal_pickaxe": "§9Кирка из Кристалла материи",
+  "item.liaveres.matter_crystal_sword": "§9Меч из Кристалла материи",
+  "item.liaveres.matter_crystal_axe": "§9Топор из Кристалла материи",
+  "item.liaveres.matter_crystal_shovel": "§9Лопата из Кристалла материи",
+  "item.liaveres.matter_crystal_helmet": "§9Шлем из Кристалла материи",
+  "item.liaveres.matter_crystal_chestplate": "§9Нагрудник из Кристалла материи",
+  "item.liaveres.matter_crystal_leggings": "§9Поножи из Кристалла материи",
+  "item.liaveres.matter_crystal_boots": "§9Ботинки из Кристалла материи",
 
-  "block.liaveres.matter_crystal_block": "Блок Кристалла матреии",
+  "block.liaveres.matter_crystal_block": "§7Блок Кристалла матреии",
 
   "itemGroup.liaveres_all": "LiaVeres: Всё",
 
-  "item.liaveres.matter_crystal_pickaxe": "Кирка из Кристалла материи",
-  "item.liaveres.matter_crystal_sword": "Меч из Кристалла материи",
-  "item.liaveres.matter_crystal_axe": "Топор из Кристалла материи",
-  "item.liaveres.matter_crystal_shovel": "Лопата из Кристалла материи",
-
-  "item.liaveres.matter_crystal_helmet": "Шлем из Кристалла материи",
-  "item.liaveres.matter_crystal_chestplate": "Нагрудник из Кристалла материи",
-  "item.liaveres.matter_crystal_leggings": "Поножи из Кристалла материи",
-  "item.liaveres.matter_crystal_boots": "Ботинки из Кристалла материи"
+  "tooltip.flying_catalyst": "В связке с Незеритовой Бронёй, преобразует Незеритовую Бронь в Броню из Кристалла материи, которая вас с легкостью поднимет в воздух.",
+  "tooltip.matter_crystal_armor": "Полный, одетый сет брони дает полёт"
 }

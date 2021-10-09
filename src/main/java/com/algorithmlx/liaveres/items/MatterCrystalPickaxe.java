@@ -1,6 +1,5 @@
 package com.algorithmlx.liaveres.items;
 
-import com.algorithmlx.liaveres.LiaVeres;
 import com.algorithmlx.liaveres.itemtears.MatterTear;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -62,7 +61,7 @@ public class MatterCrystalPickaxe extends PickaxeItem {
                         }
                     }
                 }
-                skip = false;
+                skip = true;
                 for (BlockPos position : blocks) {
                     BlockState state = world.getBlockState(position);
                     if (!state.isAir()) {

@@ -15,11 +15,4 @@ public class Crystalline extends Item {
         super(new Item.Properties().isImmuneToFire().group(LIAVERES_ALL));
     }
 
-    @Override
-    public ActionResultType onItemUse(ItemUseContext context) {
-        PlayerEntity player = context.getPlayer();
-        Hand hand = context.getHand();
-        ItemStack itemstack = player.getHeldItem(hand);
-        return ActionResultType.SUCCESS;
-    }
 }

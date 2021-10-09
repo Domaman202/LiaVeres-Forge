@@ -1,8 +1,8 @@
 package com.algorithmlx.liaveres.itemtears;
 
+import com.algorithmlx.liaveres.registry.ModBlocks;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public enum MatterArmorTear implements IArmorMaterial {
     MatterCrystalArm("matter_crystal_arm", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, () -> {
-        return Ingredient.fromItems(Items.NETHERITE_INGOT);
+        return Ingredient.fromItems(ModBlocks.MATTER_CRYSTAL_BLOCK_ITEM.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{2147483647, 2147483647, 2147483647, 2147483647};

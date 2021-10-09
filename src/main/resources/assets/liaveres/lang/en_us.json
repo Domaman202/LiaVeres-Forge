@@ -1,19 +1,21 @@
 {
-  "item.liaveres.matter_crystal": "Crystal Matter",
+  "item.liaveres.matter_crystal": "§3Crystal Matter",
   "item.liaveres.matter": "Matter",
-  "item.liaveres.crystalline": "Crystalline",
+  "item.liaveres.crystalline": "§dCrystalline",
+  "item.liaveres.flying_catalyst": "§3Catalyst of Flying",
+  "item.liaveres.matter_crystal_pickaxe": "§9Matter Crystal Pickaxe",
+  "item.liaveres.matter_crystal_sword": "§9Matter Crystal Sword",
+  "item.liaveres.matter_crystal_axe": "§9Matter Crystal Axe",
+  "item.liaveres.matter_crystal_shovel": "§9Matter Crystal Shovel",
+  "item.liaveres.matter_crystal_helmet": "§9Matter Crystal Helmet",
+  "item.liaveres.matter_crystal_chestplate": "§9Matter Crystal Chestplate",
+  "item.liaveres.matter_crystal_leggings": "§9Matter Crystal Leggings",
+  "item.liaveres.matter_crystal_boots": "§9Matter Crystal Boots",
 
-  "block.liaveres.matter_crystal_block": "Block Crystal Matter",
+  "block.liaveres.matter_crystal_block": "§7Block Crystal Matter",
 
   "itemGroup.liaveres_all": "LiaVeres: All",
 
-  "item.liaveres.matter_crystal_pickaxe": "Matter Crystal Pickaxe",
-  "item.liaveres.matter_crystal_sword": "Matter Crystal Sword",
-  "item.liaveres.matter_crystal_axe": "Matter Crystal Axe",
-  "item.liaveres.matter_crystal_shovel": "Matter Crystal Shovel",
-
-  "item.liaveres.matter_crystal_helmet": "Matter Crystal Helmet",
-  "item.liaveres.matter_crystal_chestplate": "Matter Crystal Chestplate",
-  "item.liaveres.matter_crystal_leggings": "Matter Crystal Leggings",
-  "item.liaveres.matter_crystal_boots": "Matter Crystal Boots"
+  "tooltip.flying_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
+  "tooltip.matter_crystal_armor": "§bA §4full, §bdressed set of armor gives flight"
 }
