@@ -30,5 +30,5 @@ public class ModItems {
     public static final RegistryObject<MatterCrystalPickaxe> MATTER_CRYSTAL_PICKAXE = ITEMS.register("matter_crystal_pickaxe", MatterCrystalPickaxe::new);
     public static final RegistryObject<MatterCrystalShovel> MATTER_CRYSTAL_SHOVEL = ITEMS.register("matter_crystal_shovel", MatterCrystalShovel::new);
     public static final RegistryObject<MatterCrystalSword> MATTER_CRYSTAL_SWORD = ITEMS.register("matter_crystal_sword", MatterCrystalSword::new);
-    public static final RegistryObject<FlyingCatalyst> FLYING_CATALYST = ITEMS.register("flying_catalyst", FlyingCatalyst::new);
+    public static final RegistryObject<EffectCatalyst> EFFECT_CATALYST = ITEMS.register("effect_catalyst", EffectCatalyst::new);
 }

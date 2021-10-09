@@ -2,7 +2,7 @@
   "item.liaveres.matter_crystal": "§3Кристалл материи",
   "item.liaveres.matter": "Материя",
   "item.liaveres.crystalline": "§dКристаллин",
-  "item.liaveres.flying_catalyst": "§3Каталист Полёта",
+  "item.liaveres.effect_catalyst": "§3Каталист Полёта",
   "item.liaveres.matter_crystal_pickaxe": "§9Кирка из Кристалла материи",
   "item.liaveres.matter_crystal_sword": "§9Меч из Кристалла материи",
   "item.liaveres.matter_crystal_axe": "§9Топор из Кристалла материи",
@@ -16,6 +16,9 @@
 
   "itemGroup.liaveres_all": "LiaVeres: Всё",
 
-  "tooltip.flying_catalyst": "В связке с Незеритовой Бронёй, преобразует Незеритовую Бронь в Броню из Кристалла материи, которая вас с легкостью поднимет в воздух.",
-  "tooltip.matter_crystal_armor": "Полный, одетый сет брони дает полёт"
+  "tooltip.effect_catalyst": "В связке с Незеритовой Бронёй, преобразует Незеритовую Бронь в Броню из Кристалла материи, которая вас с легкостью поднимет в воздух.",
+  "tooltip.matter_crystal_armor1": "§bОдетый §4полностью §bсет брони, дает полёт, и эффекты",
+  "tooltip.matter_crystal_armor2": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "tooltip.matter_crystal_pickaxe": "§2Нажмите §fПКМ §2чтобы сломать область блоков, которая равна 31x31",
+  "tooltip.tooltip.matter_crystal_axe": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ"
 }

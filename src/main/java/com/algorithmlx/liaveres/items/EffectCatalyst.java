@@ -14,8 +14,8 @@ import java.util.List;
 
 import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 
-public class FlyingCatalyst extends Item {
-    public FlyingCatalyst() {
+public class EffectCatalyst extends Item {
+    public EffectCatalyst() {
         super(new Item.Properties().isImmuneToFire().group(LIAVERES_ALL));
     }
 
@@ -23,6 +23,6 @@ public class FlyingCatalyst extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("tooltip.flying_catalyst"));
+        tooltip.add(new TranslationTextComponent("tooltip.effect_catalyst"));
     }
 }

@@ -8,6 +8,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -51,6 +53,80 @@ public class MatterCrystalArmor extends ArmorItem {
         {
             player.abilities.allowFlying = true;
         }
+        if(iswearingFullMatterCrystalArmor) {
+            //bad effect remove
+            if(player.getActivePotionEffect(Effects.BLINDNESS) != null)
+            {
+                player.removePotionEffect(Effects.BLINDNESS);
+            }
+
+            if(player.getActivePotionEffect(Effects.SLOWNESS) != null)
+            {
+                player.removePotionEffect(Effects.SLOWNESS);
+            }
+
+            if(player.getActivePotionEffect(Effects.MINING_FATIGUE) != null)
+            {
+                player.removePotionEffect(Effects.MINING_FATIGUE);
+            }
+
+            if(player.getActivePotionEffect(Effects.INSTANT_DAMAGE) != null)
+            {
+                player.removePotionEffect(Effects.INSTANT_DAMAGE);
+            }
+
+            if(player.getActivePotionEffect(Effects.NAUSEA) != null)
+            {
+                player.removePotionEffect(Effects.NAUSEA);
+            }
+
+            if(player.getActivePotionEffect(Effects.HUNGER) != null)
+            {
+                player.removePotionEffect(Effects.HUNGER);
+            }
+
+            if(player.getActivePotionEffect(Effects.POISON) != null)
+            {
+                player.removePotionEffect(Effects.POISON);
+            }
+
+            if(player.getActivePotionEffect(Effects.WITHER) != null)
+            {
+                player.removePotionEffect(Effects.WITHER);
+            }
+
+            if(player.getActivePotionEffect(Effects.LEVITATION) != null)
+            {
+                player.removePotionEffect(Effects.LEVITATION);
+            }
+
+            if(player.getActivePotionEffect(Effects.UNLUCK) != null)
+            {
+                player.removePotionEffect(Effects.UNLUCK);
+            }
+
+            if(player.getActivePotionEffect(Effects.WEAKNESS) != null)
+            {
+                player.removePotionEffect(Effects.WEAKNESS);
+            }
+            //good effect add
+            EffectInstance nv = new EffectInstance(Effects.NIGHT_VISION, 300, 0, false, false);
+                    player.addPotionEffect(nv);
+            EffectInstance regen = new EffectInstance(Effects.REGENERATION, 300, 2147483647, false, false);
+                    player.addPotionEffect(regen);
+            EffectInstance underWater = new EffectInstance(Effects.WATER_BREATHING, 300, 0, false, false);
+                    player.addPotionEffect(underWater);
+            EffectInstance haste = new EffectInstance(Effects.HASTE, 300, 20, false, false);
+                    player.addPotionEffect(haste);
+            EffectInstance saturation = new EffectInstance(Effects.SATURATION, 300, 50, false, false);
+                    player.addPotionEffect(saturation);
+            EffectInstance strength = new EffectInstance(Effects.STRENGTH, 300, 20, false, false);
+                    player.addPotionEffect(strength);
+            EffectInstance fr = new EffectInstance(Effects.FIRE_RESISTANCE, 300, 2147483647, false, false);
+                    player.addPotionEffect(fr);
+            EffectInstance luck = new EffectInstance(Effects.LUCK, 300, 10, false, false);
+                    player.addPotionEffect(luck);
+        }
         player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
     }
 
@@ -70,6 +146,7 @@ public class MatterCrystalArmor extends ArmorItem {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_armor"));
+        tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_armor1"));
+        tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_armor2"));
     }
 }

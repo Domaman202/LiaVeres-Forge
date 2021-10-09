@@ -6,18 +6,18 @@
     "ABA"
   ],
   "key": {
-    "M": {
+    "B": {
       "item": "minecraft:nether_star"
     },
     "A": {
-      "item": "minecraft:end_crystal"
+      "item": "minecraft:enchanted_golden_apple"
     },
-    "B": {
-      "item": "minecraft:shulker_shell"
+    "M": {
+      "item": "minecraft:shulker_box"
     }
   },
   "result": {
     "item": "liaveres:crystalline",
-    "count": 16
+    "count": 1
   }
 }

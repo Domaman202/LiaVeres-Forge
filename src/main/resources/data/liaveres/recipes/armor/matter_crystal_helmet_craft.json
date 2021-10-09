@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "1 1",
+    "   "
+  ],
+  "key": {
+    "1": {
+      "item": "liaveres:effect_catalyst"
+    }
+  },
+  "result": {
+    "item": "liaveres:matter_crystal_helmet",
+    "count": 1
+  }
+}
