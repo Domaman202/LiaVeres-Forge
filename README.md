@@ -4,7 +4,7 @@ Port LiaVeres
 # URL's
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/AlgorithmLX-Team/LiaVeres-Fabric/blob/main/LICENSE)
 [![](https://img.shields.io/badge/Discord-AlgoTeam-738bd7?style=flat-square.svg)](https://discord.gg/e2Abs6XAYW)
-[![](http://cf.way2muchnoise.eu/full_liaveres-forge.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/liaveres-forge/files) [![](http://cf.way2muchnoise.eu/versions/liaveres-forge.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/liaveres-forge/files)
+[![](http://cf.way2muchnoise.eu/full_liaveres-forge.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/liaveres-forge/files)[![](http://cf.way2muchnoise.eu/versions/liaveres-forge.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/liaveres-forge/files)
 
 Mystic mod adding unusual items. 
 
