@@ -2,12 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "111",
-    "1 1",
+    "1A1",
     "1 1"
   ],
   "key": {
     "1": {
       "item": "liaveres:effect_catalyst"
+    },
+    "A": {
+      "item": "minecraft:netherite_leggings"
     }
   },
   "result": {
