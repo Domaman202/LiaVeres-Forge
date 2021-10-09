@@ -27,23 +27,23 @@ public class MatterCrystalArmor extends ArmorItem {
         ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
 
         if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
-        boolean iswearingFullatterCrystalArmor = head != null && head.getItem() == ModItems.MATTER_CRYSTAL_HELMET.get() &&
+        boolean iswearingFullMatterCrystalArmor =
+                head != null && head.getItem() == ModItems.MATTER_CRYSTAL_HELMET.get() &&
                 chest != null && chest.getItem() == ModItems.MATTER_CRYSTAL_CHESTPLATE.get() &&
                 legs != null && legs.getItem() == ModItems.MATTER_CRYSTAL_LEGS.get() &&
                 feet != null && feet.getItem() == ModItems.MATTER_CRYSTAL_BOOTS.get();
 
-        boolean wasWearingDragonArmorLastTick = player.getPersistentData().getBoolean("wearingFullMatterCrystalArmor");
+        boolean wasWearingMatterCrystalArmorLastTick = player.getPersistentData().getBoolean("wearingFullMatterCrystalArmor");
 
-        if(!iswearingFullatterCrystalArmor && wasWearingDragonArmorLastTick && !player.isCreative())
+        if(!iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick && !player.isCreative())
         {
             player.abilities.allowFlying = false;
             player.abilities.isFlying = false;
-        }
-        else if((iswearingFullatterCrystalArmor) && (world.getDimensionKey().equals(World.OVERWORLD) || world.getDimensionKey().equals(World.THE_NETHER) || world.getDimensionKey().equals(World.THE_END)))
+        } else if((iswearingFullMatterCrystalArmor) && (world.getDimensionKey().equals(World.OVERWORLD) || world.getDimensionKey().equals(World.THE_NETHER) || world.getDimensionKey().equals(World.THE_END)))
         {
             player.abilities.allowFlying = true;
         }
-        player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullatterCrystalArmor);
+        player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
     }
 
     @Override
@@ -51,11 +51,11 @@ public class MatterCrystalArmor extends ArmorItem {
     {
         if (slot == EquipmentSlotType.LEGS)
         {
-            return "liaveres:textures/armor/matter_crystal_2.png";
+            return ModId + ":textures/armor/matter_crystal_2.png";
         }
         else
         {
-            return "liaveres:textures/armor/matter_crystal_1.png";
+            return ModId + ":textures/armor/matter_crystal_1.png";
         }
     }
 }
