@@ -9,7 +9,7 @@ Port LiaVeres
 Mystic mod adding unusual items. 
 
 
-# Forge Version
+# Fabric Version
 This is Forge version, are you looking for Fabric? See: [LiaVeres Fabric Source Code](https://github.com/AlgorithmLX-Team/LiaVeres-Fabric)
 
 
