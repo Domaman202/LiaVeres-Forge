@@ -62,7 +62,7 @@ public class MatterCrystalPickaxe extends PickaxeItem {
                         }
                     }
                 }
-                skip = true;
+                skip = false;
                 for (BlockPos position : blocks) {
                     BlockState state = world.getBlockState(position);
                     if (!state.isAir()) {
