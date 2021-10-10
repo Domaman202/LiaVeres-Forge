@@ -140,10 +140,6 @@ public class MatterCrystalArmor extends ArmorItem {
             EffectInstance luck = new EffectInstance
                     (Effects.LUCK, 300, 10, false, false);
                     player.addPotionEffect(luck);
-
-            EffectInstance speed = new EffectInstance
-                    (Effects.SPEED, 20, 30, false, false);
-            player.addPotionEffect(speed);
         }
         player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
     }
