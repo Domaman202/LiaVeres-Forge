@@ -29,27 +29,32 @@ public class MatterCrystalArmor extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
         super.onArmorTick(stack, world, player);
-        if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
+        if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player.getPersistentData()
+                .putBoolean("wearingFullMatterCrystalArmor", false);
 
         ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
         ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
         ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
         ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
 
-        if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
+        if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player
+                .getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
         boolean iswearingFullMatterCrystalArmor =
                 head != null && head.getItem() == ModItems.MATTER_CRYSTAL_HELMET.get() &&
                 chest != null && chest.getItem() == ModItems.MATTER_CRYSTAL_CHESTPLATE.get() &&
                 legs != null && legs.getItem() == ModItems.MATTER_CRYSTAL_LEGS.get() &&
                 feet != null && feet.getItem() == ModItems.MATTER_CRYSTAL_BOOTS.get();
 
-        boolean wasWearingMatterCrystalArmorLastTick = player.getPersistentData().getBoolean("wearingFullMatterCrystalArmor");
+        boolean wasWearingMatterCrystalArmorLastTick = player.getPersistentData()
+                .getBoolean("wearingFullMatterCrystalArmor");
 
         if(!iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick && !player.isCreative())
         {
             player.abilities.allowFlying = false;
             player.abilities.isFlying = false;
-        } else if((iswearingFullMatterCrystalArmor) && (world.getDimensionKey().equals(World.OVERWORLD) || world.getDimensionKey().equals(World.THE_NETHER) || world.getDimensionKey().equals(World.THE_END)))
+        } else if((iswearingFullMatterCrystalArmor) && (world.getDimensionKey()
+                .equals(World.OVERWORLD) || world.getDimensionKey().equals(World.THE_NETHER)
+                || world.getDimensionKey().equals(World.THE_END)))
         {
             player.abilities.allowFlying = true;
         }
@@ -110,22 +115,35 @@ public class MatterCrystalArmor extends ArmorItem {
                 player.removePotionEffect(Effects.WEAKNESS);
             }
             //good effect add
-            EffectInstance nv = new EffectInstance(Effects.NIGHT_VISION, 300, 0, false, false);
+            EffectInstance nv = new EffectInstance
+                    (Effects.NIGHT_VISION, 300, 0, false, false);
                     player.addPotionEffect(nv);
-            EffectInstance regen = new EffectInstance(Effects.REGENERATION, 300, 2147483647, false, false);
+            EffectInstance regen = new EffectInstance
+                    (Effects.REGENERATION, 300, 2147483647, false, false);
                     player.addPotionEffect(regen);
-            EffectInstance underWater = new EffectInstance(Effects.WATER_BREATHING, 300, 0, false, false);
+            EffectInstance underWater = new
+                    EffectInstance
+                    (Effects.WATER_BREATHING, 300, 0, false, false);
                     player.addPotionEffect(underWater);
-            EffectInstance haste = new EffectInstance(Effects.HASTE, 300, 20, false, false);
+            EffectInstance haste = new EffectInstance
+                    (Effects.HASTE, 300, 20, false, false);
                     player.addPotionEffect(haste);
-            EffectInstance saturation = new EffectInstance(Effects.SATURATION, 300, 50, false, false);
+            EffectInstance saturation = new EffectInstance
+                    (Effects.SATURATION, 300, 50, false, false);
                     player.addPotionEffect(saturation);
-            EffectInstance strength = new EffectInstance(Effects.STRENGTH, 300, 20, false, false);
+            EffectInstance strength = new EffectInstance
+                    (Effects.STRENGTH, 300, 20, false, false);
                     player.addPotionEffect(strength);
-            EffectInstance fr = new EffectInstance(Effects.FIRE_RESISTANCE, 300, 2147483647, false, false);
+            EffectInstance fr = new EffectInstance
+                    (Effects.FIRE_RESISTANCE, 300, 2147483647, false, false);
                     player.addPotionEffect(fr);
-            EffectInstance luck = new EffectInstance(Effects.LUCK, 300, 10, false, false);
+            EffectInstance luck = new EffectInstance
+                    (Effects.LUCK, 300, 10, false, false);
                     player.addPotionEffect(luck);
+
+            EffectInstance speed = new EffectInstance
+                    (Effects.SPEED, 20, 30, false, false);
+            player.addPotionEffect(speed);
         }
         player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
     }
