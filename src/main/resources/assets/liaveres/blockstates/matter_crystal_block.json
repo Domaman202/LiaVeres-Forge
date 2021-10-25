@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": { 
+      "model": "liaveres:block/matter_crystal_block" 
+    }
+  }
+}
