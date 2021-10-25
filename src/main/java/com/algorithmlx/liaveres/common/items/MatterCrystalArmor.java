@@ -1,9 +1,20 @@
 package com.algorithmlx.liaveres.common.items;
 
-/*import com.algorithmlx.liaveres.common.api.enums.LVItemTiers;
+import com.algorithmlx.liaveres.common.api.enums.LVArmorTier;
 import com.algorithmlx.liaveres.common.registry.Registration;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.client.renderer.EffectInstance;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Abilities;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -11,25 +22,25 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
-*/
+
 
 //I'm sorry, fix this a hard, but to be honest, the armor will appear soon!
 
-public class MatterCrystalArmor /*extends ArmorItem */ {
-    /*public MatterCrystalArmor(Slot slot, Properties builderIn) {
-        super(MatterArmorTear.MatterCrystalArm, slot, builderIn);
+public class MatterCrystalArmor extends ArmorItem  {
+    public MatterCrystalArmor(EquipmentSlot slot, Properties builderIn) {
+        super(LVArmorTier.MatterCrystal, slot, builderIn);
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
+    public void onArmorTick(ItemStack stack, Level world, Player player) {
         super.onArmorTick(stack, world, player);
         if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player.getPersistentData()
                 .putBoolean("wearingFullMatterCrystalArmor", false);
 
-        ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-        ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);
+        ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
+        ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack legs = player.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack feet = player.getItemBySlot(EquipmentSlot.FEET);
 
         if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player
                 .getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
@@ -44,104 +55,102 @@ public class MatterCrystalArmor /*extends ArmorItem */ {
 
         if(!iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick && !player.isCreative())
         {
-            player.abilities.allowFlying = false;
-            player.abilities.isFlying = false;
-        } else if((iswearingFullMatterCrystalArmor) && (world.getDimensionKey()
-                .equals(World.OVERWORLD) || world.getDimensionKey().equals(World.THE_NETHER)
-                || world.getDimensionKey().equals(World.THE_END)))
+            player.getAbilities().mayfly = false;
+            player.getAbilities().flying = false;
+        } else if((iswearingFullMatterCrystalArmor) && (world.dimension()
+                .equals(Level.OVERWORLD) || world.dimension().equals(Level.NETHER)
+                || world.dimension().equals(Level.END)))
         {
-            player.abilities.allowFlying = true;
+            player.getAbilities().mayfly = true;
         }
         if(iswearingFullMatterCrystalArmor) {
             //bad effect remove
-            if(player.getActivePotionEffect(Effects.BLINDNESS) != null)
+            if(player.getEffect(MobEffects.BLINDNESS) != null)
             {
-                player.removePotionEffect(Effects.BLINDNESS);
+                player.removeEffect(MobEffects.BLINDNESS);
             }
 
-            if(player.getActivePotionEffect(Effects.SLOWNESS) != null)
+            if(player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null)
             {
-                player.removePotionEffect(Effects.SLOWNESS);
+                player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
             }
 
-            if(player.getActivePotionEffect(Effects.MINING_FATIGUE) != null)
+            if(player.getEffect(MobEffects.DIG_SLOWDOWN) != null)
             {
-                player.removePotionEffect(Effects.MINING_FATIGUE);
+                player.removeEffect(MobEffects.DIG_SLOWDOWN);
             }
 
-            if(player.getActivePotionEffect(Effects.INSTANT_DAMAGE) != null)
+            if(player.getEffect(MobEffects.HARM) != null)
             {
-                player.removePotionEffect(Effects.INSTANT_DAMAGE);
+                player.removeEffect(MobEffects.HARM);
             }
 
-            if(player.getActivePotionEffect(Effects.NAUSEA) != null)
+            if(player.getEffect(MobEffects.CONFUSION) != null)
             {
-                player.removePotionEffect(Effects.NAUSEA);
+                player.removeEffect(MobEffects.CONFUSION);
             }
 
-            if(player.getActivePotionEffect(Effects.HUNGER) != null)
+            if(player.getEffect(MobEffects.HUNGER) != null)
             {
-                player.removePotionEffect(Effects.HUNGER);
+                player.removeEffect(MobEffects.HUNGER);
             }
 
-            if(player.getActivePotionEffect(Effects.POISON) != null)
+            if(player.getEffect(MobEffects.POISON) != null)
             {
-                player.removePotionEffect(Effects.POISON);
+                player.removeEffect(MobEffects.POISON);
             }
 
-            if(player.getActivePotionEffect(Effects.WITHER) != null)
+            if(player.getEffect(MobEffects.WITHER) != null)
             {
-                player.removePotionEffect(Effects.WITHER);
+                player.removeEffect(MobEffects.WITHER);
             }
 
-            if(player.getActivePotionEffect(Effects.LEVITATION) != null)
+            if(player.getEffect(MobEffects.LEVITATION) != null)
             {
-                player.removePotionEffect(Effects.LEVITATION);
+                player.removeEffect(MobEffects.LEVITATION);
             }
 
-            if(player.getActivePotionEffect(Effects.UNLUCK) != null)
+            if(player.getEffect(MobEffects.UNLUCK) != null)
             {
-                player.removePotionEffect(Effects.UNLUCK);
+                player.removeEffect(MobEffects.UNLUCK);
             }
 
-            if(player.getActivePotionEffect(Effects.WEAKNESS) != null)
+            if(player.getEffect(MobEffects.WEAKNESS) != null)
             {
-                player.removePotionEffect(Effects.WEAKNESS);
+                player.removeEffect(MobEffects.WEAKNESS);
             }
             //good effect add
-            EffectInstance nv = new EffectInstance
-                    (Effects.NIGHT_VISION, 300, 0, false, false);
-                    player.addPotionEffect(nv);
-            EffectInstance regen = new EffectInstance
-                    (Effects.REGENERATION, 300, 2147483647, false, false);
-                    player.addPotionEffect(regen);
-            EffectInstance underWater = new
-                    EffectInstance
-                    (Effects.WATER_BREATHING, 300, 0, false, false);
-                    player.addPotionEffect(underWater);
-            EffectInstance haste = new EffectInstance
-                    (Effects.HASTE, 300, 20, false, false);
-                    player.addPotionEffect(haste);
-            EffectInstance saturation = new EffectInstance
-                    (Effects.SATURATION, 300, 50, false, false);
-                    player.addPotionEffect(saturation);
-            EffectInstance strength = new EffectInstance
-                    (Effects.STRENGTH, 300, 20, false, false);
-                    player.addPotionEffect(strength);
-            EffectInstance fr = new EffectInstance
-                    (Effects.FIRE_RESISTANCE, 300, 2147483647, false, false);
-                    player.addPotionEffect(fr);
-            EffectInstance luck = new EffectInstance
-                    (Effects.LUCK, 300, 10, false, false);
-                    player.addPotionEffect(luck);
+            MobEffectInstance nv = new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0, false, false);
+                    player.addEffect(nv);
+
+            MobEffectInstance regen = new MobEffectInstance(MobEffects.REGENERATION, 300, 2147483647, false, false);
+                    player.addEffect(regen);
+
+            MobEffectInstance underWater = new MobEffectInstance(MobEffects.WATER_BREATHING, 300, 0, false, false);
+                    player.addEffect(underWater);
+
+            MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 300, 20, false, false);
+                    player.addEffect(haste);
+
+            MobEffectInstance saturation = new MobEffectInstance(MobEffects.SATURATION, 300, 50, false, false);
+                    player.addEffect(saturation);
+
+            MobEffectInstance strength = new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 20, false, false);
+                    player.addEffect(strength);
+
+            MobEffectInstance fr = new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 2147483647, false, false);
+                    player.addEffect(fr);
+
+            MobEffectInstance luck = new MobEffectInstance(MobEffects.LUCK, 300, 10, false, false);
+                    player.addEffect(luck);
         }
         player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
     }
 
     @Override
-    public String getArmorTexture(ItemStack itemstack, Entity entity, EquipmentSlotType slot, String layer)
+    public String getArmorTexture(ItemStack itemstack, Entity entity, EquipmentSlot slot, String layer)
     {
-        if (slot == EquipmentSlotType.LEGS)
+        if (slot == EquipmentSlot.LEGS)
         {
             return ModId + ":textures/armor/matter_crystal_2.png";
         }
@@ -152,9 +161,8 @@ public class MatterCrystalArmor /*extends ArmorItem */ {
     }
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_armor1"));
-        tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_armor2"));
-    }*/
+    public void appendHoverText(ItemStack s, @Nullable Level w, List<Component> l, TooltipFlag f) {
+        l.add(new TranslatableComponent("msg.matter_crystal_armor"));
+        l.add(new TranslatableComponent("msg.matter_crystal_armor2"));
+    }
 }

@@ -1,4 +1,5 @@
 {
+  "_comment": "Translation help There: ",
   "item.liaveres.matter_crystal": "§3Crystal Matter",
   "item.liaveres.matter": "Matter",
   "item.liaveres.crystalline": "§dCrystalline",
@@ -16,12 +17,11 @@
 
   "itemGroup.liaveres_all": "LiaVeres: All",
 
-  "msg.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
-
-  "msg.matter_crystal_armor1": "§bA §4full, §bdressed set of armor gives flight, and effects",
-  "msg.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.matter_crystal_pickaxe2": "§2Press the §fRIGHT BUTTON §2to break the 31x31 area",
 
+  "msg.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
+  "msg.matter_crystal_armor": "§bA §4full, §bdressed set of armor gives flight, and effects",
+  "msg.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.matter_crystal_pickaxe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
