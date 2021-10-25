@@ -1,21 +1,17 @@
-package com.algorithmlx.liaveres.registry;
+package com.algorithmlx.liaveres.common.registry;
 
-import com.algorithmlx.liaveres.blocks.MatterCrystalBlock;
-import com.algorithmlx.liaveres.items.*;
-import net.minecraft.world.inventory.Slot;
+import com.algorithmlx.liaveres.common.blocks.MatterCrystalBlock;
+import com.algorithmlx.liaveres.common.items.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fmllegacy.RegistryObject;
-import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.awt.image.ShortLookupTable;
-
-import static com.algorithmlx.liaveres.LiaVeres.ModId;
-import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
+import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.common.setup.ModSetup.LIAVERES_ALL;
 
 public class Registration {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModId);

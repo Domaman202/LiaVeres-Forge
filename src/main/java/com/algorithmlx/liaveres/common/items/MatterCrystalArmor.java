@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.items;
+package com.algorithmlx.liaveres.common.items;
 
-/*import com.algorithmlx.liaveres.api.enums.LVItemTiers;
-import com.algorithmlx.liaveres.registry.Registration;
+/*import com.algorithmlx.liaveres.common.api.enums.LVItemTiers;
+import com.algorithmlx.liaveres.common.registry.Registration;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraftforge.api.distmarker.Dist;
@@ -10,7 +10,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.algorithmlx.liaveres.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
 */
 
 //I'm sorry, fix this a hard, but to be honest, the armor will appear soon!

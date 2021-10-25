@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.items;
+package com.algorithmlx.liaveres.common.items;
 
-import com.algorithmlx.liaveres.api.enums.LVItemTiers;
+import com.algorithmlx.liaveres.common.api.enums.LVItemTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
+import static com.algorithmlx.liaveres.common.setup.ModSetup.LIAVERES_ALL;
 
 public class MatterCrystalPickaxe extends PickaxeItem {
     //public static boolean skip = false;

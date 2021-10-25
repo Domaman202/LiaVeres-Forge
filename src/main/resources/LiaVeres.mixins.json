@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "com.algorithmlx.liaveres.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_16",
   "refmap": "liaveres.refmap.json",
   "mixins": [
   ],

@@ -1,8 +1,8 @@
-package com.algorithmlx.liaveres.items;
+package com.algorithmlx.liaveres.common.items;
 
 import net.minecraft.world.item.Item;
 
-import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
+import static com.algorithmlx.liaveres.common.setup.ModSetup.LIAVERES_ALL;
 
 public class Crystalline extends Item {
 
