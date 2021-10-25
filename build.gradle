@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'com.algorithmlx'
-version = 'A1'
+version = '1.17.1_A1'
 
 java {
     archivesBaseName = 'LiaVeres'
@@ -91,13 +91,13 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title": "LiaVeres",
+                            "Specification-Title": "LiaVeres",
                             "Specification-Vendor": "AlgorithmLX",
                             "Specification-Version": "1", // We are version 1 of ourselves
-                "Implementation-Title": project.name,
-                "Implementation-Version": project.jar.archiveVersion,
+                            "Implementation-Title": project.name,
+                            "Implementation-Version": project.jar.archiveVersion,
                             "Implementation-Vendor": "AlgorithmLX",
-                                        "MixinConfigs": "LiaVeres.mixins.json",
+                            "MixinConfigs": "LiaVeres.mixins.json",
                             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
