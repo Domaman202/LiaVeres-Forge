@@ -18,10 +18,10 @@ public class ModItems {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 //#######################################################ARMOR#############################################################################################
-    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new MatterCrystalArmor(EquipmentSlotType.HEAD, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new MatterCrystalArmor(EquipmentSlotType.CHEST, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new MatterCrystalArmor(EquipmentSlotType.LEGS, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
-    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new MatterCrystalArmor(EquipmentSlotType.FEET, new Item.Properties().isImmuneToFire().group(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEMS.register("matter_crystal_helmet", () -> new MatterCrystalArmor(EquipmentSlotType.HEAD, new Item.Properties().fireResistant().tab(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEMS.register("matter_crystal_chestplate", () -> new MatterCrystalArmor(EquipmentSlotType.CHEST, new Item.Properties().fireResistant().tab(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEMS.register("matter_crystal_leggings", () -> new MatterCrystalArmor(EquipmentSlotType.LEGS, new Item.Properties().fireResistant().tab(LIAVERES_ALL)));
+    public static final RegistryObject<Item> MATTER_CRYSTAL_BOOTS = ITEMS.register("matter_crystal_boots", () -> new MatterCrystalArmor(EquipmentSlotType.FEET, new Item.Properties().fireResistant().tab(LIAVERES_ALL)));
 //#######################################################ITEMS############################################################################################
     public static final RegistryObject<Crystalline> CRYSTALLINE = ITEMS.register("crystalline", Crystalline::new);
     public static final RegistryObject<MatterCrystal> MATTER_CRYSTAL = ITEMS.register("matter_crystal", MatterCrystal::new);

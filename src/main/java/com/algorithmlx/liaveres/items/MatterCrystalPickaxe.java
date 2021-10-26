@@ -11,7 +11,6 @@ import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,17 +27,17 @@ public class MatterCrystalPickaxe extends PickaxeItem {
     public static boolean skip = false;
 
     public MatterCrystalPickaxe() {
-        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().isImmuneToFire().group(LIAVERES_ALL));
+        super(MatterTear.MatterTear, 30, 99999999999999999999999999999999999999F, new Properties().fireResistant().tab(LIAVERES_ALL));
     }
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context) {
+    public ActionResultType useOn(ItemUseContext context) {
         PlayerEntity player = context.getPlayer();
-        BlockPos pos = context.getPos();
-        ItemStack itemstack = context.getItem();
+        BlockPos pos = context.getClickedPos();
+        ItemStack itemstack = context.getItemInHand();
         if (player == null) return ActionResultType.FAIL;
-        World world = context.getPlayer().getEntityWorld();
-        if (!world.isRemote() && !player.isSneaking() && !player.getCooldownTracker().hasCooldown(itemstack.getItem()) && player instanceof ServerPlayerEntity) {
+        World world = context.getPlayer().getEntity().level;
+        if (!world.isClientSide() && !player.isShiftKeyDown() && !player.getCooldowns().isOnCooldown(itemstack.getItem()) && player instanceof ServerPlayerEntity) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
 
             if (!skip) {
@@ -51,7 +50,7 @@ public class MatterCrystalPickaxe extends PickaxeItem {
                             int posY = pos.getY();
                             int posZ = pos.getZ();
 
-                            switch (player.getHorizontalFacing()) {
+                            switch (player.getDirection()) {
                                 case SOUTH:
                                     blocks.add(new BlockPos(posX + 16 - x, posY - 1 + y, posZ + z));
                                     break;
@@ -72,22 +71,22 @@ public class MatterCrystalPickaxe extends PickaxeItem {
                 for (BlockPos position : blocks) {
                     BlockState state = world.getBlockState(position);
                     if (!state.isAir()) {
-                        serverPlayer.interactionManager.tryHarvestBlock(position);
-                        
+                        serverPlayer.gameMode.destroyBlock(position);
+
                     }
                 }
                 skip = false;
             }
-            player.getCooldownTracker().setCooldown(this, 240);
+            player.getCooldowns().addCooldown(this, 240);
         }
-        return super.onItemUse(context);
+        return super.useOn(context);
     }
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_pickaxe1"));
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("tooltip.matter_crystal_pickaxe2"));
     }
 }

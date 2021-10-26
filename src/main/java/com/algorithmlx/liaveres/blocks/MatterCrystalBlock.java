@@ -16,8 +16,8 @@ import java.util.List;
 
 public class MatterCrystalBlock extends Block {
     public MatterCrystalBlock() {
-        super(AbstractBlock.Properties.create(Material.IRON)
-                .hardnessAndResistance(2147483647f, 2147483647f)
+        super(Properties.of(Material.STONE)
+                .harvestLevel(2147483647)
                 .sound(SoundType.METAL)
         );
     }

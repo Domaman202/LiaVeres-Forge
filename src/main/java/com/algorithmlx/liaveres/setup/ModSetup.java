@@ -14,7 +14,7 @@ public class ModSetup {
 
     public static final ItemGroup LIAVERES_ALL = new ItemGroup("liaveres_all") {
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(ModItems.MATTER_CRYSTAL.get());
         }
     };

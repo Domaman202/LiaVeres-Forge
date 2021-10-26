@@ -8,6 +8,6 @@ import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 public class MatterCrystal extends Item {
 
     public MatterCrystal() {
-        super(new Item.Properties().isImmuneToFire().group(LIAVERES_ALL));
+        super(new Item.Properties().fireResistant().tab(LIAVERES_ALL));
     }
 }
