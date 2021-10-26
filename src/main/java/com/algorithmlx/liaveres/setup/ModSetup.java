@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.setup;
 
 import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.registry.ModItems;
+import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -15,7 +15,7 @@ public class ModSetup {
     public static final ItemGroup LIAVERES_ALL = new ItemGroup("liaveres_all") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.MATTER_CRYSTAL.get());
+            return new ItemStack(Registration.MATTER_CRYSTAL.get());
         }
     };
     public static void init(final FMLCommonSetupEvent event) {

@@ -1,13 +1,13 @@
 package com.algorithmlx.liaveres.itemtears;
 
-import com.algorithmlx.liaveres.registry.ModItems;
+import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum MatterTear implements IItemTier {
 
-        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.of(new ItemStack(ModItems.MATTER_CRYSTAL.get(), 2147483647)));
+        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.of(new ItemStack(Registration.MATTER_CRYSTAL.get(), 2147483647)));
 
         private final int harvestLevel;
         private final int maxUses;

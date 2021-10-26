@@ -1,10 +1,7 @@
 package com.algorithmlx.liaveres.blocks;
 
-import com.algorithmlx.liaveres.itemtears.MatterTear;
-import com.algorithmlx.liaveres.registry.ModBlocks;
-import com.algorithmlx.liaveres.registry.ModItems;
+import com.algorithmlx.liaveres.registry.Registration;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -24,6 +21,6 @@ public class MatterCrystalBlock extends Block {
     @Override
     public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
     {
-        return ImmutableList.of(new ItemStack(ModBlocks.MATTER_CRYSTAL_BLOCK_ITEM.get(), 1));
+        return ImmutableList.of(new ItemStack(Registration.MATTER_CRYSTAL_BLOCK_ITEM.get(), 1));
     }
 }

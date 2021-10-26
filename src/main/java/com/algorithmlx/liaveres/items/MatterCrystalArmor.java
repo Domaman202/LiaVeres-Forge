@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.items;
 
 import com.algorithmlx.liaveres.itemtears.MatterArmorTear;
-import com.algorithmlx.liaveres.registry.ModItems;
+import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -40,10 +40,10 @@ public class MatterCrystalArmor extends ArmorItem {
         if(!player.getPersistentData().contains("wearingFullMatterCrystalArmor"))player
                 .getPersistentData().putBoolean("wearingFullMatterCrystalArmor", false);
         boolean iswearingFullMatterCrystalArmor =
-                head != null && head.getItem() == ModItems.MATTER_CRYSTAL_HELMET.get() &&
-                chest != null && chest.getItem() == ModItems.MATTER_CRYSTAL_CHESTPLATE.get() &&
-                legs != null && legs.getItem() == ModItems.MATTER_CRYSTAL_LEGS.get() &&
-                feet != null && feet.getItem() == ModItems.MATTER_CRYSTAL_BOOTS.get();
+                head != null && head.getItem() == Registration.MATTER_CRYSTAL_HELMET.get() &&
+                chest != null && chest.getItem() == Registration.MATTER_CRYSTAL_CHESTPLATE.get() &&
+                legs != null && legs.getItem() == Registration.MATTER_CRYSTAL_LEGS.get() &&
+                feet != null && feet.getItem() == Registration.MATTER_CRYSTAL_BOOTS.get();
 
         boolean wasWearingMatterCrystalArmorLastTick = player.getPersistentData()
                 .getBoolean("wearingFullMatterCrystalArmor");
