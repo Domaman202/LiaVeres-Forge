@@ -7,6 +7,6 @@ import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 public class Matter extends Item {
 
     public Matter() {
-        super(new Item.Properties().isImmuneToFire().group(LIAVERES_ALL));
+        super(new Item.Properties().fireResistant().tab(LIAVERES_ALL));
     }
 }

@@ -1,13 +1,13 @@
 package com.algorithmlx.liaveres.itemtears;
 
-import com.algorithmlx.liaveres.registry.ModItems;
+import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum MatterTear implements IItemTier {
 
-        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.fromStacks(new ItemStack(ModItems.MATTER_CRYSTAL.get(), 2147483647)));
+        MatterTear(2147483647, -1, 340282356779733661637539395458142568447F, 340282356779733661637539395458142568447F, 2147483647, Ingredient.of(new ItemStack(Registration.MATTER_CRYSTAL.get(), 2147483647)));
 
         private final int harvestLevel;
         private final int maxUses;
@@ -24,10 +24,34 @@ public enum MatterTear implements IItemTier {
         this.enchantability = enchantabilityIn;
         this.repairMaterial = repairMaterialIn;
     }
-        @Override public int getMaxUses()               {  return this.maxUses;        }
-        @Override public float getEfficiency()          {  return this.efficiency;     }
-        @Override public float getAttackDamage()        {  return this.attackDamage;   }
-        @Override public int getHarvestLevel()          {  return this.harvestLevel;   }
-        @Override public int getEnchantability()        {  return this.enchantability; }
-        @Override public Ingredient getRepairMaterial() {  return this.repairMaterial; }
+
+    @Override
+    public int getUses() {
+        return this.maxUses;
+    }
+
+    @Override
+    public float getSpeed() {
+        return this.efficiency;
+    }
+
+    @Override
+    public float getAttackDamageBonus() {
+        return this.attackDamage;
+    }
+
+    @Override
+    public int getLevel() {
+        return this.harvestLevel;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return this.enchantability;
+    }
+
+    @Override
+    public Ingredient getRepairIngredient() {
+        return this.repairMaterial;
+    }
 }

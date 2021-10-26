@@ -16,13 +16,13 @@ import static com.algorithmlx.liaveres.setup.ModSetup.LIAVERES_ALL;
 
 public class EffectCatalyst extends Item {
     public EffectCatalyst() {
-        super(new Item.Properties().isImmuneToFire().group(LIAVERES_ALL));
+        super(new Item.Properties().fireResistant().tab(LIAVERES_ALL));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("tooltip.effect_catalyst"));
     }
 }

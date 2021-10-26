@@ -1,8 +1,6 @@
 package com.algorithmlx.liaveres;
 
-import com.algorithmlx.liaveres.registry.ModBlocks;
-import com.algorithmlx.liaveres.registry.ModItems;
-import com.algorithmlx.liaveres.registry.TileRegistry;
+import com.algorithmlx.liaveres.registry.Registration;
 import com.algorithmlx.liaveres.setup.ModSetup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,9 +20,7 @@ public class LiaVeres {
     public LiaVeres() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.init();
-        ModBlocks.init();
-        TileRegistry.init();
+        Registration.init();
 
         MinecraftForge.EVENT_BUS.register(this);
 

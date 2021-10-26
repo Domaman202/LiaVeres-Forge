@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.itemtears;
 
-import com.algorithmlx.liaveres.registry.ModBlocks;
+import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -13,8 +13,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 public enum MatterArmorTear implements IArmorMaterial {
-    MatterCrystalArm("matter_crystal_arm", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, () -> {
-        return Ingredient.fromItems(ModBlocks.MATTER_CRYSTAL_BLOCK_ITEM.get());
+    MatterCrystalArm("matter_crystal_arm", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, () -> {
+        return Ingredient.of(Registration.MATTER_CRYSTAL_BLOCK_ITEM.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{2147483647, 2147483647, 2147483647, 2147483647};
@@ -39,24 +39,29 @@ public enum MatterArmorTear implements IArmorMaterial {
 
     }
 
-    public int getDurability(EquipmentSlotType slotIn) {
+    @Override
+    public int getDurabilityForSlot(EquipmentSlotType slotIn) {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
     }
 
-    public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+    @Override
+    public int getDefenseForSlot(EquipmentSlotType slotIn) {
         return this.damageReductionAmountArray[slotIn.getIndex()];
     }
 
-    public int getEnchantability() {
+    @Override
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 
-    public SoundEvent getSoundEvent() {
+    @Override
+    public SoundEvent getEquipSound() {
         return this.soundEvent;
     }
 
-    public Ingredient getRepairMaterial() {
-        return this.repairMaterial.getValue();
+    @Override
+    public Ingredient getRepairIngredient() {
+        return this.repairMaterial.get();
     }
 
     @OnlyIn(Dist.CLIENT)

@@ -15,13 +15,14 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'idea'
 
 group = 'com.algorithmlx'
-version = 'A8_1.16.5'
+version = 'A9_1.16.5'
 archivesBaseName = 'LiaVeres'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
 minecraft {
-    mappings channel: 'snapshot', version: '20210309-1.16.5'
+    //mappings channel: 'snapshot', version: '20210309-1.16.5'
+    mappings channel: 'official', version: '1.16.5'
 
     runs {
         client {
