@@ -43,25 +43,25 @@ public class MatterCrystalPickaxe extends PickaxeItem {
             if (!skip) {
                 List<BlockPos> blocks = new ArrayList<>();
 
-                for (int x = 0; x < 31; x++) {
-                    for (int y = 0; y < 31; y++) {
-                        for (int z = 0; z < 31; z++) {
+                for (int x = 0; x < 32; x++) {
+                    for (int y = 0; y < 32; y++) {
+                        for (int z = 0; z < 32; z++) {
                             int posX = pos.getX();
                             int posY = pos.getY();
                             int posZ = pos.getZ();
 
                             switch (player.getDirection()) {
                                 case SOUTH:
-                                    blocks.add(new BlockPos(posX + 16 - x, posY - 1 + y, posZ + z));
+                                    blocks.add(new BlockPos(posX + 17 - x, posY - 1 + y, posZ + z));
                                     break;
                                 case NORTH:
-                                    blocks.add(new BlockPos(posX - 16 + x, posY - 1 + y, posZ - z));
+                                    blocks.add(new BlockPos(posX - 17 + x, posY - 1 + y, posZ - z));
                                     break;
                                 case EAST:
-                                    blocks.add(new BlockPos(posX + x, posY - 1 + y, posZ + 16 - z));
+                                    blocks.add(new BlockPos(posX + x, posY - 1 + y, posZ + 17 - z));
                                     break;
                                 case WEST:
-                                    blocks.add(new BlockPos(posX - x, posY - 1 + y, posZ - 16 + z));
+                                    blocks.add(new BlockPos(posX - x, posY - 1 + y, posZ - 17 + z));
                                     break;
                             }
                         }
