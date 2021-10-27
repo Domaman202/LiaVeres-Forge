@@ -89,5 +89,6 @@ public class MatterCrystalPickaxe extends PickaxeItem {
     @Override
     public void appendHoverText(ItemStack s, @Nullable Level w, List<Component> l, TooltipFlag f) {
         l.add(new TranslatableComponent("msg.matter_crystal_pickaxe"));
+        l.add(new TranslatableComponent("msg.matter_crystal_pickaxe2"));
     }
 }
