@@ -1,15 +1,14 @@
-package com.algorithmlx.liaveres.common.items;
+package com.algorithmlx.liaveres.common.item.armor;
 
+import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.api.enums.LVArmorTier;
-import com.algorithmlx.liaveres.common.registry.Registration;
-import net.minecraft.client.renderer.EffectInstance;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
@@ -23,12 +22,11 @@ import java.util.List;
 
 import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
 
-
-//I'm sorry, fix this a hard, but to be honest, the armor will appear soon!
+//FIXED, B*TCH
 
 public class MatterCrystalArmor extends ArmorItem  {
-    public MatterCrystalArmor(EquipmentSlot slot, Properties builderIn) {
-        super(LVArmorTier.MatterCrystal, slot, builderIn);
+    public MatterCrystalArmor(EquipmentSlot p_40387_, Properties p_40388_) {
+        super(LVArmorTier.MatterCrystalTier, p_40387_, p_40388_);
     }
 
     @Override
@@ -63,7 +61,7 @@ public class MatterCrystalArmor extends ArmorItem  {
         {
             player.getAbilities().mayfly = true;
         }
-        if(iswearingFullMatterCrystalArmor) {
+        if(iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick) {
             //bad effect remove
             if(player.getEffect(MobEffects.BLINDNESS) != null)
             {
@@ -123,25 +121,25 @@ public class MatterCrystalArmor extends ArmorItem  {
             MobEffectInstance nv = new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0, false, false);
                     player.addEffect(nv);
 
-            MobEffectInstance regen = new MobEffectInstance(MobEffects.REGENERATION, 300, 2147483647, false, false);
+            MobEffectInstance regen = new MobEffectInstance(MobEffects.REGENERATION, 1, 2147483647, false, false);
                     player.addEffect(regen);
 
-            MobEffectInstance underWater = new MobEffectInstance(MobEffects.WATER_BREATHING, 300, 0, false, false);
+            MobEffectInstance underWater = new MobEffectInstance(MobEffects.WATER_BREATHING, 1, 0, false, false);
                     player.addEffect(underWater);
 
-            MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 300, 20, false, false);
+            MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 1, 20, false, false);
                     player.addEffect(haste);
 
-            MobEffectInstance saturation = new MobEffectInstance(MobEffects.SATURATION, 300, 50, false, false);
+            MobEffectInstance saturation = new MobEffectInstance(MobEffects.SATURATION, 1, 50, false, false);
                     player.addEffect(saturation);
 
-            MobEffectInstance strength = new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 20, false, false);
+            MobEffectInstance strength = new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 20, false, false);
                     player.addEffect(strength);
 
-            MobEffectInstance fr = new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 2147483647, false, false);
+            MobEffectInstance fr = new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1, 2147483647, false, false);
                     player.addEffect(fr);
 
-            MobEffectInstance luck = new MobEffectInstance(MobEffects.LUCK, 300, 10, false, false);
+            MobEffectInstance luck = new MobEffectInstance(MobEffects.LUCK, 1, 10, false, false);
                     player.addEffect(luck);
         }
         player.getPersistentData().putBoolean("wearingFullMatterCrystalArmor", iswearingFullMatterCrystalArmor);
@@ -152,17 +150,26 @@ public class MatterCrystalArmor extends ArmorItem  {
     {
         if (slot == EquipmentSlot.LEGS)
         {
-            return ModId + ":textures/armor/matter_crystal_2.png";
+            return ModId + ":textures/armor/matter_crystal/2.png";
         }
         else
         {
-            return ModId + ":textures/armor/matter_crystal_1.png";
+            return ModId + ":textures/armor/matter_crystal/1.png";
         }
     }
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void appendHoverText(ItemStack s, @Nullable Level w, List<Component> l, TooltipFlag f) {
-        l.add(new TranslatableComponent("msg.matter_crystal_armor"));
-        l.add(new TranslatableComponent("msg.matter_crystal_armor2"));
+    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
+        p_41423_.add(new TranslatableComponent("msg."+ModId+".matter_crystal_armor"));
+        p_41423_.add(new TranslatableComponent("msg."+ModId+".matter_crystal_armor2"));
+    }
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack stack) {
+        return stack.copy();
     }
 }

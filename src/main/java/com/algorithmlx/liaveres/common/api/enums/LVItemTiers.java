@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.api.enums;
 
-import com.algorithmlx.liaveres.common.registry.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;

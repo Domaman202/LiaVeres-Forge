@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common;
 
-import com.algorithmlx.liaveres.common.registry.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,10 +12,8 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(LiaVeres.ModId)
 public class LiaVeres {
-
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String ModId = "liaveres";
-    public static final String NAME = "LiaVeres";
 
     public LiaVeres() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

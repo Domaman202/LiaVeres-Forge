@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.common.blocks;
+package com.algorithmlx.liaveres.common.block;
 
-import com.algorithmlx.liaveres.common.registry.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;

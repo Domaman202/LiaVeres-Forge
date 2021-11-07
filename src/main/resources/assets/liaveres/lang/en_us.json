@@ -1,6 +1,6 @@
 {
   "_comment": "Translation help There: ",
-  "item.liaveres.matter_crystal": "§3Crystal Matter",
+  "item.liaveres.matter_crystal": "§3Matter Crystal",
   "item.liaveres.matter": "Matter",
   "item.liaveres.crystalline": "§dCrystalline",
   "item.liaveres.effect_catalyst": "§3Catalyst of Effects",
@@ -12,17 +12,24 @@
   "item.liaveres.matter_crystal_chestplate": "§9Matter Crystal Chestplate",
   "item.liaveres.matter_crystal_leggings": "§9Matter Crystal Leggings",
   "item.liaveres.matter_crystal_boots": "§9Matter Crystal Boots",
+  "item.liaveres.matter_helmet": "Matter Helmet",
+  "item.liaveres.matter_chestplate": "Matter Leggings",
+  "item.liaveres.matter_leggings": "Matter Leggings",
+  "item.liaveres.matter_boots": "Matter Boots",
+  "item.liaveres.matter_crystal_hoe": "§9Matter Crystal Hoe",
+  "item.liaveres.enchanted_apple": "Enchanted Apple",
 
   "block.liaveres.matter_crystal_block": "§7Block Crystal Matter",
 
   "itemGroup.liaveres_all": "LiaVeres: All",
 
-  "msg.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
-  "msg.matter_crystal_armor": "§bA §4full, §bdressed set of armor gives flight, and effects",
-  "msg.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.matter_crystal_pickaxe2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.matter_crystal_pickaxe": "§2Press the §fRIGHT BUTTON §2to break the 32x32 area",
-  "msg.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.matter_crystal_shovel": "§4I§cN§6F§eI§2N§aI§bT§3Y"
+  "msg.liaveres.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
+  "msg.liaveres.matter_crystal_armor": "§bA §4full, §bdressed set of armor gives flight, and effects",
+  "msg.liaveres.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_pickaxe2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_pickaxe": "§2Press the §fRIGHT BUTTON §2to break the 32x32 area",
+  "msg.liaveres.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_shovel": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.enchanted_apple": "Base for Crafting"
 }

@@ -13,8 +13,10 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
+String lv_version = "1.17.1-${type_version}${version_mod}"
+
 group = 'com.algorithmlx'
-version = '1.17.1_A1'
+version = "${lv_version}"
 
 java {
     archivesBaseName = 'LiaVeres'
@@ -81,10 +83,23 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.k-4u.nl"
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.103'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.104'
+
+    implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }

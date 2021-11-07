@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.items;
+package com.algorithmlx.liaveres.common.item;
 
 import net.minecraft.world.item.Item;
 

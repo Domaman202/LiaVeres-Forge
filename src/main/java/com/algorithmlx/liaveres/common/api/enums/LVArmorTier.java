@@ -1,11 +1,12 @@
 package com.algorithmlx.liaveres.common.api.enums;
 
-import com.algorithmlx.liaveres.common.registry.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -13,11 +14,20 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 public enum LVArmorTier implements ArmorMaterial {
-    MatterCrystal("matter_crystal_arm", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, () -> {
+    MatterCrystalTier("matter_crystal_tier", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, 
+            () -> {
         return Ingredient.of(Registration.MATTER_CRYSTAL_BLOCK_ITEM.get());
+    }),
+    MatterTier("matter_tier", 6000, new int[]{5000, 15000, 20000, 10000}, 6, SoundEvents.ARMOR_EQUIP_DIAMOND, 20F, 0.5F,
+            ()-> {
+        return Ingredient.of(Registration.MATTER.get());
+    }),
+    StoneTier("", 500, new int[]{100, 250, 300, 200}, 1, SoundEvents.STONE_PLACE, 5F, 0F,
+            ()-> {
+        return Ingredient.of(Items.STONE);
     });
 
-    private static final int[] MAX_DAMAGE_ARRAY = new int[]{5, 15, 20, 10};
+    private static final int[] armorDurability = new int[]{5, 15, 20, 10};
     private final String name;
     private final int maxDamageFactor;
     private final int[] damageReductionAmountArray;
@@ -40,13 +50,13 @@ public enum LVArmorTier implements ArmorMaterial {
     }
 
     @Override
-    public int getDurabilityForSlot(EquipmentSlot slotIn) {
-        return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+    public int getDurabilityForSlot(EquipmentSlot slot) {
+        return armorDurability[slot.getIndex()] * this.maxDamageFactor;
     }
 
     @Override
-    public int getDefenseForSlot(EquipmentSlot slotIn) {
-        return this.damageReductionAmountArray[slotIn.getIndex()];
+    public int getDefenseForSlot(EquipmentSlot slot) {
+        return this.damageReductionAmountArray[slot.getIndex()];
     }
 
     @Override
