@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liaveres:blocks/matter_crystal_block"
+    "all": "liaveres:block/matter_crystal_block"
   }
 }
