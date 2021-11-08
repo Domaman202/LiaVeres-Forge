@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "liaveres:matter_crystal_axe",
+    "liaveres:matter_crystal_sword",
+    "liaveres:matter_crystal_pickaxe",
+    "liaveres:matter_crystal_shovel",
+    "liaveres:matter_crystal_hoe"
+  ]
+}

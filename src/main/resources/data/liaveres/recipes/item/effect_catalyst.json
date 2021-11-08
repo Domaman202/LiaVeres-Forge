@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABE",
+    "CDC",
+    "FBG"
+  ],
+  "key": {
+    "A": {
+      "item": "liaveres:matter_helmet"
+    },
+    "B": {
+      "tag": "liaveres:tools"
+    },
+    "C": {
+      "item": "minecraft:feather"
+    },
+    "D": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "E": {
+      "item": "liaveres:matter_chestplate"
+    },
+    "F": {
+      "item": "liaveres:matter_leggings"
+    },
+    "G": {
+      "item": "liaveres:matter_boots"
+    }
+  },
+  "result": {
+    "item": "liaveres:effect_catalyst",
+    "count": 4
+  }
+}
