@@ -11,17 +11,20 @@
   "item.liaveres.matter_crystal_chestplate": "§9Нагрудник из Кристалла материи",
   "item.liaveres.matter_crystal_leggings": "§9Поножи из Кристалла материи",
   "item.liaveres.matter_crystal_boots": "§9Ботинки из Кристалла материи",
+  "item.liaveres.matter_crystal_hoe": "§9Мотыга из Кристалла материи",
+  "item.liaveres.enchanted_apple": "Зачарованное яблоко",
 
   "block.liaveres.matter_crystal_block": "§7Блок Кристалла матреии",
 
   "itemGroup.liaveres_all": "LiaVeres: Всё",
 
-  "tooltip.effect_catalyst": "В связке с Незеритовой Бронёй, преобразует Незеритовую Бронь в Броню из Кристалла материи, которая вас с легкостью поднимет в воздух.",
-  "tooltip.matter_crystal_armor1": "§bОдетый §4полностью §bсет брони, дает полёт, и эффекты",
-  "tooltip.matter_crystal_armor2": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
-  "tooltip.matter_crystal_pickaxe1": "§2Нажмите §fПКМ §2чтобы сломать область блоков, которая равна 31x31",
-  "tooltip.matter_crystal_pickaxe2": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
-  "tooltip.matter_crystal_axe": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
-  "tooltip.matter_crystal_sword": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
-  "tooltip.matter_crystal_shovel": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ"
+  "msg.liaveres.effect_catalyst": "В связке с Незеритовой Бронёй, преобразует Незеритовую Бронь в Броню из Кристалла материи, которая вас с легкостью поднимет в воздух.",
+  "msg.liaveres.matter_crystal_armor1": "§bОдетый §4полностью §bсет брони, дает полёт, и эффекты",
+  "msg.liaveres.matter_crystal_armor2": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "msg.liaveres.matter_crystal_pickaxe1": "§2Нажмите §fПКМ §2чтобы сломать область блоков, которая равна 31x31",
+  "msg.liaveres.matter_crystal_pickaxe2": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "msg.liaveres.matter_crystal_axe": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "msg.liaveres.matter_crystal_sword": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "msg.liaveres.matter_crystal_shovel": "§4Б§cЕ§6С§eК§2О§aН§bЕ§3Ч§1Н§9А§dЯ",
+  "msg.liaveres.enchanted_apple": "Основа для крафта"
 }

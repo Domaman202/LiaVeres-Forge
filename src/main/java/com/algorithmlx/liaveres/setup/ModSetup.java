@@ -1,7 +1,6 @@
 package com.algorithmlx.liaveres.setup;
 
 import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.registry.Registration;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegisterCommandsEvent;

@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres;
 
-import com.algorithmlx.liaveres.registry.Registration;
+import com.algorithmlx.liaveres.setup.Registration;
 import com.algorithmlx.liaveres.setup.ModSetup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;

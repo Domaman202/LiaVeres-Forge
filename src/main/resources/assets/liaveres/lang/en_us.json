@@ -11,17 +11,20 @@
   "item.liaveres.matter_crystal_chestplate": "§9Matter Crystal Chestplate",
   "item.liaveres.matter_crystal_leggings": "§9Matter Crystal Leggings",
   "item.liaveres.matter_crystal_boots": "§9Matter Crystal Boots",
+  "item.liaveres.matter_crystal_hoe": "§9Matter Crystal Hoe",
+  "item.liaveres.enchanted_apple": "Enchanted Apple",
 
   "block.liaveres.matter_crystal_block": "§7Block Crystal Matter",
 
   "itemGroup.liaveres_all": "LiaVeres: All",
 
-  "tooltip.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
-  "tooltip.matter_crystal_armor1": "§bA §4full, §bdressed set of armor gives flight, and effects",
-  "tooltip.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "tooltip.matter_crystal_pickaxe1": "§2Press the §fRIGHT BUTTON §2to break the 31x31 area",
-  "tooltip.matter_crystal_pickaxe2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "tooltip.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "tooltip.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "tooltip.matter_crystal_shovel": "§4I§cN§6F§eI§2N§aI§bT§3Y"
+  "msg.liaveres.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
+  "msg.liaveres.matter_crystal_armor1": "§bA §4full, §bdressed set of armor gives flight, and effects",
+  "msg.liaveres.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_pickaxe1": "§2Press the §fRIGHT BUTTON §2to break the 31x31 area",
+  "msg.liaveres.matter_crystal_pickaxe2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_shovel": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.enchanted_apple": "Base for Crafting"
 }

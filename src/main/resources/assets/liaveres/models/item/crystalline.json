@@ -2,6 +2,6 @@
   "parent": "item/generated",
   "textures":
   {
-    "layer0": "liaveres:items/crystalline"
+    "layer0": "liaveres:item/crystalline"
   }
 }
