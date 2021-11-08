@@ -14,8 +14,10 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'idea'
 
+String lv_version = "${type_version}${version_mod}_1.16.5"
+
 group = 'com.algorithmlx'
-version = 'A10_1.16.5'
+version = "${lv_version}"
 archivesBaseName = 'LiaVeres'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
