@@ -14,14 +14,14 @@ import java.util.List;
 public class MatterCrystalBlock extends Block {
     public MatterCrystalBlock() {
         super(Block.Properties.of(Material.METAL)
-                .explosionResistance(2147483647f)
-                .requiresCorrectToolForDrops()
+                .strength(2147483647f, 5000f)
+                .lightLevel(s -> 16)
                 .sound(SoundType.METAL)
         );
     }
+
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
-    {
-        return ImmutableList.of(new ItemStack(Registration.MATTER_CRYSTAL_BLOCK_ITEM.get(), 1));
+    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+        return List.of(new ItemStack(Registration.MATTER_CRYSTAL.get()));
     }
 }

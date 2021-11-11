@@ -1,5 +1,6 @@
 package com.algorithmlx.liaveres.common.item;
 
+import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
@@ -12,12 +13,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
-import static com.algorithmlx.liaveres.common.setup.ModSetup.LIAVERES_ALL;
+import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 public class EffectCatalyst extends Item {
     public EffectCatalyst() {
-        super(new Item.Properties().fireResistant().tab(LIAVERES_ALL));
+        super(new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
     }
 
     @OnlyIn(Dist.CLIENT)

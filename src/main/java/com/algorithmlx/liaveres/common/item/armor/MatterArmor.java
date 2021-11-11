@@ -11,7 +11,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 public class MatterArmor extends ArmorItem {
     public MatterArmor(EquipmentSlot p_40387_, Properties p_40388_) {

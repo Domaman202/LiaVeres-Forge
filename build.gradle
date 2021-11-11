@@ -13,7 +13,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
-String lv_version = "1.17.1-${type_version}${version_mod}"
+String lv_version = "${mc_version}-${type_version}${version_mod}"
 
 group = 'com.algorithmlx'
 version = "${lv_version}"
@@ -84,12 +84,10 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
-        // location of the maven that hosts JEI files
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
-        // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
@@ -119,3 +117,9 @@ jar {
 }
 
 jar.finalizedBy('reobfJar')
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}

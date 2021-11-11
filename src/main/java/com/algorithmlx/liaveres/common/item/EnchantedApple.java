@@ -3,8 +3,6 @@ package com.algorithmlx.liaveres.common.item;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -16,11 +14,11 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 public class EnchantedApple extends Item {
     public EnchantedApple() {
-        super(new Properties().rarity(Rarity.EPIC).tab(ModSetup.LIAVERES_ALL).food(new FoodProperties.Builder()
+        super(new Properties().rarity(Rarity.EPIC).tab(ModSetup.CLASSIC_TAB).food(new FoodProperties.Builder()
                 .saturationMod(10)
                 .nutrition(10)
                 .build()

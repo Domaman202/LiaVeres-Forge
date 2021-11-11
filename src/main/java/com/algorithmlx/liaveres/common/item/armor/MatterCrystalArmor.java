@@ -1,6 +1,5 @@
 package com.algorithmlx.liaveres.common.item.armor;
 
-import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.api.enums.LVArmorTier;
 import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.network.chat.Component;
@@ -20,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
+import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 //FIXED, B*TCH
 
@@ -161,7 +160,8 @@ public class MatterCrystalArmor extends ArmorItem  {
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
         p_41423_.add(new TranslatableComponent("msg."+ModId+".matter_crystal_armor"));
-        p_41423_.add(new TranslatableComponent("msg."+ModId+".matter_crystal_armor2"));
+        p_41423_.add(new TranslatableComponent("msg."+ModId+".matter_crystal_msg"));
+        super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
     }
     @Override
     public boolean hasContainerItem(ItemStack stack) {

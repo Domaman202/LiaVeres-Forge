@@ -1,5 +1,6 @@
 {
-  "_comment": "Translation help There: ",
+  "_comment": "Translation help There: https://github.com/AlgorithmLX-Team/TranslateHelp/",
+
   "item.liaveres.matter_crystal": "§3Matter Crystal",
   "item.liaveres.matter": "Matter",
   "item.liaveres.crystalline": "§dCrystalline",
@@ -18,18 +19,17 @@
   "item.liaveres.matter_boots": "Matter Boots",
   "item.liaveres.matter_crystal_hoe": "§9Matter Crystal Hoe",
   "item.liaveres.enchanted_apple": "Enchanted Apple",
+  "item.liaveres.empty_artifact": "Empty Artifact",
+  "item.liaveres.lightning_artifact": "Artifact: Lightning",
 
   "block.liaveres.matter_crystal_block": "§7Block Crystal Matter",
 
-  "itemGroup.liaveres_all": "LiaVeres: All",
+  "itemGroup.liaveres.classic_tab": "LiaVeres: Standard Tab",
+  "itemGroup.liaveres.artifact_tab": "LiaVeres: Artifact Tab",
 
   "msg.liaveres.effect_catalyst": "In conjunction with the Netherite Armor, it transforms Netherite Armor into Matter Crystal Armor, which will easily lift you into the air.",
   "msg.liaveres.matter_crystal_armor": "§bA §4full, §bdressed set of armor gives flight, and effects",
-  "msg.liaveres.matter_crystal_armor2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.liaveres.matter_crystal_pickaxe2": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_msg": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.liaveres.matter_crystal_pickaxe": "§2Press the §fRIGHT BUTTON §2to break the 32x32 area",
-  "msg.liaveres.matter_crystal_axe": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.liaveres.matter_crystal_sword": "§4I§cN§6F§eI§2N§aI§bT§3Y",
-  "msg.liaveres.matter_crystal_shovel": "§4I§cN§6F§eI§2N§aI§bT§3Y",
   "msg.liaveres.enchanted_apple": "Base for Crafting"
 }
