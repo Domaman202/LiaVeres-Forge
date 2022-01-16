@@ -1,0 +1,38 @@
+{
+  "_comment": "Translation help There: https://github.com/AlgorithmLX-Team/TranslateHelp/",
+
+  "item.liaveres.matter_crystal": "§3Кристалл материи",
+  "item.liaveres.matter": "Материя",
+  "item.liaveres.crystalline": "§dКристаллин",
+  "item.liaveres.effect_catalyst": "§3Эффектный каталист",
+  "item.liaveres.matter_crystal_pickaxe": "Кирка Lia",
+  "item.liaveres.matter_crystal_sword": "Меч Lia",
+  "item.liaveres.matter_crystal_axe": "Топор Lia",
+  "item.liaveres.matter_crystal_shovel": "Лопата Lia",
+  "item.liaveres.matter_crystal_hoe": "Мотыга Lia",
+  "item.liaveres.matter_crystal_helmet": "Шлем Lia",
+  "item.liaveres.matter_crystal_chestplate": "Нагрудник Lia",
+  "item.liaveres.matter_crystal_leggings": "Поножи Lia",
+  "item.liaveres.matter_crystal_boots": "Ботинки Lia",
+  "item.liaveres.matter_helmet": "Шлем из материи",
+  "item.liaveres.matter_chestplate": "Нагрудник из материи",
+  "item.liaveres.matter_leggings": "Поножи из материи",
+  "item.liaveres.matter_boots": "Ботинки из материи",
+  "item.liaveres.enchanted_apple": "Зачарованное яблоко",
+  "item.liaveres.empty_artifact": "Пустой артефакт",
+  "item.liaveres.lightning_artifact": "Артефакт: Молния",
+  "item.liaveres.amdanor_skeleton_egg": "Яйцо призыва: Скелет Амданора",
+
+  "block.liaveres.matter_crystal_block": "Блок из кристалла материи",
+
+  "entity.liaveres.amdanor_skeleton": "Скелет Амданора",
+  "itemGroup.liaveres.classic_tab": "LiaVeres: Обычная группа",
+  "itemGroup.liaveres.artifact_tab": "LiaVeres: Группа артефактов",
+  "itemGroup.liaveres.mobs_tab": "LiaVeres: Группа сущностей",
+
+  "msg.liaveres.effect_catalyst": "При совмещении с Незеритовой бронёй, преобразует Незеритовую броню в броню Lia.",
+  "msg.liaveres.matter_crystal_armor": "§4Полный, §bодетый набор брони Lia дает полёт и эффекты, а также отклоняет урон, который вы получили",
+  "msg.liaveres.matter_crystal_msg": "§4I§cN§6F§eI§2N§aI§bT§3Y",
+  "msg.liaveres.matter_crystal_pickaxe": "Нажмите §fПКМ §2чтобы сломать арену 32 на 32",
+  "msg.liaveres.enchanted_apple": "Основа для крафта"
+}
