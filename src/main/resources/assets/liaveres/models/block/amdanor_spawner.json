@@ -1,0 +1,6 @@
+{
+  "parent": "liaveres:lia/amdanor_spawner",
+  "textures": {
+    "all": "liaveres:block/amdanor_spawner"
+  }
+}

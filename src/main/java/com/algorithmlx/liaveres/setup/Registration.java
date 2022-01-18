@@ -1,12 +1,14 @@
 package com.algorithmlx.liaveres.setup;
 
 import com.algorithmlx.liaveres.LiaVeres;
+import com.algorithmlx.liaveres.block.AmdanorSpawner;
 import com.algorithmlx.liaveres.block.MatterCrystalBlock;
 import com.algorithmlx.liaveres.entity.AmdanorMob;
 import com.algorithmlx.liaveres.item.armor.MatterArmor;
 import com.algorithmlx.liaveres.item.armor.MatterCrystalArmor;
 import com.algorithmlx.liaveres.item.artifact.EmptyArtifact;
 import com.algorithmlx.liaveres.item.artifact.LightningArtifact;
+import com.algorithmlx.liaveres.item.basic.MatterCrystal;
 import com.algorithmlx.liaveres.item.egg.AmdanorSpawnEgg;
 import com.algorithmlx.liaveres.item.basic.Crystalline;
 import com.algorithmlx.liaveres.item.basic.EffectCatalyst;
@@ -17,10 +19,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,6 +37,8 @@ public class Registration {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(ForgeRegistries.ENTITIES, LiaVeres.ModId);
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, LiaVeres.ModId);
     public static final DeferredRegister<StructureFeature<?>> STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, LiaVeres.ModId);
+    public static final DeferredRegister<Biome> BIOME = DeferredRegister.create(ForgeRegistries.BIOMES, LiaVeres.ModId);
+    public static final DeferredRegister<Fluid> FLUID = DeferredRegister.create(ForgeRegistries.FLUIDS, LiaVeres.ModId);
 
     public static void init() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -42,8 +48,11 @@ public class Registration {
         ENTITY.register(bus);
         BLOCK_ENTITY.register(bus);
         STRUCTURE.register(bus);
+        BIOME.register(bus);
+        FLUID.register(bus);
     }
     public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = BLOCK.register("matter_crystal_block", MatterCrystalBlock::new);
+    public static final RegistryObject<Block> AMDANOR_SPAWNER = BLOCK.register("amdanor_spawner", AmdanorSpawner::new);
     public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEM.register("matter_crystal_helmet", ()-> new MatterCrystalArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEM.register("matter_crystal_chestplate", ()-> new MatterCrystalArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEM.register("matter_crystal_leggings", ()-> new MatterCrystalArmor(EquipmentSlot.LEGS));

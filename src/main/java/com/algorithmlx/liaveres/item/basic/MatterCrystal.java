@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.item.tool;
+package com.algorithmlx.liaveres.item.basic;
 
 import com.algorithmlx.liaveres.setup.ModSetup;
 import net.minecraft.world.item.Item;

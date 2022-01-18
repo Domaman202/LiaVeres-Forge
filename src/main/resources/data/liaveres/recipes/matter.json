@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "liaveres:matter_shard"
+    },
+    {
+      "item": "liaveres:matter_shard"
+    },
+    {
+      "item": "liaveres:matter_shard"
+    },
+    {
+      "item": "liaveres:matter_shard"
+    }
+  ],
+  "result": {
+    "item": "liaveres:matter",
+    "count": 1
+  }
+}
