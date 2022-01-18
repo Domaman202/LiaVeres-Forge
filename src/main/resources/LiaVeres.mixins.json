@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.algorithmlx.liaveres.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "LiaVeres.refmap.json",
+  "mixins": [
+
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

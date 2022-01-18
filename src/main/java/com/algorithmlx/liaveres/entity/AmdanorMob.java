@@ -39,7 +39,6 @@ public class AmdanorMob extends AbstractSkeleton {
 
     public AmdanorMob(EntityType<? extends AbstractSkeleton> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-//        MinecraftForge.EVENT_BUS.addListener(this::cancelDamage);
     }
 
     @Override
@@ -127,10 +126,10 @@ public class AmdanorMob extends AbstractSkeleton {
 
     public static AttributeSupplier.Builder prepareAttributes() {
         return LivingEntity.createLivingAttributes()
-                .add(Attributes.ATTACK_DAMAGE, 860.3d)
+                .add(Attributes.ATTACK_DAMAGE, 2000.0d)
                 .add(Attributes.MAX_HEALTH, 1000000.0d)
                 .add(Attributes.FOLLOW_RANGE, 400.0d)
-                .add(Attributes.MOVEMENT_SPEED, 5.0d)
+                .add(Attributes.MOVEMENT_SPEED, 1.0d)
                 .add(Attributes.ATTACK_KNOCKBACK, 3.5d);
     }
 
@@ -147,31 +146,6 @@ public class AmdanorMob extends AbstractSkeleton {
     protected void dropAllDeathLoot(DamageSource pDamageSource) {
         super.dropAllDeathLoot(pDamageSource);
     }
-
-//    public void cancelDamage(LivingDamageEvent event) {
-//        LivingEntity entity = event.getEntityLiving();
-//        Random random = new Random();
-//
-//        ItemStack mainHand = entity.getItemBySlot(EquipmentSlot.MAINHAND);
-//        ItemStack offHand = entity.getItemBySlot(EquipmentSlot.OFFHAND);
-//
-//        boolean isLiaSword = (mainHand != null && mainHand.getItem() == Registration.MATTER_CRYSTAL_SWORD.get())
-//                || (offHand != null && offHand.getItem() == Registration.MATTER_CRYSTAL_SWORD.get());
-//
-//        if (isLiaSword && (event.isCanceled() || event.getAmount() <= 0 || event.getEntityLiving().level.isClientSide)) {
-//            return;
-//        }
-//
-//        if (!isLiaSword) return;
-//
-//
-//        if (isLiaSword && (random.nextInt(Integer.MAX_VALUE) > 0)) {
-//            event.setCanceled(true);
-//        } else if (!isLiaSword && (random.nextInt(Integer.MAX_VALUE) > 0)) {
-//            event.setCanceled(false);
-//        }
-//    }
-
 
     @Override
     public void tick() {

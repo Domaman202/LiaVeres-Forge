@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.setup;
 
 import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.entity.AmdanorMobRender;
+import com.algorithmlx.liaveres.client.render.AmdanorMobRender;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

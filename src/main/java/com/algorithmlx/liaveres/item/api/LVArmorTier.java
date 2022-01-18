@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.api;
+package com.algorithmlx.liaveres.item.api;
 
 import com.algorithmlx.liaveres.setup.Registration;
 import net.minecraft.sounds.SoundEvent;

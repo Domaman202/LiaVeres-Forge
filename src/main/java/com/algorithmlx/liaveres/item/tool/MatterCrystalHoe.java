@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.item.tool;
 
-import com.algorithmlx.liaveres.api.LVItemTier;
+import com.algorithmlx.liaveres.item.api.LVItemTier;
 import com.algorithmlx.liaveres.setup.ModSetup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

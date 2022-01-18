@@ -1,6 +1,7 @@
 package com.algorithmlx.liaveres;
 
 //import com.algorithmlx.algocore.registry.AlgoMod;
+import com.algorithmlx.liaveres.event.EntityAttributes;
 import com.algorithmlx.liaveres.setup.ClientSetup;
 import com.algorithmlx.liaveres.setup.ModSetup;
 import com.algorithmlx.liaveres.setup.Registration;

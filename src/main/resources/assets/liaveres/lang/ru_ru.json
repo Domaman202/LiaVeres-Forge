@@ -21,11 +21,13 @@
   "item.liaveres.enchanted_apple": "Зачарованное яблоко",
   "item.liaveres.empty_artifact": "Пустой артефакт",
   "item.liaveres.lightning_artifact": "Артефакт: Молния",
-  "item.liaveres.amdanor_skeleton_egg": "Яйцо призыва: Скелет Амданора",
+  "item.liaveres.amdanor_skeleton_egg": "Яйцо призыва скелета амданора",
+  "item.liaveres.matter_shard": "Осколок материи",
 
   "block.liaveres.matter_crystal_block": "Блок из кристалла материи",
 
   "entity.liaveres.amdanor_skeleton": "Скелет Амданора",
+
   "itemGroup.liaveres.classic_tab": "LiaVeres: Обычная группа",
   "itemGroup.liaveres.artifact_tab": "LiaVeres: Группа артефактов",
   "itemGroup.liaveres.mobs_tab": "LiaVeres: Группа сущностей",
