@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -30,7 +31,7 @@ public class MatterCrystalPickaxe extends PickaxeItem {
     public static boolean skip = false;
 
     public MatterCrystalPickaxe() {
-        super(LVItemTier.MatterTear, 2147483647, 340282356779733661637539395458142568447F, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
+        super(LVItemTier.MatterTear, 2147483647, 340282356779733661637539395458142568447F, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
     }
 
     @Override

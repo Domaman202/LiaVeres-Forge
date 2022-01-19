@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,7 +20,7 @@ import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 public class MatterCrystalAxe extends AxeItem {
     public MatterCrystalAxe() {
-        super(LVItemTier.MatterTear, 2147483647, 340282356779733661637539395458142568447F, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
+        super(LVItemTier.MatterTear, 2147483647, 340282356779733661637539395458142568447F, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
     }
     @OnlyIn(Dist.CLIENT)
     @Override

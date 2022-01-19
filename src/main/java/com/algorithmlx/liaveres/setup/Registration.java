@@ -8,11 +8,8 @@ import com.algorithmlx.liaveres.item.armor.MatterArmor;
 import com.algorithmlx.liaveres.item.armor.MatterCrystalArmor;
 import com.algorithmlx.liaveres.item.artifact.EmptyArtifact;
 import com.algorithmlx.liaveres.item.artifact.LightningArtifact;
-import com.algorithmlx.liaveres.item.basic.MatterCrystal;
+import com.algorithmlx.liaveres.item.basic.*;
 import com.algorithmlx.liaveres.item.egg.AmdanorSpawnEgg;
-import com.algorithmlx.liaveres.item.basic.Crystalline;
-import com.algorithmlx.liaveres.item.basic.EffectCatalyst;
-import com.algorithmlx.liaveres.item.basic.Matter;
 import com.algorithmlx.liaveres.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.item.tool.*;
 import net.minecraft.world.entity.EntityType;
@@ -83,4 +80,5 @@ public class Registration {
                     .clientTrackingRange(16)
                     .build("amdanor_skeleton")
     );
+    public static final RegistryObject<AmdanorUnlockerKey> AMDANOR_UNLOCKER_KEY = ITEM.register("amdanor_unlocker_key", AmdanorUnlockerKey::new);
 }

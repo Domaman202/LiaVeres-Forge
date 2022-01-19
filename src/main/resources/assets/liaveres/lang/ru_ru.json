@@ -36,5 +36,7 @@
   "msg.liaveres.matter_crystal_armor": "§4Полный, §bодетый набор брони Lia дает полёт и эффекты, а также отклоняет урон, который вы получили",
   "msg.liaveres.matter_crystal_msg": "БЕССКОНЕЧНЫЙ",
   "msg.liaveres.matter_crystal_pickaxe": "Нажмите §fПКМ §2чтобы сломать арену 32 на 32",
-  "msg.liaveres.enchanted_apple": "Основа для крафта"
+  "msg.liaveres.enchanted_apple": "Основа для крафта",
+  "msg.liaveres.amdanorSpawner.peaceful": "§6[Скелет Амданора] §fВаша игровая сложность - Мирная. Призыв был отклонён",
+  "msg.liaveres.amdanorSpawner.success": "§6[Скелет Амданора] §fСкелет Амданора был призван"
 }
