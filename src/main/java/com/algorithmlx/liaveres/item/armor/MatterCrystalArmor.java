@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Random;
 
 public class MatterCrystalArmor extends ArmorItem {
-
     public MatterCrystalArmor(EquipmentSlot slot) {
         super(LVArmorTier.MatterCrystalTier, slot, new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.create("LEGENDARY", ChatFormatting.GOLD)));
         MinecraftForge.EVENT_BUS.addListener(this::updatePlayerData);

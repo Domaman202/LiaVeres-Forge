@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.setup;
 
 import com.algorithmlx.liaveres.LiaVeres;
 import com.algorithmlx.liaveres.block.AmdanorSpawner;
+import com.algorithmlx.liaveres.block.Crystallite;
 import com.algorithmlx.liaveres.block.MatterCrystalBlock;
 import com.algorithmlx.liaveres.entity.AmdanorMob;
 import com.algorithmlx.liaveres.item.armor.MatterArmor;
@@ -59,10 +60,10 @@ public class Registration {
     public static final RegistryObject<Item> MATTER_SHARD = ITEM.register("matter_shard", Matter::new);
     public static final RegistryObject<Item> AMDANOR_SKELETON_EGG = ITEM.register("amdanor_skeleton_egg", AmdanorSpawnEgg::new);
     public static final RegistryObject<Item> MATTER_CRYSTAL_SWORD = ITEM.register("matter_crystal_sword", MatterCrystalSword::new);
-    public static final RegistryObject<Item> MATTER_HELMET = ITEM.register("matter_helmet", () -> new MatterArmor(EquipmentSlot.HEAD, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB)));
-    public static final RegistryObject<Item> MATTER_CHESTPLATE = ITEM.register("matter_chestplate", () -> new MatterArmor(EquipmentSlot.CHEST, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB)));
-    public static final RegistryObject<Item> MATTER_LEGS = ITEM.register("matter_leggings", () -> new MatterArmor(EquipmentSlot.LEGS, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB)));
-    public static final RegistryObject<Item> MATTER_BOOTS = ITEM.register("matter_boots", () -> new MatterArmor(EquipmentSlot.FEET, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB)));
+    public static final RegistryObject<Item> MATTER_HELMET = ITEM.register("matter_helmet", () -> new MatterArmor(EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> MATTER_CHESTPLATE = ITEM.register("matter_chestplate", () -> new MatterArmor(EquipmentSlot.CHEST));
+    public static final RegistryObject<Item> MATTER_LEGS = ITEM.register("matter_leggings", () -> new MatterArmor(EquipmentSlot.LEGS));
+    public static final RegistryObject<Item> MATTER_BOOTS = ITEM.register("matter_boots", () -> new MatterArmor(EquipmentSlot.FEET));
     public static final RegistryObject<Item> CRYSTALLINE = ITEM.register("crystalline", Crystalline::new);
     public static final RegistryObject<Item> MATTER_CRYSTAL_AXE = ITEM.register("matter_crystal_axe", MatterCrystalAxe::new);
     public static final RegistryObject<Item> MATTER_CRYSTAL_PICKAXE = ITEM.register("matter_crystal_pickaxe", MatterCrystalPickaxe::new);
@@ -80,5 +81,8 @@ public class Registration {
                     .clientTrackingRange(16)
                     .build("amdanor_skeleton")
     );
-    public static final RegistryObject<AmdanorUnlockerKey> AMDANOR_UNLOCKER_KEY = ITEM.register("amdanor_unlocker_key", AmdanorUnlockerKey::new);
+    public static final RegistryObject<Item> AMDANOR_UNLOCKER_KEY = ITEM.register("amdanor_unlocker_key", AmdanorUnlockerKey::new);
+    public static final RegistryObject<Block> CRYSTALLITE = BLOCK.register("crystallite", Crystallite::new);
+    public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
+    public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
 }

@@ -2,9 +2,7 @@ package com.algorithmlx.liaveres.block;
 
 import com.algorithmlx.liaveres.LiaVeres;
 import com.algorithmlx.liaveres.setup.Registration;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Difficulty;
@@ -15,19 +13,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 public class AmdanorSpawner extends Block {
     public AmdanorSpawner() {
@@ -46,7 +39,7 @@ public class AmdanorSpawner extends Block {
 
     @SuppressWarnings("deprecation")
     @Override
-    public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         ItemStack mainItem = pPlayer.getMainHandItem();
         Item activator = Registration.AMDANOR_UNLOCKER_KEY.get();
         if (!pLevel.isClientSide) {
@@ -56,8 +49,10 @@ public class AmdanorSpawner extends Block {
                     mainItem.shrink(1);
                 }
                 pPlayer.sendMessage(new TranslatableComponent("msg." + LiaVeres.ModId + ".amdanorSpawner.success"), pPlayer.getUUID());
-            } else if (pLevel.getDifficulty() == Difficulty.PEACEFUL) {
+                return InteractionResult.SUCCESS;
+            } else if ((pLevel.getDifficulty() == Difficulty.PEACEFUL) && (mainItem.getItem() == activator && pHand == InteractionHand.MAIN_HAND)) {
                 pPlayer.sendMessage(new TranslatableComponent("msg." + LiaVeres.ModId + ".amdanorSpawner.peaceful"), pPlayer.getUUID());
+                return InteractionResult.FAIL;
             }
         }
         return InteractionResult.SUCCESS;

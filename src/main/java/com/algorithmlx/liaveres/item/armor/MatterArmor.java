@@ -1,6 +1,7 @@
 package com.algorithmlx.liaveres.item.armor;
 
 import com.algorithmlx.liaveres.item.api.LVArmorTier;
+import com.algorithmlx.liaveres.setup.ModSetup;
 import com.algorithmlx.liaveres.setup.Registration;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -8,14 +9,15 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import static com.algorithmlx.liaveres.LiaVeres.ModId;
 
 public class MatterArmor extends ArmorItem {
-    public MatterArmor(EquipmentSlot p_40387_, Properties p_40388_) {
-        super(LVArmorTier.MatterTier, p_40387_, p_40388_);
+    public MatterArmor(EquipmentSlot p_40387_) {
+        super(LVArmorTier.MatterTier, p_40387_, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
     }
 
     @Override
