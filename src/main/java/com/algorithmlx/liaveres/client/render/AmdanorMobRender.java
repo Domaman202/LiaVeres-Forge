@@ -1,8 +1,8 @@
 package com.algorithmlx.liaveres.client.render;
 
-import com.algorithmlx.liaveres.LiaVeres;
+import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.client.model.AmdanorMobModel;
-import com.algorithmlx.liaveres.entity.AmdanorMob;
+import com.algorithmlx.liaveres.common.entity.AmdanorMob;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;

@@ -1,15 +1,18 @@
 package com.algorithmlx.liaveres.client.screen.book;
 
-import com.algorithmlx.liaveres.LiaVeres;
-import com.algorithmlx.liaveres.client.screen.button.BaseButton;
+import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.client.screen.button.ButtonBase;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
+@OnlyIn(Dist.CLIENT)
 public class LiaBookScreen extends Screen {
     private static final int imgWidth = 512;
     private static final int imgHeight = 256;
@@ -22,10 +25,18 @@ public class LiaBookScreen extends Screen {
 
     @Override
     protected void init() {
-        this.addWidget(new BaseButton(37, 23, 32, 52,
-                new TranslatableComponent("button." + LiaVeres.ModId + ".liaBook.buttonMain"), pButton -> {
+//        this.addWidget(new ButtonBase(37, 23, 32, 52,
+//                new TranslatableComponent("button." + LiaVeres.ModId + ".liaBook.buttonMain"), pButton -> {
+//                    Minecraft.getInstance().setScreen(this);
+//                }, new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")
+//            )
+//        );
+        this.addRenderableWidget(new ButtonBase(37, 23, 31, 26,
+                "", pButton -> {
                     Minecraft.getInstance().setScreen(this);
-                }, new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")));
+                }, new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")
+            )
+        );
     }
 
     @Override
@@ -45,5 +56,9 @@ public class LiaBookScreen extends Screen {
     @Override
     public boolean isPauseScreen() {
         return false;
+    }
+
+    public static void open() {
+        Minecraft.getInstance().setScreen(new LiaBookScreen());
     }
 }
