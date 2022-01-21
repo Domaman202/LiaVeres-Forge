@@ -6,6 +6,7 @@ import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -27,6 +28,7 @@ public class LiaBook extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {
             Minecraft.getInstance().setScreen(new LiaBookScreen());
+            pPlayer.sendMessage(new TranslatableComponent("msg." + LiaVeres.ModId + ".liaBook.isOpened", pPlayer.getDisplayName()), pPlayer.getUUID());
             return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
         } else {
             return InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));

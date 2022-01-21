@@ -1,17 +1,16 @@
 package com.algorithmlx.liaveres.common;
 
-//import com.algorithmlx.algocore.registry.AlgoMod;
-import com.algorithmlx.liaveres.common.setup.ClientSetup;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.proxy.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
@@ -19,12 +18,11 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(LiaVeres.ModId)
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class LiaVeres /*implements AlgoMod*/ {
+public class LiaVeres {
     public static final String ModId = "liaveres";
     public static final Logger LOGGER = LogManager.getLogger();
 
     public LiaVeres() {
-        DistExecutor.safeRunWhenOn(Dist.CLIENT, ()-> ClientSetup::new);
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Registration.init();

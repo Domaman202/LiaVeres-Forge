@@ -1,18 +1,23 @@
 package com.algorithmlx.liaveres.common.setup;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.proxy.ClientProxy;
+import com.algorithmlx.liaveres.proxy.Proxies;
+import com.algorithmlx.liaveres.proxy.ServerProxy;
 import com.algorithmlx.liaveres.server.network.Network;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {
+    public static Proxies proxy = DistExecutor.safeRunForDist(()-> ClientProxy::new, ()-> ServerProxy::new);
+
     public static final CreativeModeTab CLASSIC_TAB = new CreativeModeTab(LiaVeres.ModId + ".classic_tab") {
         @Override
         public @NotNull ItemStack makeIcon() {
@@ -36,6 +41,7 @@ public class ModSetup {
 
     public static void init(final FMLCommonSetupEvent event) {
         Network.messageRegister();
+        proxy.init();
     }
 
     @SubscribeEvent

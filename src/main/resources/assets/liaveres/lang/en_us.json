@@ -23,8 +23,14 @@
   "item.liaveres.lightning_artifact": "Artifact: Lightning",
   "item.liaveres.amdanor_skeleton_egg": "Amdanor Skeleton Spawn Egg",
   "item.liaveres.matter_shard": "Matter Shard",
+  "item.liaveres.amdanor_unlocker_key": "Amdanor Unlock Key",
+  "item.liaveres.lia_book": "The Lia's Book",
+  "item.liaveres.withering_bone": "Withering Bone",
 
   "block.liaveres.matter_crystal_block": "Matter Crystal Block",
+  "block.liaveres.crystallite": "Crystallite",
+  "block.liaveres.matter_block": "Matter Block",
+  "block.liaveres.amdanor_spawner": "Amdanor Spawner",
 
   "entity.liaveres.amdanor_skeleton": "Amdanor Skeleton",
 
@@ -38,5 +44,9 @@
   "msg.liaveres.matter_crystal_pickaxe": "§2Press the §fRIGHT BUTTON §2to break the 32x32 area",
   "msg.liaveres.enchanted_apple": "Base for Crafting",
   "msg.liaveres.amdanorSpawner.peaceful": "§6[Amdanor Skeleton] §fYour game Difficulty - Peaceful. Summon was been rejected",
-  "msg.liaveres.amdanorSpawner.success": "§6[Amdanor Skeleton] §fAmdanor Skeleton was been summoned"
+  "msg.liaveres.amdanorSpawner.success": "§6[Amdanor Skeleton] §fAmdanor Skeleton was been summoned",
+  "msg.liaveres.liaBook.isOpened": "May knowledge come to you with the opening of this book, dear §6%s",
+  "msg.liaveres.liaBook": "Translation from the book of the ancients, as well as an addition from the story of §6Lia ",
+  "msg.liaveres.liaBook.author": "Author: Lia Vendrora",
+  "msg.liaveres.liaBook.edition": "Edition: I"
 }
