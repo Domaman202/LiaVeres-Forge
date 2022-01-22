@@ -1,6 +1,8 @@
 package com.algorithmlx.liaveres.common.setup;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.common.level.feature.StructureConfigured;
+import com.algorithmlx.liaveres.common.level.structures.StructureRegistry;
 import com.algorithmlx.liaveres.proxy.ClientProxy;
 import com.algorithmlx.liaveres.proxy.Proxies;
 import com.algorithmlx.liaveres.proxy.ServerProxy;
@@ -42,6 +44,10 @@ public class ModSetup {
     public static void init(final FMLCommonSetupEvent event) {
         Network.messageRegister();
         proxy.init();
+        event.enqueueWork(()-> {
+            StructureRegistry.setupStructures();
+            StructureConfigured.registerConfiguredStructures();
+        });
     }
 
     @SubscribeEvent
