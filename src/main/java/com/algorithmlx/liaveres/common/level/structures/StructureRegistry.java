@@ -26,7 +26,7 @@ public class StructureRegistry {
                 //p_68168_ - Расстояние
                 //p_68169_ - Разделение
                 //p_68170_ - хз что
-                new StructureFeatureConfiguration(1000000000, 1, 1234567890), true);
+                new StructureFeatureConfiguration(5000, 2, 1234567890), true);
     }
 
     public static <F extends StructureFeature<?>> void setupMapSpacingAndLand(F structure, StructureFeatureConfiguration structureFeatureConfiguration, boolean transformSurroundingLand) {

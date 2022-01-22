@@ -3,6 +3,7 @@ package com.algorithmlx.liaveres.common.setup;
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.AmdanorSpawner;
 import com.algorithmlx.liaveres.common.block.Crystallite;
+import com.algorithmlx.liaveres.common.block.MatterBlock;
 import com.algorithmlx.liaveres.common.block.MatterCrystalBlock;
 import com.algorithmlx.liaveres.common.entity.AmdanorMob;
 import com.algorithmlx.liaveres.common.item.armor.MatterArmor;
@@ -88,6 +89,7 @@ public class Registration {
     public static final RegistryObject<Block> CRYSTALLITE = BLOCK.register("crystallite", Crystallite::new);
     public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
     public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
+    public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", MatterBlock::new);
 
     public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
         commandDispatcher.register(Commands.literal(LiaVeres.ModId)

@@ -9,6 +9,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,7 +55,7 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
         }
 
         JigsawConfiguration newConfig =
-                new JigsawConfiguration(() -> context.registryAccess().ownedRegistryOrThrow(Registry.TEMPLATE_POOL_REGISTRY).get(new ResourceLocation(LiaVeres.ModId, "amdanor_base/start_pool")), 1000000000
+                new JigsawConfiguration(() -> context.registryAccess().ownedRegistryOrThrow(Registry.TEMPLATE_POOL_REGISTRY).get(new ResourceLocation(LiaVeres.ModId, "amdanor_base/start_pool")), 5000
         );
         PieceGeneratorSupplier.Context<JigsawConfiguration> newContext = new PieceGeneratorSupplier.Context<>(
                 context.chunkGenerator(),
@@ -79,10 +80,12 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
     }
 
     private static boolean isFeatureChunk(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
+
         BlockPos blockPos = context.chunkPos().getWorldPosition();
         int landHeight = context.chunkGenerator().getFirstOccupiedHeight(blockPos.getX(), blockPos.getZ(), Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
         NoiseColumn columnOfBlocks = context.chunkGenerator().getBaseColumn(blockPos.getX(), blockPos.getZ(), context.heightAccessor());
         BlockState topBlock = columnOfBlocks.getBlock(landHeight);
+
         return topBlock.getFluidState().isEmpty();
     }
 }
