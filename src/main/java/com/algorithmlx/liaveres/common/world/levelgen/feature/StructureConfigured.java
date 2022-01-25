@@ -1,8 +1,7 @@
-package com.algorithmlx.liaveres.common.level.feature;
+package com.algorithmlx.liaveres.common.world.levelgen.feature;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.level.structures.StructureRegistry;
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.world.structures.StructureRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.PlainVillagePools;

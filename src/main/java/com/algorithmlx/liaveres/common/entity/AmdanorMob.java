@@ -124,8 +124,8 @@ public class AmdanorMob extends AbstractSkeleton {
 
     public static AttributeSupplier.Builder prepareAttributes() {
         return LivingEntity.createLivingAttributes()
-                .add(Attributes.ATTACK_DAMAGE, 2000.0d)
-                .add(Attributes.MAX_HEALTH, 1000000.0d)
+                .add(Attributes.ATTACK_DAMAGE, 2000000.0d)
+                .add(Attributes.MAX_HEALTH, 100000000.0d)
                 .add(Attributes.FOLLOW_RANGE, 400.0d)
                 .add(Attributes.MOVEMENT_SPEED, 1.0d)
                 .add(Attributes.ATTACK_KNOCKBACK, 3.5d);

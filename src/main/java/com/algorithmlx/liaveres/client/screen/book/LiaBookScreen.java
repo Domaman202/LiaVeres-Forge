@@ -25,12 +25,6 @@ public class LiaBookScreen extends Screen {
 
     @Override
     protected void init() {
-//        this.addWidget(new ButtonBase(37, 23, 32, 52,
-//                new TranslatableComponent("button." + LiaVeres.ModId + ".liaBook.buttonMain"), pButton -> {
-//                    Minecraft.getInstance().setScreen(this);
-//                }, new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")
-//            )
-//        );
         this.addRenderableWidget(new ButtonBase(37, 23, 31, 26,
                 "", pButton -> {
                     Minecraft.getInstance().setScreen(this);
@@ -41,6 +35,7 @@ public class LiaBookScreen extends Screen {
 
     @Override
     public void render(@NotNull PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
+        super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
         // x - width
         // y - height
 

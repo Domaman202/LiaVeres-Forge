@@ -1,8 +1,10 @@
 package com.algorithmlx.liaveres.common.setup;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.level.feature.StructureConfigured;
-import com.algorithmlx.liaveres.common.level.structures.StructureRegistry;
+import com.algorithmlx.liaveres.common.world.levelgen.OreConfigured;
+import com.algorithmlx.liaveres.common.world.levelgen.OrePlacement;
+import com.algorithmlx.liaveres.common.world.levelgen.feature.StructureConfigured;
+import com.algorithmlx.liaveres.common.world.structures.StructureRegistry;
 import com.algorithmlx.liaveres.proxy.ClientProxy;
 import com.algorithmlx.liaveres.proxy.Proxies;
 import com.algorithmlx.liaveres.proxy.ServerProxy;
@@ -48,6 +50,8 @@ public class ModSetup {
             StructureRegistry.setupStructures();
             StructureConfigured.registerConfiguredStructures();
         });
+        OreConfigured.register();
+        OrePlacement.register();
     }
 
     @SubscribeEvent

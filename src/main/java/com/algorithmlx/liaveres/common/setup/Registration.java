@@ -90,6 +90,7 @@ public class Registration {
     public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
     public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
     public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", MatterBlock::new);
+     
 
     public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
         commandDispatcher.register(Commands.literal(LiaVeres.ModId)

@@ -1,11 +1,10 @@
 package com.algorithmlx.liaveres.common;
 
-import com.algorithmlx.liaveres.common.level.feature.StructureConfigured;
-import com.algorithmlx.liaveres.common.level.structures.StructureRegistry;
-import com.algorithmlx.liaveres.common.level.structures.structure.AmdanorBaseStructure;
+import com.algorithmlx.liaveres.common.world.levelgen.feature.StructureConfigured;
+import com.algorithmlx.liaveres.common.world.structures.StructureRegistry;
+import com.algorithmlx.liaveres.common.world.structures.structure.AmdanorBaseStructure;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.Registration;
-import com.algorithmlx.liaveres.proxy.*;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
@@ -31,9 +30,7 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -89,7 +86,7 @@ public class LiaVeres {
             for(Map.Entry<ResourceKey<Biome>, Biome> biomeEntry : serverLevel.registryAccess().ownedRegistryOrThrow(Registry.BIOME_REGISTRY).entrySet()) {
 
                 Biome.BiomeCategory biomeCategory = biomeEntry.getValue().getBiomeCategory();
-                if(biomeCategory != Biome.BiomeCategory.OCEAN && biomeCategory != Biome.BiomeCategory.THEEND && biomeCategory != Biome.BiomeCategory.NETHER && biomeCategory != Biome.BiomeCategory.NONE) {
+                if (biomeCategory != Biome.BiomeCategory.OCEAN && biomeCategory != Biome.BiomeCategory.THEEND && biomeCategory != Biome.BiomeCategory.NETHER && biomeCategory != Biome.BiomeCategory.NONE) {
                     associateBiomeToConfiguredStructure(StructureMap, StructureConfigured.CONFIGURED_AMDANOR_BASE, biomeEntry.getKey());
                 }
             }
@@ -102,11 +99,11 @@ public class LiaVeres {
             worldStructureConfig.configuredStructures = tempStructureToMultiMap.build();
 
             try {
-                if(GET_CODEC_METHOD == null) GET_CODEC_METHOD = ObfuscationReflectionHelper.findMethod(ChunkGenerator.class, "codec");
+                if (GET_CODEC_METHOD == null) GET_CODEC_METHOD = ObfuscationReflectionHelper.findMethod(ChunkGenerator.class, "codec");
                 ResourceLocation cgRL = Registry.CHUNK_GENERATOR.getKey((Codec<? extends ChunkGenerator>) GET_CODEC_METHOD.invoke(chunkGenerator));
-                if(cgRL != null && cgRL.getNamespace().equals("terraforged")) return;
+                if (cgRL != null && cgRL.getNamespace().equals("terraforged")) return;
             }
-            catch(Exception e){
+            catch (Exception e) {
                 LiaVeres.LOGGER.error("Was unable to check if " + serverLevel.dimension().location() + " is using Terraforged's ChunkGenerator.");
             }
             Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = new HashMap<>(worldStructureConfig.structureConfig());

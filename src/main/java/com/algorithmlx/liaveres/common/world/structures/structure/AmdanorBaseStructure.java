@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.common.level.structures.structure;
+package com.algorithmlx.liaveres.common.world.structures.structure;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.level.structures.StructureRegistry;
+import com.algorithmlx.liaveres.common.world.structures.StructureRegistry;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
@@ -9,7 +9,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +47,7 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
         }
     }
 
-    public static Optional<PieceGenerator<JigsawConfiguration>> createPiecesGenerator(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
+    public static @NotNull Optional<PieceGenerator<JigsawConfiguration>> createPiecesGenerator(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
 
         if (!AmdanorBaseStructure.isFeatureChunk(context)) {
             return Optional.empty();
@@ -73,7 +72,7 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
                 JigsawPlacement.addPieces(newContext, PoolElementStructurePiece::new, blockpos, false, true);
 
-        if(structurePiecesGenerator.isPresent()) {
+        if (structurePiecesGenerator.isPresent()) {
             LiaVeres.LOGGER.debug("Amdanor base spawned in coordinates: " + blockpos);
         }
         return structurePiecesGenerator;

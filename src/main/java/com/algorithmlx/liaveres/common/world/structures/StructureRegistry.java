@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.common.level.structures;
+package com.algorithmlx.liaveres.common.world.structures;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.level.structures.structure.AmdanorBaseStructure;
+import com.algorithmlx.liaveres.common.world.structures.structure.AmdanorBaseStructure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.data.BuiltinRegistries;
@@ -49,12 +49,12 @@ public class StructureRegistry {
         BuiltinRegistries.NOISE_GENERATOR_SETTINGS.entrySet().forEach(settings -> {
             Map<StructureFeature<?>, StructureFeatureConfiguration> structureMap = settings.getValue().structureSettings().structureConfig();
 
-            if(structureMap instanceof ImmutableMap){
+            if (structureMap instanceof ImmutableMap) {
                 Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = new HashMap<>(structureMap);
                 tempMap.put(structure, structureFeatureConfiguration);
                 settings.getValue().structureSettings().structureConfig = tempMap;
             }
-            else{
+            else {
                 structureMap.put(structure, structureFeatureConfiguration);
             }
         });
