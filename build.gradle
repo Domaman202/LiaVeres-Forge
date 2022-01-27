@@ -91,6 +91,7 @@ mixin {
     add sourceSets.main, "LiaVeres.refmap.json"
 }
 
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
