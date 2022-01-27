@@ -1,11 +1,9 @@
-package com.algorithmlx.liaveres.common.setup;
+package com.algorithmlx.liaveres.common.setup.registries;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.block.AmdanorSpawner;
-import com.algorithmlx.liaveres.common.block.Crystallite;
-import com.algorithmlx.liaveres.common.block.MatterBlock;
-import com.algorithmlx.liaveres.common.block.MatterCrystalBlock;
+import com.algorithmlx.liaveres.common.block.*;
 import com.algorithmlx.liaveres.common.entity.AmdanorMob;
+import com.algorithmlx.liaveres.common.item.armor.GoldenNetheriteArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterCrystalArmor;
 import com.algorithmlx.liaveres.common.item.artifact.EmptyArtifact;
@@ -14,7 +12,10 @@ import com.algorithmlx.liaveres.common.item.basic.*;
 import com.algorithmlx.liaveres.common.item.egg.AmdanorSpawnEgg;
 import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
+import com.algorithmlx.liaveres.common.setup.ModSetup;
+import com.algorithmlx.liaveres.common.world.structures.AmdanorBaseStructure;
 import com.algorithmlx.liaveres.server.command.BookCommand;
+import com.algorithmlx.liaveres.server.command.DimensionCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import net.minecraft.commands.CommandSourceStack;
@@ -28,6 +29,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfiguration;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -42,6 +44,7 @@ public class Registration {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, LiaVeres.ModId);
     public static final DeferredRegister<Biome> BIOME = DeferredRegister.create(ForgeRegistries.BIOMES, LiaVeres.ModId);
     public static final DeferredRegister<Fluid> FLUID = DeferredRegister.create(ForgeRegistries.FLUIDS, LiaVeres.ModId);
+    public static final DeferredRegister<StructureFeature<?>> STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, LiaVeres.ModId);
 
     public static void init() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -52,6 +55,7 @@ public class Registration {
         BLOCK_ENTITY.register(bus);
         BIOME.register(bus);
         FLUID.register(bus);
+        STRUCTURE.register(bus);
     }
     public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = BLOCK.register("matter_crystal_block", MatterCrystalBlock::new);
     public static final RegistryObject<Block> AMDANOR_SPAWNER = BLOCK.register("amdanor_spawner", AmdanorSpawner::new);
@@ -90,11 +94,19 @@ public class Registration {
     public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
     public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
     public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", MatterBlock::new);
-     
+    public static final RegistryObject<Item> GOLDEN_NETHERITE = ITEM.register("golden_netherite", GoldenNetherite::new);
+    public static final RegistryObject<Item> GOLDEN_NETHERITE_HELMET = ITEM.register("golden_netherite_helmet", ()-> new GoldenNetheriteArmor(EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> GOLDEN_NETHERITE_CHESTPLATE = ITEM.register("golden_netherite_chestplate", ()-> new GoldenNetheriteArmor(EquipmentSlot.CHEST));
+    public static final RegistryObject<Item> GOLDEN_NETHERITE_LEGS = ITEM.register("golden_netherite_leggings", ()-> new GoldenNetheriteArmor(EquipmentSlot.LEGS));
+    public static final RegistryObject<Item> GOLDEN_NETHERITE_BOOTS = ITEM.register("golden_netherite_boots", ()-> new GoldenNetheriteArmor(EquipmentSlot.FEET));
+    public static final RegistryObject<Block> GOLDEN_NETHERITE_BLOCK = BLOCK.register("golden_netherite_block", GoldenNetheriteBlock::new);
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base",
+            () -> new AmdanorBaseStructure(JigsawConfiguration.CODEC));
 
     public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
         commandDispatcher.register(Commands.literal(LiaVeres.ModId)
-                        .then(BookCommand.register(commandDispatcher))
+                .then(BookCommand.register(commandDispatcher))
+                .then(DimensionCommand.register(commandDispatcher))
         );
     }
 }

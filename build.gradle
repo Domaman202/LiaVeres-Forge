@@ -20,7 +20,6 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 String lv_version = "${mc_version}-${type_version}${version_mod}"
-String parchment_mc = "${mc_version}-${parchment_version}"
 
 group = 'com.algorithmlx'
 version = "${lv_version}"
@@ -71,11 +70,13 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'LiaVeres', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'LiaVeres', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
+
+            environment 'target', 'fmluserdevdata'
 
             mods {
                 LiaVeres {
@@ -90,7 +91,6 @@ mixin {
     add sourceSets.main, "LiaVeres.refmap.json"
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
@@ -116,7 +116,7 @@ jar {
         attributes([
                 "Specification-Title": "LiaVeres",
                 "Specification-Vendor": "AlgorithmLX",
-                "Specification-Version": "1", // We are version 1 of ourselves
+                "Specification-Version": "1",
                 "Implementation-Title": project.name,
                 "Implementation-Version": project.jar.archiveVersion,
                 "Implementation-Vendor": "AlgorithmLX",

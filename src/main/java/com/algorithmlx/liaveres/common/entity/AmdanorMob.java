@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.entity;
 
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;

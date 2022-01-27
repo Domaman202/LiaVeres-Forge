@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.item.api;
 
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
@@ -9,18 +9,57 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public enum LVArmorTier implements ArmorMaterial {
-    MatterCrystalTier("matter_crystal_tier", -1, new int[]{2147483647, 2147483647, 2147483647, 2147483647}, 2147483647, SoundEvents.ARMOR_EQUIP_NETHERITE, 2147483647F, 2147483647F, () -> {
-        return Ingredient.of(Registration.MATTER_CRYSTAL.get());
-    }),
-    MatterTier("matter_tier", 6000, new int[]{5000, 15000, 20000, 10000}, 6, SoundEvents.ARMOR_EQUIP_DIAMOND, 20F, 0.5F, ()-> {
-        return Ingredient.of(Registration.MATTER.get());
-    });
+public enum LVArmorMaterial implements ArmorMaterial {
+    MATTER_CRYSTAL("matter_crystal",
+            -1,
+            new int[]{
+            Integer.MAX_VALUE,
+            Integer.MAX_VALUE,
+            Integer.MAX_VALUE,
+            Integer.MAX_VALUE
+        },
+            Integer.MAX_VALUE,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            Float.MAX_VALUE,
+            Float.MAX_VALUE,
+            ()-> Ingredient.of(Registration.MATTER_CRYSTAL.get())
+    ),
+    MATTER(
+            "matter",
+            6000,
+            new int[]{
+                    5000,
+                    15000,
+                    20000,
+                    10000
+            },
+            6,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
+            20F,
+            0.5F,
+            ()-> Ingredient.of(Registration.MATTER.get())
+    ),
+    GOLDEN_NETHERITE(
+            "golden_netherite",
+            65,
+            new int[] {
+                    12,
+                    24,
+                    32,
+                    12
+            },
+            50,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0f,
+            1f,
+            ()-> Ingredient.of(Registration.GOLDEN_NETHERITE.get())
+    );
 
-    private static final int[] armorDurability = new int[]{5, 15, 20, 10};
+    private static final int[] armorDurability =  new int[]{13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;
     private final int[] damageReductionAmountArray;
@@ -28,9 +67,11 @@ public enum LVArmorTier implements ArmorMaterial {
     private final SoundEvent soundEvent;
     private final float toughness;
     private final float knockbackResistance;
+    @SuppressWarnings("deprecation")
     private final LazyLoadedValue<Ingredient> repairMaterial;
 
-    LVArmorTier(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
+    @SuppressWarnings("deprecation")
+    LVArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
         this.damageReductionAmountArray = damageReductionAmountArray;
@@ -58,17 +99,17 @@ public enum LVArmorTier implements ArmorMaterial {
     }
 
     @Override
-    public SoundEvent getEquipSound() {
+    public @NotNull SoundEvent getEquipSound() {
         return this.soundEvent;
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return this.repairMaterial.get();
     }
 
     @OnlyIn(Dist.CLIENT)
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 

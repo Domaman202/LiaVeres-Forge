@@ -14,6 +14,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,6 +26,7 @@ public class LiaBook extends Item {
         super(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant().stacksTo(1));
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {

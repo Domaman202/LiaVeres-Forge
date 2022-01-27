@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.common.item.egg;
 
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 
 public class AmdanorSpawnEgg extends ForgeSpawnEggItem {

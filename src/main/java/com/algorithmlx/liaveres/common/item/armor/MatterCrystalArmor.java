@@ -1,9 +1,9 @@
 package com.algorithmlx.liaveres.common.item.armor;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.item.api.LVArmorTier;
+import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.Random;
 
 public class MatterCrystalArmor extends ArmorItem {
-    public MatterCrystalArmor(EquipmentSlot slot) {
-        super(LVArmorTier.MatterCrystalTier, slot, new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.create("LEGENDARY", ChatFormatting.GOLD)));
+    public MatterCrystalArmor(EquipmentSlot pSlot) {
+        super(LVArmorMaterial.MATTER_CRYSTAL, pSlot, new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.create("LEGENDARY", ChatFormatting.GOLD)));
         MinecraftForge.EVENT_BUS.addListener(this::updatePlayerData);
         MinecraftForge.EVENT_BUS.addListener(this::cancelDamage);
     }
@@ -107,70 +107,55 @@ public class MatterCrystalArmor extends ArmorItem {
         boolean wasWearingMatterCrystalArmorLastTick = player.getPersistentData()
                 .getBoolean("wearingFullMatterCrystalArmor");
 
-        if(!iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick && !player.isCreative())
-        {
+        if(!iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick && !player.isCreative()) {
             player.getAbilities().mayfly = false;
             player.getAbilities().flying = false;
-        } else if((iswearingFullMatterCrystalArmor) && (world.dimension()
-                .equals(Level.OVERWORLD) || world.dimension().equals(Level.NETHER)
-                || world.dimension().equals(Level.END)))
-        {
+        } else if((iswearingFullMatterCrystalArmor) && (world.dimension().equals(Level.OVERWORLD) || world.dimension().equals(Level.NETHER) || world.dimension().equals(Level.END))) {
             player.getAbilities().mayfly = true;
         }
         if(iswearingFullMatterCrystalArmor && wasWearingMatterCrystalArmorLastTick) {
             //bad effect remove
-            if(player.getEffect(MobEffects.BLINDNESS) != null)
-            {
+            if(player.getEffect(MobEffects.BLINDNESS) != null) {
                 player.removeEffect(MobEffects.BLINDNESS);
             }
 
-            if(player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null)
-            {
+            if(player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
                 player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
             }
 
-            if(player.getEffect(MobEffects.DIG_SLOWDOWN) != null)
-            {
+            if(player.getEffect(MobEffects.DIG_SLOWDOWN) != null) {
                 player.removeEffect(MobEffects.DIG_SLOWDOWN);
             }
 
-            if(player.getEffect(MobEffects.HARM) != null)
-            {
+            if(player.getEffect(MobEffects.HARM) != null) {
                 player.removeEffect(MobEffects.HARM);
             }
 
-            if(player.getEffect(MobEffects.CONFUSION) != null)
-            {
+            if(player.getEffect(MobEffects.CONFUSION) != null) {
                 player.removeEffect(MobEffects.CONFUSION);
             }
 
-            if(player.getEffect(MobEffects.HUNGER) != null)
-            {
+            if(player.getEffect(MobEffects.HUNGER) != null) {
                 player.removeEffect(MobEffects.HUNGER);
             }
 
-            if(player.getEffect(MobEffects.POISON) != null)
-            {
+            if(player.getEffect(MobEffects.POISON) != null) {
                 player.removeEffect(MobEffects.POISON);
             }
 
-            if(player.getEffect(MobEffects.WITHER) != null)
-            {
+            if(player.getEffect(MobEffects.WITHER) != null) {
                 player.removeEffect(MobEffects.WITHER);
             }
 
-            if(player.getEffect(MobEffects.LEVITATION) != null)
-            {
+            if(player.getEffect(MobEffects.LEVITATION) != null) {
                 player.removeEffect(MobEffects.LEVITATION);
             }
 
-            if(player.getEffect(MobEffects.UNLUCK) != null)
-            {
+            if(player.getEffect(MobEffects.UNLUCK) != null) {
                 player.removeEffect(MobEffects.UNLUCK);
             }
 
-            if(player.getEffect(MobEffects.WEAKNESS) != null)
-            {
+            if(player.getEffect(MobEffects.WEAKNESS) != null) {
                 player.removeEffect(MobEffects.WEAKNESS);
             }
             //good effect add

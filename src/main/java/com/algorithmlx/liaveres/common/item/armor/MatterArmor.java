@@ -1,8 +1,8 @@
 package com.algorithmlx.liaveres.common.item.armor;
 
-import com.algorithmlx.liaveres.common.item.api.LVArmorTier;
+import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -16,13 +16,12 @@ import net.minecraft.world.level.Level;
 import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
 
 public class MatterArmor extends ArmorItem {
-    public MatterArmor(EquipmentSlot p_40387_) {
-        super(LVArmorTier.MatterTier, p_40387_, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
+    public MatterArmor(EquipmentSlot pSlot) {
+        super(LVArmorMaterial.MATTER, pSlot, new Item.Properties().fireResistant().tab(ModSetup.CLASSIC_TAB));
     }
 
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
-        super.onArmorTick(stack, world, player);
         if(!player.getPersistentData().contains("wearingFullMatterArmor"))player.getPersistentData().putBoolean("wearingFullMatterArmor", false);
 
         ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);

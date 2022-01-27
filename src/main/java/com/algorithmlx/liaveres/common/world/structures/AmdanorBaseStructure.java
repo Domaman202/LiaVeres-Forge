@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.common.world.structures.structure;
+package com.algorithmlx.liaveres.common.world.structures;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.world.structures.StructureRegistry;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
@@ -42,7 +42,7 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
     ));
 
     public static void setupStructureSpawns(final StructureSpawnListGatherEvent event) {
-        if(event.getStructure() == StructureRegistry.AMDANOR_BASE.get()) {
+        if(event.getStructure() == Registration.AMDANOR_BASE.get()) {
             event.addEntitySpawns(MobCategory.CREATURE, STRUCTURE_CREATURES.get());
         }
     }

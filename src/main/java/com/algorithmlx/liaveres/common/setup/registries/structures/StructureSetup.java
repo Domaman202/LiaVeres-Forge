@@ -1,32 +1,19 @@
-package com.algorithmlx.liaveres.common.world.structures;
+package com.algorithmlx.liaveres.common.setup.registries.structures;
 
-import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.world.structures.structure.AmdanorBaseStructure;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.world.level.levelgen.StructureSettings;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.StructureFeatureConfiguration;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class StructureRegistry {
-    public static final DeferredRegister<StructureFeature<?>> STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, LiaVeres.ModId);
-
-    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base", () -> (new AmdanorBaseStructure(JigsawConfiguration.CODEC)));
-
+public class StructureSetup {
     public static void setupStructures() {
-        setupMapSpacingAndLand(AMDANOR_BASE.get(),
-                //p_68168_ - Расстояние
-                //p_68169_ - Разделение
-                //p_68170_ - хз что
-                new StructureFeatureConfiguration(5000, 2, 1234567890), true);
+        setupMapSpacingAndLand(Registration.AMDANOR_BASE.get(), new StructureFeatureConfiguration(5000, 2, 1234567890), true);
     }
 
     public static <F extends StructureFeature<?>> void setupMapSpacingAndLand(F structure, StructureFeatureConfiguration structureFeatureConfiguration, boolean transformSurroundingLand) {

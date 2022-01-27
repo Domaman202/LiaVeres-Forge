@@ -1,8 +1,7 @@
 package com.algorithmlx.liaveres.common.item.tool;
 
-import com.algorithmlx.liaveres.common.item.api.LVItemTier;
+import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
@@ -21,13 +20,13 @@ import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
 public class MatterCrystalSword extends SwordItem {
     public MatterCrystalSword()
     {
-        super(LVItemTier.MatterTear, 2147483647,340282356779733661637539395458142568447F, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
+        super(LVToolMaterial.MATTER_CRYSTAL, Integer.MAX_VALUE, Float.MAX_VALUE, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(new TranslatableComponent(ChatFormatting.RED + ModId+".matter_crystal_msg"));
+        p_41423_.add(new TranslatableComponent("msg." + ModId + ".matter_crystal_msg"));
         super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
     }
     @Override

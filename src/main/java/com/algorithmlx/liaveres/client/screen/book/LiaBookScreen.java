@@ -26,9 +26,8 @@ public class LiaBookScreen extends Screen {
     @Override
     protected void init() {
         this.addRenderableWidget(new ButtonBase(37, 23, 31, 26,
-                "", pButton -> {
-                    Minecraft.getInstance().setScreen(this);
-                }, new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")
+                "", pButton -> Minecraft.getInstance().setScreen(this),
+                new ResourceLocation(LiaVeres.ModId, "textures/gui/button/page_button.png")
             )
         );
     }

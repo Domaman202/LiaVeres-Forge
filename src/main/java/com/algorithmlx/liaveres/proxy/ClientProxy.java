@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres.proxy;
 
 import com.algorithmlx.liaveres.client.render.AmdanorMobRender;
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.Registration;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
