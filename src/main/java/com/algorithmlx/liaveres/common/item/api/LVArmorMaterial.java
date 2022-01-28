@@ -56,7 +56,7 @@ public enum LVArmorMaterial implements ArmorMaterial {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.0f,
             1f,
-            ()-> Ingredient.of(Registration.GOLDEN_NETHERITE.get())
+            ()-> Ingredient.of(Registration.GOLDEN_NETHERITE_INGOT.get())
     );
 
     private static final int[] armorDurability =  new int[]{13, 15, 16, 11};

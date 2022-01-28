@@ -48,5 +48,8 @@
   "msg.liaveres.liaBook.isOpened": "Пусть с открытием этой книги, к тебе придут знания, дорогой§6 %s",
   "msg.liaveres.liaBook": "Перевод из книги древних, а также добавление из истории §6Лиа",
   "msg.liaveres.liaBook.author": "Автор: Лиа Вельдора",
-  "msg.liaveres.liaBook.edition": "Издание: I"
+  "msg.liaveres.liaBook.edition": "Издание: I",
+
+  "advancement.liaveres.main": "[LiaVeres]: Безграничное начало",
+  "advancement.liaveres.main.desc": "Добудьте кристаллин"
 }

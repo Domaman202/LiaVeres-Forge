@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "liaveres:item/golden_netherite_ingot"
+  }
+}

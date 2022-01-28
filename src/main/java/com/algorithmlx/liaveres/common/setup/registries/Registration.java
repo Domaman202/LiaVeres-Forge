@@ -94,7 +94,7 @@ public class Registration {
     public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
     public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
     public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", MatterBlock::new);
-    public static final RegistryObject<Item> GOLDEN_NETHERITE = ITEM.register("golden_netherite", GoldenNetherite::new);
+    public static final RegistryObject<Item> GOLDEN_NETHERITE_INGOT = ITEM.register("golden_netherite_ingot", GoldenNetherite::new);
     public static final RegistryObject<Item> GOLDEN_NETHERITE_HELMET = ITEM.register("golden_netherite_helmet", ()-> new GoldenNetheriteArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_CHESTPLATE = ITEM.register("golden_netherite_chestplate", ()-> new GoldenNetheriteArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_LEGS = ITEM.register("golden_netherite_leggings", ()-> new GoldenNetheriteArmor(EquipmentSlot.LEGS));

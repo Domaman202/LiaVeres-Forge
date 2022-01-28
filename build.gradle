@@ -31,6 +31,7 @@ java {
 
 minecraft {
     mappings channel: 'parchment', version: "2021.12.19-1.18.1"
+//    mappings channel: 'official', version: "1.18.1"
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -45,7 +46,7 @@ minecraft {
             arg "-mixin.config=LiaVeres.mixins.json"
 
             mods {
-                LiaVeres {
+                liaveres {
                     source sourceSets.main
                 }
             }
@@ -61,7 +62,7 @@ minecraft {
             arg "-mixin.config=LiaVeres.mixins.json"
 
             mods {
-                LiaVeres {
+                liaveres {
                     source sourceSets.main
                 }
             }
@@ -74,12 +75,12 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'LiaVeres', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
+            args '--mod', 'liaveres', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
 
             environment 'target', 'fmluserdevdata'
 
             mods {
-                LiaVeres {
+                liaveres {
                     source sourceSets.main
                 }
             }
