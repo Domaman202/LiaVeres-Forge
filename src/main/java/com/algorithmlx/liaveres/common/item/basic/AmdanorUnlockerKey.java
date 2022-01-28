@@ -5,7 +5,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 
-@Deprecated
 public class AmdanorUnlockerKey extends Item {
     public AmdanorUnlockerKey() {
         super(new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")).stacksTo(1));
