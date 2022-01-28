@@ -41,7 +41,7 @@ public class LiaVeres {
     public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
         Registration.BLOCK.getEntries().stream().map(RegistryObject::get).forEach(block ->
             event.getRegistry()
-                    .register(new BlockItem(block, new Item.Properties().tab(ModSetup.CLASSIC_TAB))
+                    .register(new BlockItem(block, new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant())
                             .setRegistryName(Objects.requireNonNull(block.getRegistryName()))));
     }
 }

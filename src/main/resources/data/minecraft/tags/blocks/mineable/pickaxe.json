@@ -3,6 +3,7 @@
   "values": [
     "liaveres:crystallite",
     "liaveres:golden_netherite_block",
-    "liaveres:matter_block"
+    "liaveres:matter_block",
+    "liaveres:matter_crystal_block"
   ]
 }

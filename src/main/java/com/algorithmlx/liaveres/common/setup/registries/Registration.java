@@ -60,8 +60,12 @@ public class Registration {
         FLUID.register(bus);
         STRUCTURE.register(bus);
     }
-    public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = BLOCK.register("matter_crystal_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(Float.MAX_VALUE, Float.MAX_VALUE)));
+    public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = BLOCK.register("matter_crystal_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(Float.MAX_VALUE, Float.MAX_VALUE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> AMDANOR_SPAWNER = BLOCK.register("amdanor_spawner", AmdanorSpawner::new);
+    public static final RegistryObject<Block> GOLDEN_NETHERITE_BLOCK = BLOCK.register("golden_netherite_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(160f, 240000f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CRYSTALLITE = BLOCK.register("crystallite", Crystallite::new);
+    public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(500f, 700000000f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = ITEM.register("matter_crystal_helmet", ()-> new MatterCrystalArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = ITEM.register("matter_crystal_chestplate", ()-> new MatterCrystalArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> MATTER_CRYSTAL_LEGS = ITEM.register("matter_crystal_leggings", ()-> new MatterCrystalArmor(EquipmentSlot.LEGS));
@@ -84,27 +88,18 @@ public class Registration {
     public static final RegistryObject<Item> ENCHANTED_APPLE = ITEM.register("enchanted_apple", EnchantedApple::new);
     public static final RegistryObject<Item> LIGHTNING_ARTIFACT = ITEM.register("lightning_artifact", LightningArtifact::new);
     public static final RegistryObject<Item> EMPTY_ARTIFACT = ITEM.register("empty_artifact", ()-> new Item(new Item.Properties().tab(tab)));
-    public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton",
-            ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER)
-                    .sized(0.55f, 1.5f)
-                    .fireImmune()
-                    .immuneTo(Blocks.WITHER_ROSE)
-                    .clientTrackingRange(16)
-                    .build("amdanor_skeleton")
-    );
     public static final RegistryObject<Item> AMDANOR_UNLOCKER_KEY = ITEM.register("amdanor_unlocker_key", AmdanorUnlockerKey::new);
-    public static final RegistryObject<Block> CRYSTALLITE = BLOCK.register("crystallite", Crystallite::new);
     public static final RegistryObject<Item> WITHERING_BONE = ITEM.register("withering_bone", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant()));
     public static final RegistryObject<Item> LIA_BOOK = ITEM.register("lia_book", LiaBook::new);
-    public static final RegistryObject<Block> MATTER_BLOCK = BLOCK.register("matter_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(500f, 700000000f)));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_INGOT = ITEM.register("golden_netherite_ingot", ()-> new Item(new Item.Properties().tab(tab)));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_HELMET = ITEM.register("golden_netherite_helmet", ()-> new GoldenNetheriteArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_CHESTPLATE = ITEM.register("golden_netherite_chestplate", ()-> new GoldenNetheriteArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_LEGS = ITEM.register("golden_netherite_leggings", ()-> new GoldenNetheriteArmor(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> GOLDEN_NETHERITE_BOOTS = ITEM.register("golden_netherite_boots", ()-> new GoldenNetheriteArmor(EquipmentSlot.FEET));
-    public static final RegistryObject<Block> GOLDEN_NETHERITE_BLOCK = BLOCK.register("golden_netherite_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.5f, 80.5f)));
-    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base",
-            () -> new AmdanorBaseStructure(JigsawConfiguration.CODEC));
+
+    public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
+
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base", () -> new AmdanorBaseStructure(JigsawConfiguration.CODEC));
 
     public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
         commandDispatcher.register(Commands.literal(LiaVeres.ModId)
