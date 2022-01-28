@@ -8,23 +8,9 @@ import net.minecraft.world.item.Rarity;
 
 import java.util.Optional;
 
+@Deprecated
 public class GoldenNetherite extends Item {
     public GoldenNetherite() {
         super(new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
-    }
-
-    @Override
-    public boolean isFoil(ItemStack pStack) {
-        return false;
-    }
-
-    @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        return true;
-    }
-
-    @Override
-    public Optional<TooltipComponent> getTooltipImage(ItemStack pStack) {
-        return super.getTooltipImage(pStack);
     }
 }

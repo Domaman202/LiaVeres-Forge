@@ -4,6 +4,7 @@ import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 
+@Deprecated
 public class AmdanorSpawnEgg extends ForgeSpawnEggItem {
     public AmdanorSpawnEgg() {
         super(Registration.AMDANOR_SKELETON, 0x000000, 0xffffff, new Properties().tab(ModSetup.MOBS_TAB));

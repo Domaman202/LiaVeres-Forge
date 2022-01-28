@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.gata.generators;
+package com.algorithmlx.liaveres.common.gata.generators.advancement;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
@@ -48,21 +48,6 @@ public class AdvancementBase extends AdvancementProvider {
            }
         });
         new Advancements().accept(consumer);
-    }
-
-    public static class Advancements implements Consumer<Consumer<Advancement>> {
-
-        @Override
-        public void accept(Consumer<Advancement> advancementConsumer) {
-            Advancement main = Advancement.Builder.advancement()
-                    .display(Registration.CRYSTALLINE.get(),
-                            new TranslatableComponent("advancement." + LiaVeres.ModId + ".main"),
-                            new TranslatableComponent("advancement." + LiaVeres.ModId + ".main.desc"),
-                            new ResourceLocation("minecraft", "textures/gui/advancements/backgrounds/stone.png"),
-                            FrameType.TASK, true, true, false)
-                    .addCriterion("crystalline", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.CRYSTALLINE.get()))
-                    .save(advancementConsumer, LiaVeres.ModId + "/main/main");
-        }
     }
 
     private static Path createPath(Path pathIn, Advancement advancementIn) {

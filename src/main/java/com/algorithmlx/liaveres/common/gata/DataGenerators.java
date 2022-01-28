@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.gata;
 
-import com.algorithmlx.liaveres.common.gata.generators.AdvancementBase;
+import com.algorithmlx.liaveres.common.gata.generators.advancement.AdvancementBase;
 import com.algorithmlx.liaveres.common.gata.generators.BlockStates;
 import com.algorithmlx.liaveres.common.gata.generators.ItemModels;
 import com.algorithmlx.liaveres.common.gata.generators.Recipes;
