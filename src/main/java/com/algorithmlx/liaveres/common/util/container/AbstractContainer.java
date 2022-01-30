@@ -1,5 +1,6 @@
 package com.algorithmlx.liaveres.common.util.container;
 
+import com.algorithmlx.liaveres.common.container.BasicBackpackContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -13,14 +14,14 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 public abstract class AbstractContainer extends AbstractContainerMenu {
     private final IItemHandler playerInventory;
 
-    public AbstractContainer(MenuType<?> container, int windowId, Level world, BlockPos pos, Inventory playerInventory, Player player) {
+    public AbstractContainer(MenuType<?> container, int windowId, Inventory playerInventory) {
         super(container, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 
         //makeInventorySlots(8, 84);
     }
 
-    private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
+    public int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
         for (int i = 0 ; i < amount ; i++) {
             addSlot(new SlotItemHandler(handler, index, x, y));
             x += dx;
@@ -29,14 +30,14 @@ public abstract class AbstractContainer extends AbstractContainerMenu {
         return index;
     }
 
-    private void addSlotBox(IItemHandler handler, int index, int x, int y, int horAmount, int dx, int verAmount, int dy) {
+    public void addSlotBox(IItemHandler handler, int index, int x, int y, int horAmount, int dx, int verAmount, int dy) {
         for (int j = 0 ; j < verAmount ; j++) {
             index = addSlotRange(handler, index, x, y, horAmount, dx);
             y += dy;
         }
     }
 
-    private void makeInventorySlots(int leftColX, int topRowY) {
+    public void makeInventorySlots(int leftColX, int topRowY) {
         addSlotBox(playerInventory, 9, leftColX, topRowY, 9, 18, 3, 18);
 
         topRowY += 58;

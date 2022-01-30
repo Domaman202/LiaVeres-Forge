@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.common.setup.registries;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.*;
+import com.algorithmlx.liaveres.common.container.BasicBackpackContainer;
 import com.algorithmlx.liaveres.common.entity.AmdanorMob;
 import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
 import com.algorithmlx.liaveres.common.item.armor.GildedNetheriteArmor;
@@ -18,10 +19,13 @@ import com.algorithmlx.liaveres.server.command.DimensionCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +36,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfigura
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -46,6 +51,7 @@ public class Registration {
     public static final DeferredRegister<Biome> BIOME = DeferredRegister.create(ForgeRegistries.BIOMES, LiaVeres.ModId);
     public static final DeferredRegister<Fluid> FLUID = DeferredRegister.create(ForgeRegistries.FLUIDS, LiaVeres.ModId);
     public static final DeferredRegister<StructureFeature<?>> STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, LiaVeres.ModId);
+    public static final DeferredRegister<MenuType<?>> CONTAINER = DeferredRegister.create(ForgeRegistries.CONTAINERS, LiaVeres.ModId);
 
     public static void init() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -57,6 +63,7 @@ public class Registration {
         BIOME.register(bus);
         FLUID.register(bus);
         STRUCTURE.register(bus);
+        CONTAINER.register(bus);
     }
     public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = BLOCK.register("matter_crystal_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(Float.MAX_VALUE, Float.MAX_VALUE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> AMDANOR_SPAWNER = BLOCK.register("amdanor_spawner", AmdanorSpawner::new);
@@ -104,6 +111,13 @@ public class Registration {
 //    public static final RegistryObject<EntityType<MHNO3>> MHNO3_BOSS = ENTITY.register("mhno3", ()-> EntityType.Builder.of(MHNO3::new, MobCategory.MONSTER).sized(1.1f, 3.0f).fireImmune().immuneTo(Blocks.GRAVEL, Blocks.TNT, Blocks.SAND, Blocks.WITHER_ROSE).clientTrackingRange(16).build("mhno3"));
 
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC));
+
+    public static final RegistryObject<MenuType<BasicBackpackContainer>> BASIC_BACKPACK_CONTAINER = CONTAINER.register("basic_backpack",
+            ()-> IForgeMenuType.create((((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                Level level = inv.player.getCommandSenderWorld();
+                return new BasicBackpackContainer(windowId, level, pos, inv, inv.player);
+            }))));
 
     public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
         commandDispatcher.register(Commands.literal(LiaVeres.ModId)
