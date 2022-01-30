@@ -22,6 +22,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecation")
 public class AmdanorSpawner extends Block {
     public AmdanorSpawner() {
         super(Properties.of(Material.METAL).strength(-1F, 340282356779733661637539395458142568447F).noOcclusion());
@@ -37,7 +38,6 @@ public class AmdanorSpawner extends Block {
         builder.add(BlockStateProperties.FACING);
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         ItemStack mainItem = pPlayer.getMainHandItem();

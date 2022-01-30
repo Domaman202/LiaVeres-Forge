@@ -26,11 +26,22 @@
   "item.liaveres.amdanor_unlocker_key": "Amdanor Unlock Key",
   "item.liaveres.lia_book": "The Lia's Book",
   "item.liaveres.withering_bone": "Withering Bone",
+  "item.liaveres.gilded_netherite_ingot": "Gilded Netherite Ingot",
+  "item.liaveres.gilded_netherite_helmet": "Gilded Netherite Helmet",
+  "item.liaveres.gilded_netherite_chestplate": "Gilded Netherite Chestplate",
+  "item.liaveres.gilded_netherite_leggings": "Gilded Netherite Leggings",
+  "item.liaveres.gilded_netherite_boots": "Gilded Netherite Boots",
+  "item.liaveres.gilded_netherite_sword": "Gilded Netherite Sword",
+  "item.liaveres.gilded_netherite_pickaxe": "Gilded Netherite Pickaxe",
+  "item.liaveres.gilded_netherite_axe": "Gilded Netherite Axe",
+  "item.liaveres.gilded_netherite_shovel": "Gilded Netherite Shovel",
+  "item.liaveres.gilded_netherite_hoe": "Gilded Netherite Hoe",
 
   "block.liaveres.matter_crystal_block": "Matter Crystal Block",
   "block.liaveres.crystallite": "Crystallite",
   "block.liaveres.matter_block": "Matter Block",
   "block.liaveres.amdanor_spawner": "Amdanor Spawner",
+  "block.liaveres.gilded_netherite_block": "Gilded Netherite Block",
 
   "entity.liaveres.amdanor_skeleton": "Amdanor Skeleton",
 

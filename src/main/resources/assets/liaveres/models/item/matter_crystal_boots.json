@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures": 
     {
-        "layer0": "liaveres:item/armor/matter_crystal/matter_crystal_boots"
+        "layer0": "liaveres:item/matter_crystal_boots"
     }
 }

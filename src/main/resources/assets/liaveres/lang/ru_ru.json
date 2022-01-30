@@ -26,11 +26,22 @@
   "item.liaveres.amdanor_unlocker_key": "Ключ особождения Амданора",
   "item.liaveres.lia_book": "Книга Лиа",
   "item.liaveres.withering_bone": "Иссушающая кость",
+  "item.liaveres.gilded_netherite_ingot": "Золочёный незеритовый слиток",
+  "item.liaveres.gilded_netherite_helmet": "Золочёный незеритовый шлем",
+  "item.liaveres.gilded_netherite_chestplate": "Золочёный незеритовый нагрудник",
+  "item.liaveres.gilded_netherite_leggings": "Золочёные незеритовые поножи",
+  "item.liaveres.gilded_netherite_boots": "Золочёные незеритовые ботинки",
+  "item.liaveres.gilded_netherite_sword": "Золочёный незеритовый меч",
+  "item.liaveres.gilded_netherite_pickaxe": "Золочёная незеритовая кирка",
+  "item.liaveres.gilded_netherite_axe": "Золочёный незеритовый топор",
+  "item.liaveres.gilded_netherite_shovel": "Золочёная незеритовая лопата",
+  "item.liaveres.gilded_netherite_hoe": "Золочёная незеритовая мотыга",
 
   "block.liaveres.matter_crystal_block": "Блок кристалла материи",
   "block.liaveres.crystallite": "Кристаллит",
   "block.liaveres.matter_block": "Блок материи ",
   "block.liaveres.amdanor_spawner": "Призыватель Амданора",
+  "block.liaveres.gilded_netherite_block": "Золочёный незеритовый блок",
 
   "entity.liaveres.amdanor_skeleton": "Скелет Амданора",
 

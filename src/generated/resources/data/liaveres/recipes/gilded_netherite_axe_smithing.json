@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_axe"
+  },
+  "addition": {
+    "item": "liaveres:gilded_netherite_ingot"
+  },
+  "result": {
+    "item": "liaveres:gilded_netherite_axe"
+  }
+}

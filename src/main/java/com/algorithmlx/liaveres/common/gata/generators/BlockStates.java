@@ -14,6 +14,6 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        simpleBlock(Registration.GOLDEN_NETHERITE_BLOCK.get());
+        simpleBlock(Registration.GILDED_NETHERITE_BLOCK.get());
     }
 }

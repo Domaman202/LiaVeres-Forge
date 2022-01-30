@@ -14,7 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum LVArmorMaterial implements ArmorMaterial {
-    MATTER_CRYSTAL("matter_crystal",
+    MATTER_CRYSTAL(
+            "matter_crystal",
             -1,
             new int[]{
             Integer.MAX_VALUE,
@@ -43,8 +44,8 @@ public enum LVArmorMaterial implements ArmorMaterial {
             0.5F,
             ()-> Ingredient.of(Registration.MATTER.get())
     ),
-    GOLDEN_NETHERITE(
-            "golden_netherite",
+   GILDED_NETHERITE(
+            "gilded_netherite",
             65,
             new int[] {
                     12,
@@ -56,7 +57,7 @@ public enum LVArmorMaterial implements ArmorMaterial {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.0f,
             1f,
-            ()-> Ingredient.of(Registration.GOLDEN_NETHERITE_INGOT.get())
+            ()-> Ingredient.of(Registration.GILDED_NETHERITE_INGOT.get())
     );
 
     private static final int[] armorDurability =  new int[]{13, 15, 16, 11};
@@ -67,10 +68,8 @@ public enum LVArmorMaterial implements ArmorMaterial {
     private final SoundEvent soundEvent;
     private final float toughness;
     private final float knockbackResistance;
-    @SuppressWarnings("deprecation")
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Supplier<Ingredient> repairMaterial;
 
-    @SuppressWarnings("deprecation")
     LVArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
@@ -79,7 +78,7 @@ public enum LVArmorMaterial implements ArmorMaterial {
         this.soundEvent = soundEvent;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
-        this.repairMaterial = new LazyLoadedValue<>(repairMaterial);
+        this.repairMaterial = repairMaterial;
 
     }
 

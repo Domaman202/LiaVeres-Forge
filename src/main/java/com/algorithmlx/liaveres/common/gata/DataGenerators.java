@@ -1,5 +1,6 @@
 package com.algorithmlx.liaveres.common.gata;
 
+import com.algorithmlx.liaveres.common.gata.generators.LootTables;
 import com.algorithmlx.liaveres.common.gata.generators.advancement.AdvancementBase;
 import com.algorithmlx.liaveres.common.gata.generators.BlockStates;
 import com.algorithmlx.liaveres.common.gata.generators.ItemModels;
@@ -17,6 +18,7 @@ public class DataGenerators {
         if (event.includeServer()) {
             generator.addProvider(new Recipes(generator));
             generator.addProvider(new AdvancementBase(generator));
+            generator.addProvider(new LootTables(generator));
         }
 
         if (event.includeClient()) {

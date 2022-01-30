@@ -22,6 +22,7 @@ public class ClientProxy extends Proxies {
     @SubscribeEvent
     public static void entityRender(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(Registration.AMDANOR_SKELETON.get(), AmdanorMobRender::new);
+//        event.registerEntityRenderer(Registration.MHNO3_BOSS.get(), MHNO3Render::new);
     }
 
     @Override

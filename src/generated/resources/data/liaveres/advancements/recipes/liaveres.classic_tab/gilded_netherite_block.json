@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "liaveres:gilded_netherite_block"
+    ]
+  },
+  "criteria": {
+    "any": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          null
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "liaveres:gilded_netherite_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any",
+      "has_the_recipe"
+    ]
+  ]
+}

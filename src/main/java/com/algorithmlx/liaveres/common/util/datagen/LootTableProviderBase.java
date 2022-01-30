@@ -18,7 +18,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.CopyNbtFunction;
 import net.minecraft.world.level.storage.loot.functions.SetContainerContents;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -54,6 +53,14 @@ public abstract class LootTableProviderBase extends LootTableProvider {
                                 .withEntry(DynamicLoot.dynamicEntry(new ResourceLocation("minecraft", "contents")))
                         )
                 );
+        return LootTable.lootTable().withPool(builder);
+    }
+
+    protected LootTable.Builder createStandardNoBE(String lootTableName, Block block) {
+        LootPool.Builder builder = LootPool.lootPool()
+                .name(lootTableName)
+                .setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(block));
         return LootTable.lootTable().withPool(builder);
     }
 
