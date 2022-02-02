@@ -1,13 +1,12 @@
 package com.algorithmlx.liaveres.common.gata.generators.advancement;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -22,6 +21,7 @@ import java.nio.file.Path;
 import java.util.Set;
 import java.util.function.Consumer;
 
+@SuppressWarnings("deprecation")
 public class AdvancementBase extends AdvancementProvider {
     private final Path generatorOutput;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
@@ -54,15 +54,15 @@ public class AdvancementBase extends AdvancementProvider {
         return pathIn.resolve("data/" + LiaVeres.ModId + "/advancements/" + advancementIn.getId().getPath() + ".json");
     }
 
-    protected static Advancement.Builder advancement(Advancement parent, ItemLike display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden, String modId) {
-        return Advancement.Builder.advancement().parent(parent).display(display,
+    public static void advancement(Advancement parent, ItemLike display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden, String modId) {
+        Advancement.Builder.advancement().parent(parent).display(display,
                 new TranslatableComponent("advancement." + modId + "." + name),
                 new TranslatableComponent("advancement." + modId + "." + name + ".desc"),
                 null, frame, showToast, announceToChat, hidden);
     }
 
-    protected static Advancement.Builder advancement(Advancement parent, ItemStack display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden, String modId) {
-        return Advancement.Builder.advancement().parent(parent).display(display,
+    public static void advancement(Advancement parent, ItemStack display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden, String modId) {
+        Advancement.Builder.advancement().parent(parent).display(display,
                 new TranslatableComponent("advancement." + modId + "." + name),
                 new TranslatableComponent("advancement." + modId + "." + name + ".desc"),
                 null, frame, showToast, announceToChat, hidden);

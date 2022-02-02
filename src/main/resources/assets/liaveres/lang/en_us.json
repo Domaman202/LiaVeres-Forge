@@ -61,6 +61,9 @@
   "msg.liaveres.liaBook.author": "Author: Lia Veldora",
   "msg.liaveres.liaBook.edition": "Edition: I",
 
-  "advancement.liaveres.main": "[LiaVeres]: Boundless beginning",
-  "advancement.liaveres.main.desc": "Get the Crystalline"
+  "advancement.liaveres.main": "Boundless beginning",
+  "advancement.liaveres.get_key": "Key to death",
+
+  "advancement.liaveres.main.desc": "Get the Crystalline",
+  "advancement.liaveres.get_key.desc": "Get Amdanor Unlocker key"
 }
