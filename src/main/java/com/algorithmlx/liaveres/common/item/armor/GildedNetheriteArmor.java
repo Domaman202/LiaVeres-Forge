@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.common.item.armor;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
+import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 public class GildedNetheriteArmor extends ArmorItem {
     public GildedNetheriteArmor(EquipmentSlot pSlot) {
-        super(LVArmorMaterial.GILDED_NETHERITE, pSlot, new Properties().rarity(Rarity.valueOf("LEGENDARY")).fireResistant().tab(ModSetup.CLASSIC_TAB));
+        super(LVArmorMaterial.GILDED_NETHERITE, pSlot, new Properties().rarity(Constants.getLegendary).fireResistant().tab(ModSetup.CLASSIC_TAB));
     }
 
 

@@ -12,6 +12,7 @@ import com.algorithmlx.liaveres.common.item.artifact.LightningArtifact;
 import com.algorithmlx.liaveres.common.item.basic.*;
 import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
+import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.world.structures.AmdanorBaseStructure;
 import com.algorithmlx.liaveres.server.command.BookCommand;
@@ -101,11 +102,11 @@ public class Registration {
     public static final RegistryObject<Item> GILDED_NETHERITE_CHESTPLATE = ITEM.register("gilded_netherite_chestplate", ()-> new GildedNetheriteArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> GILDED_NETHERITE_LEGS = ITEM.register("gilded_netherite_leggings", ()-> new GildedNetheriteArmor(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> GILDED_NETHERITE_BOOTS = ITEM.register("gilded_netherite_boots", ()-> new GildedNetheriteArmor(EquipmentSlot.FEET));
-    public static final RegistryObject<Item> GILDED_NETHERITE_SWORD = ITEM.register("gilded_netherite_sword", ()-> new SwordItem(LVToolMaterial.GILDED_NETHERITE, 12, 10F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY"))));
-    public static final RegistryObject<Item> GILDED_NETHERITE_PICKAXE = ITEM.register("gilded_netherite_pickaxe", ()-> new PickaxeItem(LVToolMaterial.GILDED_NETHERITE, 4, 12F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY"))));
-    public static final RegistryObject<Item> GILDED_NETHERITE_AXE = ITEM.register("gilded_netherite_axe", ()-> new AxeItem(LVToolMaterial.GILDED_NETHERITE, 20F, 11.2F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY"))));
-    public static final RegistryObject<Item> GILDED_NETHERITE_SHOVEL = ITEM.register("gilded_netherite_shovel", ()-> new ShovelItem(LVToolMaterial.GILDED_NETHERITE, 6F, 12F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY"))));
-    public static final RegistryObject<Item> GILDED_NETHERITE_HOE = ITEM.register("gilded_netherite_hoe", ()-> new HoeItem(LVToolMaterial.GILDED_NETHERITE, -16, 0F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY"))));
+    public static final RegistryObject<Item> GILDED_NETHERITE_SWORD = ITEM.register("gilded_netherite_sword", ()-> new SwordItem(LVToolMaterial.GILDED_NETHERITE, 12, 10F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
+    public static final RegistryObject<Item> GILDED_NETHERITE_PICKAXE = ITEM.register("gilded_netherite_pickaxe", ()-> new PickaxeItem(LVToolMaterial.GILDED_NETHERITE, 4, 12F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
+    public static final RegistryObject<Item> GILDED_NETHERITE_AXE = ITEM.register("gilded_netherite_axe", ()-> new AxeItem(LVToolMaterial.GILDED_NETHERITE, 20F, 11.2F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
+    public static final RegistryObject<Item> GILDED_NETHERITE_SHOVEL = ITEM.register("gilded_netherite_shovel", ()-> new ShovelItem(LVToolMaterial.GILDED_NETHERITE, 6F, 12F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
+    public static final RegistryObject<Item> GILDED_NETHERITE_HOE = ITEM.register("gilded_netherite_hoe", ()-> new HoeItem(LVToolMaterial.GILDED_NETHERITE, -16, 0F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
 
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 //    public static final RegistryObject<EntityType<MHNO3>> MHNO3_BOSS = ENTITY.register("mhno3", ()-> EntityType.Builder.of(MHNO3::new, MobCategory.MONSTER).sized(1.1f, 3.0f).fireImmune().immuneTo(Blocks.GRAVEL, Blocks.TNT, Blocks.SAND, Blocks.WITHER_ROSE).clientTrackingRange(16).build("mhno3"));

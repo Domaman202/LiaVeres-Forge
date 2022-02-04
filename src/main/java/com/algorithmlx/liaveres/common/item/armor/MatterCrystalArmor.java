@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.common.item.armor;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
+import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.ChatFormatting;
@@ -32,7 +33,7 @@ import java.util.Random;
 
 public class MatterCrystalArmor extends ArmorItem {
     public MatterCrystalArmor(EquipmentSlot pSlot) {
-        super(LVArmorMaterial.MATTER_CRYSTAL, pSlot, new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.create("LEGENDARY", ChatFormatting.GOLD)));
+        super(LVArmorMaterial.MATTER_CRYSTAL, pSlot, new Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary));
         MinecraftForge.EVENT_BUS.addListener(this::updatePlayerData);
         MinecraftForge.EVENT_BUS.addListener(this::cancelDamage);
     }

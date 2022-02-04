@@ -1,6 +1,7 @@
 package com.algorithmlx.liaveres.common.item.tool;
 
 import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
+import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -18,9 +19,8 @@ import java.util.List;
 import static com.algorithmlx.liaveres.common.LiaVeres.ModId;
 
 public class MatterCrystalSword extends SwordItem {
-    public MatterCrystalSword()
-    {
-        super(LVToolMaterial.MATTER_CRYSTAL, Integer.MAX_VALUE, Float.MAX_VALUE, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Rarity.valueOf("LEGENDARY")));
+    public MatterCrystalSword() {
+        super(LVToolMaterial.MATTER_CRYSTAL, Integer.MAX_VALUE, Float.MAX_VALUE, new Properties().fireResistant().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary));
     }
 
     @OnlyIn(Dist.CLIENT)

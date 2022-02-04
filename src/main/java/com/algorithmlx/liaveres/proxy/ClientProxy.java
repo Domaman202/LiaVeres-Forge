@@ -12,6 +12,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientProxy extends Proxies {
     @SubscribeEvent
@@ -37,7 +39,7 @@ public class ClientProxy extends Proxies {
 
     @Override
     public Level clientLevel() {
-        return Minecraft.getInstance().player.level;
+        return Objects.requireNonNull(Minecraft.getInstance().player).level;
     }
 
     @Override
