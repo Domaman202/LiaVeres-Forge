@@ -2,10 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.algorithmlx.liaveres.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_8",
   "refmap": "LiaVeres.refmap.json",
   "mixins": [
-
+    "MenuTypeMixin",
+    "MenuScreensMixin"
   ],
   "client": [
 

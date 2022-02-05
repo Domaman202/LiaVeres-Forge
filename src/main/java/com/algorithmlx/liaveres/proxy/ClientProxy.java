@@ -21,7 +21,6 @@ import java.util.Objects;
 public class ClientProxy extends Proxies {
     @SubscribeEvent
     public static void doClient(final FMLClientSetupEvent event) {
-        MenuScreens.register(Registration.BASIC_BACKPACK_CONTAINER.get(), BackpackScreen::new);
     }
 
     @SubscribeEvent
