@@ -1,9 +1,12 @@
 package com.algorithmlx.liaveres.proxy;
 
 import com.algorithmlx.liaveres.client.render.AmdanorMobRender;
+import com.algorithmlx.liaveres.client.screen.container.BackpackScreen;
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.mojang.blaze3d.platform.ScreenManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,7 +21,7 @@ import java.util.Objects;
 public class ClientProxy extends Proxies {
     @SubscribeEvent
     public static void doClient(final FMLClientSetupEvent event) {
-
+        MenuScreens.register(Registration.BASIC_BACKPACK_CONTAINER.get(), BackpackScreen::new);
     }
 
     @SubscribeEvent

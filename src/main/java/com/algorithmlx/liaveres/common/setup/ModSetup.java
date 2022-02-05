@@ -1,6 +1,7 @@
 package com.algorithmlx.liaveres.common.setup;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.common.setup.registries.CommandRegister;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import com.algorithmlx.liaveres.common.setup.registries.structures.StructureSetup;
 import com.algorithmlx.liaveres.common.world.levelgen.OreConfigured;
@@ -57,6 +58,6 @@ public class ModSetup {
 
     @SubscribeEvent
     public static void serverInit(final RegisterCommandsEvent event) {
-        Registration.commandRegister(event.getDispatcher());
+        CommandRegister.commandRegister(event.getDispatcher());
     }
 }

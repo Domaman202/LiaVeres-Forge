@@ -13,8 +13,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 import java.util.List;
 
-// FIXME: 2/4/2022 
-
+// FIXME: 2/4/2022
 //@Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CraftingEvent {
 //    @SubscribeEvent

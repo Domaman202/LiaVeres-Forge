@@ -9,6 +9,7 @@ import com.algorithmlx.liaveres.common.item.armor.GildedNetheriteArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterCrystalArmor;
 import com.algorithmlx.liaveres.common.item.artifact.LightningArtifact;
+import com.algorithmlx.liaveres.common.item.backpack.BasicBackpack;
 import com.algorithmlx.liaveres.common.item.basic.*;
 import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
@@ -21,6 +22,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
@@ -107,6 +109,7 @@ public class Registration {
     public static final RegistryObject<Item> GILDED_NETHERITE_AXE = ITEM.register("gilded_netherite_axe", ()-> new AxeItem(LVToolMaterial.GILDED_NETHERITE, 20F, 11.2F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
     public static final RegistryObject<Item> GILDED_NETHERITE_SHOVEL = ITEM.register("gilded_netherite_shovel", ()-> new ShovelItem(LVToolMaterial.GILDED_NETHERITE, 6F, 12F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
     public static final RegistryObject<Item> GILDED_NETHERITE_HOE = ITEM.register("gilded_netherite_hoe", ()-> new HoeItem(LVToolMaterial.GILDED_NETHERITE, -16, 0F, new Item.Properties().tab(ModSetup.CLASSIC_TAB).rarity(Constants.getLegendary)));
+    public static final RegistryObject<Item> BASIC_BACKPACK = ITEM.register("basic_backpack", BasicBackpack::new);
 
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 //    public static final RegistryObject<EntityType<MHNO3>> MHNO3_BOSS = ENTITY.register("mhno3", ()-> EntityType.Builder.of(MHNO3::new, MobCategory.MONSTER).sized(1.1f, 3.0f).fireImmune().immuneTo(Blocks.GRAVEL, Blocks.TNT, Blocks.SAND, Blocks.WITHER_ROSE).clientTrackingRange(16).build("mhno3"));
@@ -114,16 +117,7 @@ public class Registration {
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC));
 
     public static final RegistryObject<MenuType<BasicBackpackContainer>> BASIC_BACKPACK_CONTAINER = CONTAINER.register("basic_backpack",
-            ()-> IForgeMenuType.create((((windowId, inv, data) -> {
-                BlockPos pos = data.readBlockPos();
-                Level level = inv.player.getCommandSenderWorld();
-                return new BasicBackpackContainer(windowId, level, pos, inv, inv.player);
-            }))));
+            ()-> IForgeMenuType.create((windowId, inv, data)-> new BasicBackpackContainer(windowId, inv, InteractionHand.MAIN_HAND)));
 
-    public static void commandRegister(CommandDispatcher<CommandSourceStack> commandDispatcher) {
-        commandDispatcher.register(Commands.literal(LiaVeres.ModId)
-                .then(BookCommand.register(commandDispatcher))
-                .then(DimensionCommand.register(commandDispatcher))
-        );
-    }
+
 }
