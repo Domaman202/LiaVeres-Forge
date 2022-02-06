@@ -20,7 +20,7 @@ public class BackpackContainer extends AbstractContainer {
     public static final int BACKPACK_INVENTORY = 1;
     private final Player player;
     private final InteractionHand hand;
-    private  ItemStack itemStack;
+    private ItemStack itemStack;
     int padding = 8;
     int titleSpace = 10;
 

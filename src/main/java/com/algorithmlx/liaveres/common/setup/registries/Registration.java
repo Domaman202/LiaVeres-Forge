@@ -3,6 +3,7 @@ package com.algorithmlx.liaveres.common.setup.registries;
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.*;
 import com.algorithmlx.liaveres.common.entity.AmdanorMob;
+import com.algorithmlx.liaveres.common.entity.block.YarnStationBlockEntity;
 import com.algorithmlx.liaveres.common.gata.BackpackData;
 import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
 import com.algorithmlx.liaveres.common.item.armor.GildedNetheriteArmor;
@@ -13,9 +14,11 @@ import com.algorithmlx.liaveres.common.item.backpack.Backpack;
 import com.algorithmlx.liaveres.common.item.basic.*;
 import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
+import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
 import com.algorithmlx.liaveres.common.setup.Config;
 import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
+import com.algorithmlx.liaveres.common.util.recipe.LiaVeresRecipeSerializer;
 import com.algorithmlx.liaveres.common.world.structures.AmdanorBaseStructure;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -23,6 +26,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -38,7 +42,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.lwjgl.system.CallbackI;
 
 public class Registration {
     public static final DeferredRegister<Item> ITEM = DeferredRegister.create(ForgeRegistries.ITEMS, LiaVeres.ModId);
@@ -49,6 +52,7 @@ public class Registration {
     public static final DeferredRegister<Fluid> FLUID = DeferredRegister.create(ForgeRegistries.FLUIDS, LiaVeres.ModId);
     public static final DeferredRegister<StructureFeature<?>> STRUCTURE = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, LiaVeres.ModId);
     public static final DeferredRegister<MenuType<?>> CONTAINER = DeferredRegister.create(ForgeRegistries.CONTAINERS, LiaVeres.ModId);
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPE = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, LiaVeres.ModId);
 
     public static void init() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -61,12 +65,14 @@ public class Registration {
         FLUID.register(bus);
         STRUCTURE.register(bus);
         CONTAINER.register(bus);
+        RECIPE.register(bus);
     }
     public static final RegistryObject<Block> MATTER_CRYSTAL_BLOCK = Config.commonModule.get().equals(true) ? BLOCK.register("matter_crystal_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(Float.MAX_VALUE, Float.MAX_VALUE).requiresCorrectToolForDrops())) : null;
     public static final RegistryObject<Block> AMDANOR_SPAWNER = Config.commonModule.get().equals(true) ? BLOCK.register("amdanor_spawner", AmdanorSpawner::new) : null;
     public static final RegistryObject<Block> GILDED_NETHERITE_BLOCK = Config.commonModule.get().equals(true) ? BLOCK.register("gilded_netherite_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(80f, 240000f).requiresCorrectToolForDrops())) : null;
     public static final RegistryObject<Block> CRYSTALLITE = Config.commonModule.get().equals(true) ? BLOCK.register("crystallite", Crystallite::new) : null;
     public static final RegistryObject<Block> MATTER_BLOCK = Config.commonModule.get().equals(true) ? BLOCK.register("matter_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(500f, 700000000f).requiresCorrectToolForDrops())) : null;
+    public static final RegistryObject<Block> YARN_STATION = Config.backpackModule.get().equals(true) ? BLOCK.register("yarn_station", YarnStation::new) : null;
 
     public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = Config.commonModule.get().equals(true) ? ITEM.register("matter_crystal_helmet", ()-> new MatterCrystalArmor(EquipmentSlot.HEAD)) : null;
     public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = Config.commonModule.get().equals(true) ? ITEM.register("matter_crystal_chestplate", ()-> new MatterCrystalArmor(EquipmentSlot.CHEST)) : null;
@@ -112,4 +118,6 @@ public class Registration {
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = Config.commonModule.get().equals(true) ? STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC)) : null;
+
+    public static final RegistryObject<LiaVeresRecipeSerializer<YarnRecipe>> YARN_RECIPE = RECIPE.register("yarn", ()-> new LiaVeresRecipeSerializer<>(YarnRecipe::new));
 }

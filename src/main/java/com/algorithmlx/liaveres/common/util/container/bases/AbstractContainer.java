@@ -13,8 +13,6 @@ public abstract class AbstractContainer extends AbstractContainerMenu {
     public AbstractContainer(MenuType<?> container, int windowId, Inventory playerInventory) {
         super(container, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
-
-        //makeInventorySlots(8, 84);
     }
 
     public int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
