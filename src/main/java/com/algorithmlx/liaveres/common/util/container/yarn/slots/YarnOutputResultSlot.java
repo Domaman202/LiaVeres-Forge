@@ -13,12 +13,12 @@ import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.Optional;
 
-public class YarnOutputSkeinSlot extends Slot {
+public class YarnOutputResultSlot extends Slot {
     private final YarnCraftInventory craftSlots;
     private final Player player;
     private int removeCount;
 
-    public YarnOutputSkeinSlot(Player player, YarnCraftInventory slot, Container pContainer, int pIndex, int pX, int pY) {
+    public YarnOutputResultSlot(Player player, YarnCraftInventory slot, Container pContainer, int pIndex, int pX, int pY) {
         super(pContainer, pIndex, pX, pY);
         this.craftSlots = slot;
         this.player = player;
