@@ -3,14 +3,14 @@ package com.algorithmlx.liaveres.common.setup.registries;
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.*;
 import com.algorithmlx.liaveres.common.entity.AmdanorMob;
-import com.algorithmlx.liaveres.common.entity.block.YarnStationBlockEntity;
+import com.algorithmlx.liaveres.common.block.entity.YarnStationBlockEntity;
 import com.algorithmlx.liaveres.common.gata.BackpackData;
 import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
 import com.algorithmlx.liaveres.common.item.armor.GildedNetheriteArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterArmor;
 import com.algorithmlx.liaveres.common.item.armor.MatterCrystalArmor;
 import com.algorithmlx.liaveres.common.item.artifact.LightningArtifact;
-import com.algorithmlx.liaveres.common.item.backpack.Backpack;
+import com.algorithmlx.liaveres.common.item.backpack.BackpackItem;
 import com.algorithmlx.liaveres.common.item.basic.*;
 import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
@@ -72,7 +72,7 @@ public class Registration {
     public static final RegistryObject<Block> GILDED_NETHERITE_BLOCK = Config.commonModule.get().equals(true) ? BLOCK.register("gilded_netherite_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(80f, 240000f).requiresCorrectToolForDrops())) : null;
     public static final RegistryObject<Block> CRYSTALLITE = Config.commonModule.get().equals(true) ? BLOCK.register("crystallite", Crystallite::new) : null;
     public static final RegistryObject<Block> MATTER_BLOCK = Config.commonModule.get().equals(true) ? BLOCK.register("matter_block", ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(500f, 700000000f).requiresCorrectToolForDrops())) : null;
-    public static final RegistryObject<Block> YARN_STATION = Config.backpackModule.get().equals(true) ? BLOCK.register("yarn_station", YarnStation::new) : null;
+    public static final RegistryObject<Block> YARN_STATION = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? BLOCK.register("yarn_station", YarnStation::new) : null;
 
     public static final RegistryObject<Item> MATTER_CRYSTAL_HELMET = Config.commonModule.get().equals(true) ? ITEM.register("matter_crystal_helmet", ()-> new MatterCrystalArmor(EquipmentSlot.HEAD)) : null;
     public static final RegistryObject<Item> MATTER_CRYSTAL_CHESTPLATE = Config.commonModule.get().equals(true) ? ITEM.register("matter_crystal_chestplate", ()-> new MatterCrystalArmor(EquipmentSlot.CHEST)) : null;
@@ -113,11 +113,13 @@ public class Registration {
     public static final RegistryObject<Item> STITCHED_LEATHER = Config.backpackModule.get().equals(true) ? ITEM.register("stitched_leather", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> STRING_SKEIN = Config.backpackModule.get().equals(true) ? ITEM.register("string_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> EMPTY_SKEIN = Config.backpackModule.get().equals(true) ? ITEM.register("empty_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
-    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new Backpack(BackpackData.of("basic", 1, 9, false, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
+    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new BackpackItem(BackpackData.of("basic", 9, 1, false, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
 
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = Config.commonModule.get().equals(true) ? STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC)) : null;
 
-    public static final RegistryObject<LiaVeresRecipeSerializer<YarnRecipe>> YARN_RECIPE = RECIPE.register("yarn", ()-> new LiaVeresRecipeSerializer<>(YarnRecipe::new));
+    public static final RegistryObject<LiaVeresRecipeSerializer<YarnRecipe>> YARN_RECIPE = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? RECIPE.register("yarn", ()-> new LiaVeresRecipeSerializer<>(YarnRecipe::new)) : null;
+
+    public static final RegistryObject<BlockEntityType<YarnStationBlockEntity>> YARN_STATION_BLOCK_ENTITY = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? BLOCK_ENTITY.register("yarn_station", ()-> BlockEntityType.Builder.of(YarnStationBlockEntity::new, YARN_STATION.get()).build(null)) : null;
 }

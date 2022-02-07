@@ -2,7 +2,6 @@ package com.algorithmlx.liaveres.common.item.backpack;
 
 import com.algorithmlx.liaveres.common.container.BackpackContainer;
 import com.algorithmlx.liaveres.common.gata.BackpackData;
-import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -12,9 +11,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class Backpack extends Item {
+public class BackpackItem extends Item {
     private final BackpackData backpackData;
-    public Backpack(BackpackData data, Item.Properties properties) {
+    public BackpackItem(BackpackData data, Item.Properties properties) {
         super(properties);
         this.backpackData = data;
     }

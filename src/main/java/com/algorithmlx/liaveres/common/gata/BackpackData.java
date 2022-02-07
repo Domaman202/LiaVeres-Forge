@@ -2,20 +2,7 @@ package com.algorithmlx.liaveres.common.gata;
 
 import net.minecraft.sounds.SoundEvent;
 
-public class BackpackData {
-    private final String name;
-    private final int rowWidth;
-    private final int rows;
-    private final boolean fireResistant;
-    private final SoundEvent soundEvent;
-
-    public BackpackData(String name, int rowWidth, int rows, boolean fireResistant, SoundEvent soundEvent) {
-        this.name = name;
-        this.rowWidth = rowWidth;
-        this.rows = rows;
-        this.fireResistant = fireResistant;
-        this.soundEvent = soundEvent;
-    }
+public record BackpackData(String name, int rowWidth, int rowHeight, boolean fireResistant, SoundEvent soundEvent) {
 
     public String getName() {
         return this.name;
@@ -25,8 +12,8 @@ public class BackpackData {
         return this.rowWidth;
     }
 
-    public int getRows() {
-        return this.rows;
+    public int getRowHeight() {
+        return this.rowHeight;
     }
 
     public boolean getFireResistant() {
@@ -37,7 +24,7 @@ public class BackpackData {
         return this.soundEvent;
     }
 
-    public static BackpackData of(String name, int rowWidth, int rows, boolean fireResistant, SoundEvent soundEvent) {
-        return new BackpackData(name, rowWidth, rows, fireResistant, soundEvent);
+    public static BackpackData of(String name, int rowWidth, int rowHeight, boolean fireResistant, SoundEvent soundEvent) {
+        return new BackpackData(name, rowWidth, rowHeight, fireResistant, soundEvent);
     }
 }

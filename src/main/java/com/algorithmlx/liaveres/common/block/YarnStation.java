@@ -1,5 +1,6 @@
 package com.algorithmlx.liaveres.common.block;
 
+import com.algorithmlx.liaveres.common.block.entity.YarnStationBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -20,6 +21,6 @@ public class YarnStation extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return null;
+        return new YarnStationBlockEntity(pPos, pState);
     }
 }

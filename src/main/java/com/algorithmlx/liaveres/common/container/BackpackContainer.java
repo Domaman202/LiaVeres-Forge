@@ -3,7 +3,7 @@ package com.algorithmlx.liaveres.common.container;
 import com.algorithmlx.liaveres.common.container.api.Dimension;
 import com.algorithmlx.liaveres.common.container.api.Point;
 import com.algorithmlx.liaveres.common.gata.BackpackData;
-import com.algorithmlx.liaveres.common.item.backpack.Backpack;
+import com.algorithmlx.liaveres.common.item.backpack.BackpackItem;
 import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.util.container.bases.AbstractContainer;
 import com.algorithmlx.liaveres.common.util.container.nbt.ContainerTag;
@@ -30,7 +30,7 @@ public class BackpackContainer extends AbstractContainer {
         this.hand = hand;
         ItemStack stack = player.getItemInHand(hand);
 
-        if (stack.getItem() instanceof Backpack) {
+        if (stack.getItem() instanceof BackpackItem) {
             this.loadContainer(playerInventory, stack);
         }
     }
@@ -39,7 +39,7 @@ public class BackpackContainer extends AbstractContainer {
         Dimension dimension = this.getDimension();
         BackpackData type = this.getItem().getBackpackType();
         int rowWidth = type.getRowWidth();
-        int rows = type.getRows();
+        int rows = type.getRowHeight();
 
         ListTag tags = itemStack.getOrCreateTag().getList("Inventory", 10);
         SimpleContainer simpleContainer = new SimpleContainer(rowWidth * rows) {
@@ -72,13 +72,13 @@ public class BackpackContainer extends AbstractContainer {
         }
     }
 
-    public Backpack getItem() {
-        return (Backpack) player.getItemInHand(hand).getItem();
+    public BackpackItem getItem() {
+        return (BackpackItem) player.getItemInHand(hand).getItem();
     }
 
     public Dimension getDimension() {
         BackpackData type = getItem().getBackpackType();
-        return new Dimension(padding * 2 + Math.max(type.getRowWidth(), 9) * 18, padding * 2 + titleSpace * 2 + 8 + (type.getRows() + 4) * 18);
+        return new Dimension(padding * 2 + Math.max(type.getRowWidth(), 9) * 18, padding * 2 + titleSpace * 2 + 8 + (type.getRowHeight() + 4) * 18);
     }
 
     public Point getBackpackSlotPosition(Dimension dimension, int x, int y) {
@@ -93,7 +93,7 @@ public class BackpackContainer extends AbstractContainer {
     @Override
     public boolean stillValid(Player pPlayer) {
         ItemStack stack = pPlayer.getItemInHand(hand);
-        return stack.getItem() instanceof Backpack;
+        return stack.getItem() instanceof BackpackItem;
     }
 
     @Override
@@ -104,11 +104,11 @@ public class BackpackContainer extends AbstractContainer {
             ItemStack toInsert = slot.getItem();
             itemStack = toInsert.copy();
             BackpackData type = getItem().getBackpackType();
-            if (index < type.getRows() * type.getRowWidth()) {
-                if (!this.moveItemStackTo(toInsert, type.getRows() * type.getRowWidth(), this.slots.size(), true)) {
+            if (index < type.getRowHeight() * type.getRowWidth()) {
+                if (!this.moveItemStackTo(toInsert, type.getRowHeight() * type.getRowWidth(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.moveItemStackTo(toInsert, 0, type.getRows() * type.getRowWidth(), false)) {
+            } else if (!this.moveItemStackTo(toInsert, 0, type.getRowHeight() * type.getRowWidth(), false)) {
                 return ItemStack.EMPTY;
             }
 
@@ -129,12 +129,12 @@ public class BackpackContainer extends AbstractContainer {
 
         @Override
         public boolean mayPickup(Player player) {
-            return !(getItem().getItem() instanceof Backpack) && getItem() != player.getItemInHand(hand);
+            return !(getItem().getItem() instanceof BackpackItem) && getItem() != player.getItemInHand(hand);
         }
 
         @Override
         public boolean mayPlace(ItemStack stack) {
-            return !(stack.getItem() instanceof Backpack) && stack != player.getItemInHand(hand);
+            return !(stack.getItem() instanceof BackpackItem) && stack != player.getItemInHand(hand);
         }
     }
 }

@@ -19,6 +19,8 @@ public class Config {
             .comment("Enable All netherite items from netherite module").define("netheriteModule", true);
     public static final ForgeConfigSpec.ConfigValue<Boolean> backpackModule = LIAVERES_CONFIG
             .comment("Enable All backpacks from backpack module").define("backpackModule", true);
+    public static final ForgeConfigSpec.ConfigValue<Boolean> experimentalModule = LIAVERES_CONFIG
+            .comment("DON'T TOUCH ME").define("experimentalModule", false);
 
     static {
         LIAVERES_CONFIG.pop();

@@ -20,7 +20,6 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackContainer> {
 
     public BackpackScreen(BackpackContainer pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
-
         Dimension dimension = pMenu.getDimension();
         this.imageWidth = dimension.width;
         this.imageHeight = dimension.height;
@@ -50,7 +49,7 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackContainer> {
         renderTooltip(pPoseStack, pMouseX, pMouseY);
     }
 
-    public void renderBgTexture(PoseStack matrices, Rectangle bounds, float pPartialTick, int color) {
+    public void renderBgTexture(PoseStack poseStack, Rectangle bounds, float pPartialTick, int color) {
         float alpha = ((color >> 24) & 0xFF) / 255f;
         float red = ((color >> 16) & 0xFF) / 255f;
         float green = ((color >> 8) & 0xFF) / 255f;
@@ -62,12 +61,12 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackContainer> {
         int xTextureOffset = 0;
         int yTextureOffset = 66;
 
-        this.blit(matrices, x, y, 106 + xTextureOffset, 124 + yTextureOffset, 8, 8);
-        this.blit(matrices, x + width - 8, y, 248 + xTextureOffset, 124 + yTextureOffset, 8, 8);
-        this.blit(matrices, x, y + height - 8, 106 + xTextureOffset, 182 + yTextureOffset, 8, 8);
-        this.blit(matrices, x + width - 8, y + height - 8, 248 + xTextureOffset, 182 + yTextureOffset, 8, 8);
+        this.blit(poseStack, x, y, 106 + xTextureOffset, 124 + yTextureOffset, 8, 8);
+        this.blit(poseStack, x + width - 8, y, 248 + xTextureOffset, 124 + yTextureOffset, 8, 8);
+        this.blit(poseStack, x, y + height - 8, 106 + xTextureOffset, 182 + yTextureOffset, 8, 8);
+        this.blit(poseStack, x + width - 8, y + height - 8, 248 + xTextureOffset, 182 + yTextureOffset, 8, 8);
 
-        Matrix4f matrix = matrices.last().pose();
+        Matrix4f matrix = poseStack.last().pose();
 
         texturedQuad(matrix, x + 8, x + width - 8, y, y + 8, getBlitOffset(), (114 + xTextureOffset) / 256f, (248 + xTextureOffset) / 256f, (124 + yTextureOffset) / 256f, (132 + yTextureOffset) / 256f);
         texturedQuad(matrix, x + 8, x + width - 8, y + height - 8, y + height, getBlitOffset(), (114 + xTextureOffset) / 256f, (248 + xTextureOffset) / 256f, (182 + yTextureOffset) / 256f, (190 + yTextureOffset) / 256f);
