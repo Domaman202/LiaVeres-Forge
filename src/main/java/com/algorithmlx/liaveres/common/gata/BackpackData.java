@@ -24,7 +24,7 @@ public record BackpackData(String name, int rowWidth, int rowHeight, boolean fir
         return this.soundEvent;
     }
 
-    public static BackpackData of(String name, int rowWidth, int rowHeight, boolean fireResistant, SoundEvent soundEvent) {
+    public static BackpackData create(String name, int rowWidth, int rowHeight, boolean fireResistant, SoundEvent soundEvent) {
         return new BackpackData(name, rowWidth, rowHeight, fireResistant, soundEvent);
     }
 }

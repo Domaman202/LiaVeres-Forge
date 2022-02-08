@@ -1,10 +1,6 @@
-package com.algorithmlx.liaveres.common.gata;
+package com.algorithmlx.liaveres.common.gata.generators;
 
-import com.algorithmlx.liaveres.common.gata.generators.LootTables;
 import com.algorithmlx.liaveres.common.gata.generators.advancement.AdvancementBase;
-import com.algorithmlx.liaveres.common.gata.generators.BlockStates;
-import com.algorithmlx.liaveres.common.gata.generators.ItemModels;
-import com.algorithmlx.liaveres.common.gata.generators.Recipes;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

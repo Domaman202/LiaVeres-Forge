@@ -2,6 +2,7 @@ package com.algorithmlx.liaveres.common.item.backpack;
 
 import com.algorithmlx.liaveres.common.container.BackpackContainer;
 import com.algorithmlx.liaveres.common.gata.BackpackData;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -22,6 +23,10 @@ public class BackpackItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         pPlayer.startUsingItem(pUsedHand);
 
+        if (pLevel.isClientSide()) {
+            pLevel.playSound(pPlayer, pPlayer.blockPosition(), backpackData.getSoundEvent(), SoundSource.PLAYERS, 1, 1);
+        }
+
         if (!pLevel.isClientSide()) {
             pPlayer.openMenu(new SimpleMenuProvider((id, inv, player) -> new BackpackContainer(id, inv, pUsedHand), this.getDescription()));
         }
@@ -34,7 +39,7 @@ public class BackpackItem extends Item {
         return false;
     }
 
-    public BackpackData getBackpackType() {
+    public BackpackData getType() {
         return this.backpackData;
     }
 }

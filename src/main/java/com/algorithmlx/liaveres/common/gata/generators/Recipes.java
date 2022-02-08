@@ -38,6 +38,15 @@ public class Recipes extends RecipeProvider {
         blockCrafting(Registration.GILDED_NETHERITE_INGOT.get(), Registration.GILDED_NETHERITE_BLOCK.get(), pFinishedRecipeConsumer);
 
         blockUncrafting(Registration.GILDED_NETHERITE_BLOCK.get(), Registration.GILDED_NETHERITE_INGOT.get(), pFinishedRecipeConsumer);
+
+        craftingTable(
+                "aaa",
+                "a a",
+                "aaa",
+                'a',
+                Items.LEATHER,
+                Registration.BASIC_BACKPACK.get(),
+                pFinishedRecipeConsumer);
     }
 
     private void withGildedNetheriteUpgrade(ItemLike ingredient, Item result, @NotNull Consumer<FinishedRecipe> consumer) {

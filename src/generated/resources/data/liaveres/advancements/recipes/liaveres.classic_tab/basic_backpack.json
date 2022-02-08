@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "liaveres:basic_backpack"
+    ]
+  },
+  "criteria": {
+    "any": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          null
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "liaveres:basic_backpack"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any",
+      "has_the_recipe"
+    ]
+  ]
+}

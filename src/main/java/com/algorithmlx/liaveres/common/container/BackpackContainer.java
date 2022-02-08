@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class BackpackContainer extends AbstractContainer {
     public static final int BACKPACK_INVENTORY = 1;
@@ -37,7 +38,7 @@ public class BackpackContainer extends AbstractContainer {
 
     private void loadContainer(Inventory inventory, ItemStack itemStack) {
         Dimension dimension = this.getDimension();
-        BackpackData type = this.getItem().getBackpackType();
+        BackpackData type = this.getBackpack().getType();
         int rowWidth = type.getRowWidth();
         int rows = type.getRowHeight();
 
@@ -72,17 +73,17 @@ public class BackpackContainer extends AbstractContainer {
         }
     }
 
-    public BackpackItem getItem() {
+    public BackpackItem getBackpack() {
         return (BackpackItem) player.getItemInHand(hand).getItem();
     }
 
     public Dimension getDimension() {
-        BackpackData type = getItem().getBackpackType();
+        BackpackData type = getBackpack().getType();
         return new Dimension(padding * 2 + Math.max(type.getRowWidth(), 9) * 18, padding * 2 + titleSpace * 2 + 8 + (type.getRowHeight() + 4) * 18);
     }
 
     public Point getBackpackSlotPosition(Dimension dimension, int x, int y) {
-        BackpackData type = getItem().getBackpackType();
+        BackpackData type = getBackpack().getType();
         return new Point(dimension.width / 2 - type.getRowWidth() * 9 + x * 18, padding + titleSpace + y * 18);
     }
 
@@ -97,13 +98,13 @@ public class BackpackContainer extends AbstractContainer {
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
+    public @NotNull ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if (slot != null && slot.hasItem()) {
             ItemStack toInsert = slot.getItem();
             itemStack = toInsert.copy();
-            BackpackData type = getItem().getBackpackType();
+            BackpackData type = getBackpack().getType();
             if (index < type.getRowHeight() * type.getRowWidth()) {
                 if (!this.moveItemStackTo(toInsert, type.getRowHeight() * type.getRowWidth(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
@@ -123,8 +124,8 @@ public class BackpackContainer extends AbstractContainer {
     }
 
     public class LockableSlot extends Slot {
-        public LockableSlot(Container inventory, int index, int x, int y) {
-            super(inventory, index, x, y);
+        public LockableSlot(Container container, int index, int x, int y) {
+            super(container, index, x, y);
         }
 
         @Override

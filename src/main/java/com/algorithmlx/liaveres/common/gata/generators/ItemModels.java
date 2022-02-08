@@ -17,11 +17,11 @@ public class ItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         standardModel(Registration.GILDED_NETHERITE_INGOT.get());
-
         standardModel(Registration.GILDED_NETHERITE_HELMET.get());
         standardModel(Registration.GILDED_NETHERITE_CHESTPLATE.get());
         standardModel(Registration.GILDED_NETHERITE_LEGS.get());
         standardModel(Registration.GILDED_NETHERITE_BOOTS.get());
+        standardModel(Registration.BASIC_BACKPACK.get());
 
         toolModel(Registration.GILDED_NETHERITE_SWORD.get());
         toolModel(Registration.GILDED_NETHERITE_AXE.get());
