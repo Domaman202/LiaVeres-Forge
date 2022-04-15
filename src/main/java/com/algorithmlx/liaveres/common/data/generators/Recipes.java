@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.gata.generators;
+package com.algorithmlx.liaveres.common.data.generators;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;

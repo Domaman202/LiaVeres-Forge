@@ -1,19 +1,23 @@
-package com.algorithmlx.liaveres.common.gata.generators.advancement;
+package com.algorithmlx.liaveres.common.data.generators.advancement;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import core.liquid.objects.data.gen.AdvancementGenerator;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
-import static com.algorithmlx.liaveres.common.gata.generators.advancement.AdvancementBase.*;
-
-public class Advancements implements Consumer<Consumer<Advancement>> {
+public class Advancements extends AdvancementGenerator implements Consumer<Consumer<Advancement>> {
     String m = LiaVeres.ModId;
+
+    public Advancements(DataGenerator generatorIn) {
+        super(generatorIn);
+    }
 
     @Override
     public void accept(Consumer<Advancement> advancementConsumer) {

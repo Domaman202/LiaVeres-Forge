@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres.common.world.levelgen;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import com.algorithmlx.liaveres.common.world.levelgen.feature.FeatureConfig;
+import core.liquid.world.FeatureConfig;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.OreFeatures;

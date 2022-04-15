@@ -59,10 +59,10 @@ public class StructureListener {
             try {
                 if (GET_CODEC_METHOD == null) GET_CODEC_METHOD = ObfuscationReflectionHelper.findMethod(ChunkGenerator.class, "codec");
                 ResourceLocation cgRL = Registry.CHUNK_GENERATOR.getKey((Codec<? extends ChunkGenerator>) GET_CODEC_METHOD.invoke(chunkGenerator));
-                if (cgRL != null && cgRL.getNamespace().equals("terraforged")) return;
+                if (cgRL != null && cgRL.getNamespace().equals(LiaVeres.ModId)) return;
             }
             catch (Exception e) {
-                LiaVeres.LOGGER.error("Was unable to check if " + serverLevel.dimension().location() + " is using Terraforged's ChunkGenerator.");
+                LiaVeres.LOGGER.error("Was unable to check if " + serverLevel.dimension().location() + " is using LiaVeres's ChunkGenerator.");
             }
             Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = new HashMap<>(worldStructureConfig.structureConfig());
             tempMap.putIfAbsent(Registration.AMDANOR_BASE.get(), StructureSettings.DEFAULTS.get(Registration.AMDANOR_BASE.get()));

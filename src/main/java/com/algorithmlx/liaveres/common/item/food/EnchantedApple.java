@@ -21,8 +21,8 @@ public class EnchantedApple extends Item {
         super(new Properties().rarity(Rarity.EPIC).tab(ModSetup.CLASSIC_TAB).food(new FoodProperties.Builder()
                 .saturationMod(10)
                 .nutrition(10)
-                .build()
-        ));
+                .build())
+        );
     }
 
     @Override
@@ -32,7 +32,7 @@ public class EnchantedApple extends Item {
     }
 
     @Override
-    public boolean isFoil(ItemStack p_41453_) {
+    public boolean isFoil(ItemStack pStack) {
         return true;
     }
 }

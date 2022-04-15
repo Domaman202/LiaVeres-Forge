@@ -1,9 +1,10 @@
 package com.algorithmlx.liaveres.proxy;
 
+import core.liquid.network.proxy.Direction;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class ServerProxy extends Proxies {
+public class ServerProxy extends Direction {
     @Override
     public void init() {
 

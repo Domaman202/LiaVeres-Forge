@@ -8,9 +8,9 @@ import com.algorithmlx.liaveres.common.world.levelgen.OreConfigured;
 import com.algorithmlx.liaveres.common.world.levelgen.OrePlacement;
 import com.algorithmlx.liaveres.common.world.levelgen.feature.StructureConfigured;
 import com.algorithmlx.liaveres.proxy.ClientProxy;
-import com.algorithmlx.liaveres.proxy.Proxies;
 import com.algorithmlx.liaveres.proxy.ServerProxy;
 import com.algorithmlx.liaveres.server.network.Network;
+import core.liquid.network.proxy.Direction;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {
-    public static Proxies proxy = DistExecutor.safeRunForDist(()-> ClientProxy::new, ()-> ServerProxy::new);
+    public static Direction proxy = DistExecutor.safeRunForDist(()-> ClientProxy::new, ()-> ServerProxy::new);
 
     public static final CreativeModeTab CLASSIC_TAB = new CreativeModeTab(LiaVeres.ModId + ".classic_tab") {
         @Override

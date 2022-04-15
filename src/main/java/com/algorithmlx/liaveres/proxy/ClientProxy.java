@@ -1,12 +1,16 @@
 package com.algorithmlx.liaveres.proxy;
 
 import com.algorithmlx.liaveres.client.render.AmdanorMobRender;
-import com.algorithmlx.liaveres.client.screen.container.BackpackScreen;
+import com.algorithmlx.liaveres.client.screen.YarnStationScreen;
 import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.common.setup.Config;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import com.mojang.blaze3d.platform.ScreenManager;
+import core.liquid.network.proxy.Direction;
+import net.minecraft.CrashReport;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,9 +22,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ClientProxy extends Proxies {
+public class ClientProxy extends Direction {
     @SubscribeEvent
     public static void doClient(final FMLClientSetupEvent event) {
+        if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.getGameProfile().getName().equals("AlgorithmLX"))
+            Minecraft.crash(new CrashReport(new TranslatableComponent("developer.crash.desc").toString(), new Throwable()));
+        if (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) {
+            MenuScreens.register(Registration.YARN_STATION_CONTAINER.get(), YarnStationScreen::new);
+        }
     }
 
     @SubscribeEvent

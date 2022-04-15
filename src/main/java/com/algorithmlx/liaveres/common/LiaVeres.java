@@ -26,7 +26,7 @@ import java.util.Objects;
 @Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LiaVeres {
     public static final String ModId = "liaveres";
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(LiaVeres.ModId);
 
     public LiaVeres() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -40,6 +40,11 @@ public class LiaVeres {
 
         forgeEventBus.addListener(EventPriority.NORMAL, StructureListener::addDimensionalSpacing);
         forgeEventBus.addListener(EventPriority.NORMAL, AmdanorBaseStructure::setupStructureSpawns);
+        if (Config.experimentalModule.get().equals(true)) {
+            LiaVeres.LOGGER.info("[LiaVeres Config] EXPERIMENTAL MODULE IS TRUE. WE CANNOT VOUCH FOR BUGS WITH THIS MODULE");
+        } else if (Config.experimentalModule.get().equals(false)) {
+            LiaVeres.LOGGER.info("[LiaVeres Config] EXPERIMENTAL MODULE IS FALSE. LOADING MOD WITHOUT WARNING");
+        }
     }
 
     @SubscribeEvent

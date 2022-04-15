@@ -103,13 +103,18 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
+    flatDir {
+        dirs 'dep'
+    }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.18.1-39.0.40"
+    minecraft 'net.minecraftforge:forge:1.18.1-39.1.2'
 
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+
+    implementation fg.deobf("com.algorithmlx:liquid:${lc_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }

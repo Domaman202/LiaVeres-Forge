@@ -2,24 +2,22 @@ package com.algorithmlx.liaveres.common.setup.registries;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.*;
-import com.algorithmlx.liaveres.common.entity.AmdanorMob;
 import com.algorithmlx.liaveres.common.block.entity.YarnStationBlockEntity;
-import com.algorithmlx.liaveres.common.gata.BackpackData;
-import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
-import com.algorithmlx.liaveres.common.item.armor.GildedNetheriteArmor;
-import com.algorithmlx.liaveres.common.item.armor.MatterArmor;
-import com.algorithmlx.liaveres.common.item.armor.MatterCrystalArmor;
-import com.algorithmlx.liaveres.common.item.artifact.LightningArtifact;
-import com.algorithmlx.liaveres.common.item.backpack.BackpackItem;
+import com.algorithmlx.liaveres.common.entity.*;
+import com.algorithmlx.liaveres.common.item.api.*;
+import com.algorithmlx.liaveres.common.item.armor.*;
+import com.algorithmlx.liaveres.common.item.artifact.*;
 import com.algorithmlx.liaveres.common.item.basic.*;
-import com.algorithmlx.liaveres.common.item.food.EnchantedApple;
 import com.algorithmlx.liaveres.common.item.tool.*;
-import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
-import com.algorithmlx.liaveres.common.setup.Config;
-import com.algorithmlx.liaveres.common.setup.Constants;
-import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.util.recipe.LiaVeresRecipeSerializer;
-import com.algorithmlx.liaveres.common.world.structures.AmdanorBaseStructure;
+import com.algorithmlx.liaveres.common.item.food.*;
+import com.algorithmlx.liaveres.common.recipe.*;
+import com.algorithmlx.liaveres.common.setup.*;
+import com.algorithmlx.liaveres.common.world.structures.*;
+import com.algorithmlx.liaveres.container.YarnStationContainer;
+import core.liquid.dynamic.item.DynamicItem;
+import core.liquid.objects.data.DynamicContainerData;
+import core.liquid.recipes.LiquidRecipeSerializers;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -27,9 +25,9 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
@@ -37,11 +35,10 @@ import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfigura
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.*;
 
 public class Registration {
     public static final DeferredRegister<Item> ITEM = DeferredRegister.create(ForgeRegistries.ITEMS, LiaVeres.ModId);
@@ -113,13 +110,27 @@ public class Registration {
     public static final RegistryObject<Item> STITCHED_LEATHER = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("stitched_leather", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> STRING_SKEIN = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("string_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> EMPTY_SKEIN = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("empty_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
-    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new BackpackItem(BackpackData.create("basic", 9, 1, false, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
+    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new DynamicItem(DynamicContainerData.create("basic", 9, 1, false, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
+
+    public static final RegistryObject<BlockEntityType<YarnStationBlockEntity>> YARN_STATION_BLOCK_ENTITY =
+            (Config.experimentalModule.get().equals(true) && Config.backpackModule.get().equals(true))
+                    ? BLOCK_ENTITY.register("yarn_station",
+                    ()-> BlockEntityType.Builder.of(YarnStationBlockEntity::new, YARN_STATION.get()).build(null)) : null;
+
+    public static final RegistryObject<MenuType<YarnStationContainer>> YARN_STATION_CONTAINER =
+            (Config.experimentalModule.get().equals(true) && Config.backpackModule.get().equals(true))
+            ? CONTAINER.register("yarn_station",
+                    ()-> IForgeMenuType.create(((windowId, inv, data) -> {
+                        BlockPos pos = data.readBlockPos();
+                        Level level = inv.player.getCommandSenderWorld();
+                        return new YarnStationContainer(windowId, level, pos, inv, inv.player);
+                    }))) : null;
 
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = Config.commonModule.get().equals(true) ? STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC)) : null;
 
-    public static final RegistryObject<LiaVeresRecipeSerializer<YarnRecipe>> YARN_RECIPE = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? RECIPE.register("yarn", ()-> new LiaVeresRecipeSerializer<>(YarnRecipe::new)) : null;
-
-    public static final RegistryObject<BlockEntityType<YarnStationBlockEntity>> YARN_STATION_BLOCK_ENTITY = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? BLOCK_ENTITY.register("yarn_station", ()-> BlockEntityType.Builder.of(YarnStationBlockEntity::new, YARN_STATION.get()).build(null)) : null;
+    public static final RegistryObject<LiquidRecipeSerializers<YarnRecipe>> YARN_RECIPE =
+            (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? RECIPE.register("yarn",
+                    ()-> new LiquidRecipeSerializers<>(YarnRecipe::new)) : null;
 }

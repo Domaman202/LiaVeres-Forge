@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.common.gata.generators;
+package com.algorithmlx.liaveres.common.data.generators;
 
-import com.algorithmlx.liaveres.common.gata.generators.advancement.AdvancementBase;
+import com.algorithmlx.liaveres.common.data.generators.advancement.Advancements;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,7 +13,7 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         if (event.includeServer()) {
             generator.addProvider(new Recipes(generator));
-            generator.addProvider(new AdvancementBase(generator));
+            generator.addProvider(new Advancements(generator));
             generator.addProvider(new LootTables(generator));
         }
 

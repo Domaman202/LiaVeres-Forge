@@ -55,4 +55,10 @@ My unreal cheat mod
    versionRange="[1.18.1,1.19)"
    ordering="NONE"
    side="BOTH"
-#
+[[dependencies.liaveres]]
+   modId="liquid"
+   mandatory=true
+   versionRange="[1.1,)"
+   ordering="NONE"
+   side="BOTH"
+
