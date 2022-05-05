@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "liaveres",
+    "name": "LiaVeres Legacy",
+    "description": "This is deupdate LiaVeres on version 1.12.2",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "AlgorithmLX"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
