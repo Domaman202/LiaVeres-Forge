@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "liaveres:block/gilded_netherite_block"
-  }
-}

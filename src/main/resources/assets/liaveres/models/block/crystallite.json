@@ -1,8 +1,0 @@
-{
-  "parent": "liaveres:lia/crystalline_cluster",
-  "textures": {
-    "0": "liaveres:block/cl_one",
-    "1": "liaveres:block/cl_two",
-    "particle": "liaveres:block/cl_one"
-  }
-}
