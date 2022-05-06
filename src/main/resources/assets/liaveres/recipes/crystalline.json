@@ -10,10 +10,11 @@
       "item": "minecraft:nether_star"
     },
     "A": {
-      "item": "minecraft:enchanted_golden_apple"
+      "item": "minecraft:golden_apple",
+      "data": 1
     },
     "M": {
-      "item": "minecraft:shulker_box"
+      "item": "minecraft:shulker_shell"
     }
   },
   "result": {

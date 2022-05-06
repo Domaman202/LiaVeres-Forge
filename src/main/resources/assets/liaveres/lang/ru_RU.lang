@@ -1,0 +1,22 @@
+itemGroup.liaveres.tab_main=LiaVeres
+
+item.liaveres.crystalline.name=Кристаллин
+item.liaveres.matter.name=Материя
+item.liaveres.matter_crystal_axe.name=Топор кристалла материи
+item.liaveres.matter_crystal_sword.name=Меч кристалла материи
+item.liaveres.matter_crystal_pickaxe.name=Кирка кристалла материи
+item.liaveres.matter_crystal_hoe.name=Мотыга кристалла материи
+item.liaveres.matter_crystal_shovel.name=Лопата кристалла материи
+item.liaveres.matter_crystal_helmet.name=Шлем кристалла материи
+item.liaveres.matter_crystal_chestplate.name=Нагрудник кристалла материи
+item.liaveres.matter_crystal_leggings.name=Поножи кристалла материи
+item.liaveres.matter_crystal_boots.name=Ботинки кристалла материи
+item.liaveres.effect_catalyst.name=Каталист Эффектов
+item.liaveres.enchanted_apple.name=Зачарованное яблоко
+item.liaveres.matter_helmet.name=Шлем материи
+item.liaveres.matter_chestplate.name=Нагрудник материи
+item.liaveres.matter_leggings.name=Поножи материи
+item.liaveres.matter_boots.name=Ботинки материи
+
+tile.liaveres.matter_crystal_block.name=Блок кристалла материи
+tile.liaveres.matter_block.name=Блок материи

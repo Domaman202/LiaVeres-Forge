@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "liaveres:matter_crystal_block"
+      "item": "liaveres:matter_block"
     }
   ],
   "result": {
-    "item": "liaveres:matter_crystal",
+    "item": "liaveres:matter",
     "count": 9
   }
 }

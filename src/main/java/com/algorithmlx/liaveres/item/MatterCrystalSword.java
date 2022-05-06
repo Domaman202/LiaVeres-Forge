@@ -3,9 +3,20 @@ package com.algorithmlx.liaveres.item;
 import com.algorithmlx.liaveres.util.item.SwordBase;
 import com.algorithmlx.liaveres.util.material.LiaMaterials;
 import com.algorithmlx.liaveres.util.tab.Tabs;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class MatterCrystalSword extends SwordBase {
     public MatterCrystalSword(String id) {
-        super(LiaMaterials.MATTER_TOOL_MATERIAL, id, Tabs.LIAVERES);
+        super(id, LiaMaterials.MATTER_CRYSTAL_TOOL, Tabs.LIAVERES);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add("Unbreakable");
     }
 }

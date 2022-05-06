@@ -1,0 +1,22 @@
+itemGroup.liaveres.tab_main=LiaVeres
+
+item.liaveres.crystalline.name=Crystalline
+item.liaveres.matter.name=Matter
+item.liaveres.matter_crystal_axe.name=Matter Crystal Axe
+item.liaveres.matter_crystal_sword.name=Matter Crystal Sword
+item.liaveres.matter_crystal_pickaxe.name=Matter Crystal Pickaxe
+item.liaveres.matter_crystal_hoe.name=Matter Crystal Hoe
+item.liaveres.matter_crystal_shovel.name=Matter Crystal Shovel
+item.liaveres.matter_crystal_helmet.name=Matter Crystal Helmet
+item.liaveres.matter_crystal_chestplate.name=Matter Crystal Chestplate
+item.liaveres.matter_crystal_leggings.name=Matter Crystal Leggings
+item.liaveres.matter_crystal_boots.name=Matter Crystal Boots
+item.liaveres.effect_catalyst.name=Effect Catalyst
+item.liaveres.enchanted_apple.name=Enchanted Apple
+item.liaveres.matter_helmet.name=Matter Helmet
+item.liaveres.matter_chestplate.name=Matter Chestplate
+item.liaveres.matter_leggings.name=Matter Leggings
+item.liaveres.matter_boots.name=Matter Boots
+
+tile.liaveres.matter_crystal_block.name=Matter Crystal Block
+tile.liaveres.matter_block.name=Matter Block

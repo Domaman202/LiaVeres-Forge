@@ -1,11 +1,15 @@
 package com.algorithmlx.liaveres;
 
-import com.algorithmlx.liaveres.util.proxy.Common;
+import com.algorithmlx.liaveres.item.MatterCrystalArmor;
+import com.algorithmlx.liaveres.proxy.Common;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,8 +25,8 @@ public class LiaVeresLegacy {
     public static final String MOD_NAME = "LiaVeres Legacy";
     public static final String VERSION = "1.12.2_R1";
 
-    public static final String CLIENT = "com.algorithmlx.liaveres.util.proxy.Common";
-    public static final String SERVER = "com.algorithmlx.liaveres.util.proxy.Common";
+    public static final String CLIENT = "com.algorithmlx.liaveres.proxy.Client";
+    public static final String SERVER = "com.algorithmlx.liaveres.proxy.Common";
 
     @Mod.Instance(MOD_ID)
     public static LiaVeresLegacy INSTANCE;
@@ -32,16 +36,22 @@ public class LiaVeresLegacy {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        proxy.preInit(e);
+        MinecraftForge.EVENT_BUS.register(this);
+        LiaVeresLegacy.proxy.preInit(e);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-        proxy.init(e);
+        LiaVeresLegacy.proxy.init(e);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
-        proxy.postInit(e);
+        LiaVeresLegacy.proxy.postInit(e);
+    }
+
+    @SubscribeEvent
+    public void armorEventHandler(LivingDamageEvent event) {
+        MatterCrystalArmor.cancelDamage(event);
     }
 }

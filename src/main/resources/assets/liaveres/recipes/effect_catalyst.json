@@ -1,22 +1,42 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "ABE",
+    "A#E",
     "CDC",
-    "FBG"
+    "F#G"
   ],
   "key": {
     "A": {
       "item": "liaveres:matter_helmet"
     },
-    "B": {
-      "tag": "liaveres:tools"
-    },
+    "#": [
+      {
+        "item": "liaveres:matter_crystal_pickaxe",
+        "data": 0
+      },
+      {
+        "item": "liaveres:matter_crystal_axe",
+        "data": 1
+      },
+      {
+        "item": "liaveres:matter_crystal_sword",
+        "data": 2
+      },
+      {
+        "item": "liaveres:matter_crystal_shovel",
+        "data": 3
+      },
+      {
+        "item": "liaveres:matter_crystal_hoe",
+        "data": 4
+      }
+    ],
     "C": {
       "item": "minecraft:feather"
     },
     "D": {
-      "item": "minecraft:enchanted_golden_apple"
+      "item": "minecraft:golden_apple",
+      "data": 1
     },
     "E": {
       "item": "liaveres:matter_chestplate"

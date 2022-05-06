@@ -1,6 +1,5 @@
 package com.algorithmlx.liaveres.item;
 
-import com.algorithmlx.liaveres.LiaVeresLegacy;
 import com.algorithmlx.liaveres.util.item.PickaxeBase;
 import com.algorithmlx.liaveres.util.material.LiaMaterials;
 import com.algorithmlx.liaveres.util.tab.Tabs;
@@ -13,8 +12,8 @@ import java.util.List;
 
 @SuppressWarnings("ALL")
 public class MatterCrystalPickaxe extends PickaxeBase {
-    protected MatterCrystalPickaxe(String id) {
-        super(LiaMaterials.MATTER_TOOL_MATERIAL, id, Tabs.LIAVERES);
+    public MatterCrystalPickaxe(String id) {
+        super(id, LiaMaterials.MATTER_CRYSTAL_TOOL, Tabs.LIAVERES);
     }
 
 //    @Override
@@ -68,7 +67,7 @@ public class MatterCrystalPickaxe extends PickaxeBase {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add("msg."+ LiaVeresLegacy.MOD_ID +".matter_crystal_pickaxe");
-        tooltip.add("msg."+ LiaVeresLegacy.MOD_ID +".matter_crystal_pickaxe2");
+        tooltip.add("32x32 Function is Doesn't work");
+        tooltip.add("Unbreakable");
     }
 }

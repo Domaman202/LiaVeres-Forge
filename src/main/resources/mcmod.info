@@ -4,7 +4,7 @@
     "name": "LiaVeres Legacy",
     "description": "This is deupdate LiaVeres on version 1.12.2",
     "version": "${version}",
-    "mcversion": "${mcversion}",
+    "mcversion": "${mc_version}",
     "url": "",
     "updateUrl": "",
     "authorList": [
