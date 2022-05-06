@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "liaveres:item/matter_crystal_sword"
+  }
+}
