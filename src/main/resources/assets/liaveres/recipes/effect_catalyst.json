@@ -11,24 +11,19 @@
     },
     "#": [
       {
-        "item": "liaveres:matter_crystal_pickaxe",
-        "data": 0
+        "item": "liaveres:matter_crystal_pickaxe"
       },
       {
-        "item": "liaveres:matter_crystal_axe",
-        "data": 1
+        "item": "liaveres:matter_crystal_axe"
       },
       {
-        "item": "liaveres:matter_crystal_sword",
-        "data": 2
+        "item": "liaveres:matter_crystal_sword"
       },
       {
-        "item": "liaveres:matter_crystal_shovel",
-        "data": 3
+        "item": "liaveres:matter_crystal_shovel"
       },
       {
-        "item": "liaveres:matter_crystal_hoe",
-        "data": 4
+        "item": "liaveres:matter_crystal_hoe"
       }
     ],
     "C": {
