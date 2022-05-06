@@ -1,6 +1,7 @@
-package com.algorithmlx.liaveres.util;
+package com.algorithmlx.liaveres.util.registring;
 
 import com.algorithmlx.liaveres.LiaVeresLegacy;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -14,23 +15,34 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SuppressWarnings("ConstantConditions")
 public class RegistryBase {
-    protected static void block(BlockBase block) {
-        ForgeRegistries.BLOCKS.register(block);
-        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-        registryModelBlock(block);
+    private static Block block;
+    private static Item item;
 
-        LiaVeresLegacy.LOGGER.info("{} has been registred", block);
+    protected static void block(Block blockI) {
+        block = blockI;
+
+        ForgeRegistries.BLOCKS.register(blockI);
+        ForgeRegistries.ITEMS.register(new ItemBlock(blockI).setRegistryName(blockI.getRegistryName()));
+
+        LiaVeresLegacy.LOGGER.info("{} has been registred", blockI.getRegistryName());
     }
 
-    protected static void item(ItemBase item) {
-        ForgeRegistries.ITEMS.register(item);
-        registryModelItem(item);
+    protected static void item(Item itemI) {
+        item = itemI;
 
-        LiaVeresLegacy.LOGGER.info("{} has been registred", item);
+        ForgeRegistries.ITEMS.register(itemI);
+
+
+        LiaVeresLegacy.LOGGER.info("{} has been registred", itemI.getRegistryName());
+    }
+
+    public static void loadModels() {
+        registryModelItem(item);
+        registryModelBlock(block);
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registryModelItem(ItemBase item) {
+    private static void registryModelItem(Item item) {
         final ResourceLocation itemRegistryName = item.getRegistryName();
         final ModelResourceLocation modelLocation = new ModelResourceLocation(itemRegistryName, "inventory");
         ModelBakery.registerItemVariants(item, modelLocation);
@@ -38,7 +50,7 @@ public class RegistryBase {
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registryModelBlock(BlockBase block) {
+    private static void registryModelBlock(Block block) {
         Minecraft.getMinecraft()
                 .getRenderItem()
                 .getItemModelMesher()

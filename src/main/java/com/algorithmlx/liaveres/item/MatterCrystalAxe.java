@@ -1,10 +1,11 @@
 package com.algorithmlx.liaveres.item;
 
-import net.minecraft.item.ItemAxe;
+import com.algorithmlx.liaveres.util.item.AxeBase;
+import com.algorithmlx.liaveres.util.material.LiaMaterials;
+import com.algorithmlx.liaveres.util.tab.Tabs;
 
-public class MatterCrystalAxe extends ItemAxe {
-    public MatterCrystalAxe(ToolMaterial material, String itemId) {
-        super(material, Integer.MAX_VALUE, Integer.MAX_VALUE);
-        this.setRegistryName(itemId);
+public class MatterCrystalAxe extends AxeBase {
+    public MatterCrystalAxe(String id) {
+        super(LiaMaterials.MATTER_TOOL_MATERIAL, Integer.MAX_VALUE, Integer.MAX_VALUE, id, Tabs.LIAVERES);
     }
 }

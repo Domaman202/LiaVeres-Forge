@@ -1,8 +1,7 @@
-package com.algorithmlx.liaveres.util;
+package com.algorithmlx.liaveres.util.material;
 
 import com.algorithmlx.liaveres.LiaVeresLegacy;
-import com.algorithmlx.liaveres.setup.Registry;
-import net.minecraft.init.Blocks;
+import com.algorithmlx.liaveres.util.registring.Registry;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;

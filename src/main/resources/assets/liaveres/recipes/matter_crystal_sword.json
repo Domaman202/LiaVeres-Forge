@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " B ",
+    " A "
+  ],
+  "key": {
+    "B": {
+      "item": "liaveres:matter_crystal_block"
+    },
+    "A": {
+      "item": "liaveres:crystalline"
+    }
+  },
+  "result": {
+    "item": "liaveres:matter_crystal_sword",
+    "count": 1
+  }
+}

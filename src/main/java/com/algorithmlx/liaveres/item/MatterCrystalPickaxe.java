@@ -1,18 +1,20 @@
 package com.algorithmlx.liaveres.item;
 
 import com.algorithmlx.liaveres.LiaVeresLegacy;
+import com.algorithmlx.liaveres.util.item.PickaxeBase;
+import com.algorithmlx.liaveres.util.material.LiaMaterials;
+import com.algorithmlx.liaveres.util.tab.Tabs;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MatterCrystalPickaxe extends ItemPickaxe {
-    public MatterCrystalPickaxe(ToolMaterial material, String itemId) {
-        super(material);
-        this.setRegistryName(itemId);
+@SuppressWarnings("ALL")
+public class MatterCrystalPickaxe extends PickaxeBase {
+    protected MatterCrystalPickaxe(String id) {
+        super(LiaMaterials.MATTER_TOOL_MATERIAL, id, Tabs.LIAVERES);
     }
 
 //    @Override
