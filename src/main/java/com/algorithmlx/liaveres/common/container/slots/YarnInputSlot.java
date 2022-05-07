@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.util.container.yarn.slots;
+package com.algorithmlx.liaveres.common.container.slots;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;

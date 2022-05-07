@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.client.screen;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.container.YarnStationContainer;
+import com.algorithmlx.liaveres.common.container.YarnStationContainer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;

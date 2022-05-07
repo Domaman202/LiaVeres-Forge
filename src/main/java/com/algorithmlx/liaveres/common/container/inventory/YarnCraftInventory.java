@@ -1,21 +1,20 @@
-package com.algorithmlx.liaveres.common.util.container.yarn.inventory;
+package com.algorithmlx.liaveres.common.container.inventory;
 
+import core.liquid.objects.container.BasedContainer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.StackedContentsCompatible;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class YarnCraftInventory implements Container, StackedContentsCompatible {
     private final NonNullList<ItemStack> items;
     private final int size;
-    private final AbstractContainerMenu menu;
+    private final BasedContainer menu;
 
-    public YarnCraftInventory(AbstractContainerMenu menu, int size) {
+    public YarnCraftInventory(BasedContainer menu, int size) {
         this.items = NonNullList.withSize(size, ItemStack.EMPTY);
         this.menu = menu;
         this.size = size;

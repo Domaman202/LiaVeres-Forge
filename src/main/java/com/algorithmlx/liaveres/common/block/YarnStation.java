@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres.common.block;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.entity.YarnStationBlockEntity;
-import com.algorithmlx.liaveres.container.YarnStationContainer;
+import com.algorithmlx.liaveres.common.container.YarnStationContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

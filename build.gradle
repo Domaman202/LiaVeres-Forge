@@ -114,7 +114,7 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
-    implementation fg.deobf("com.algorithmlx:liquid:${lc_version}")
+    implementation fg.deobf("core.liquid:liquid:${lc_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }

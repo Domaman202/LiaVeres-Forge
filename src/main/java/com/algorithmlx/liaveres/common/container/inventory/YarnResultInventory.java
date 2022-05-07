@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.util.container.yarn.inventory;
+package com.algorithmlx.liaveres.common.container.inventory;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
@@ -7,8 +7,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraftforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class YarnResultInventory implements Container, RecipeHolder {

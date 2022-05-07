@@ -13,9 +13,9 @@ import com.algorithmlx.liaveres.common.item.food.*;
 import com.algorithmlx.liaveres.common.recipe.*;
 import com.algorithmlx.liaveres.common.setup.*;
 import com.algorithmlx.liaveres.common.world.structures.*;
-import com.algorithmlx.liaveres.container.YarnStationContainer;
+import com.algorithmlx.liaveres.common.container.YarnStationContainer;
 import core.liquid.dynamic.item.DynamicItem;
-import core.liquid.objects.data.DynamicContainerData;
+import core.liquid.objects.data.container.DynamicContainerData;
 import core.liquid.recipes.LiquidRecipeSerializers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -110,7 +110,7 @@ public class Registration {
     public static final RegistryObject<Item> STITCHED_LEATHER = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("stitched_leather", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> STRING_SKEIN = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("string_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
     public static final RegistryObject<Item> EMPTY_SKEIN = (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? ITEM.register("empty_skein", ()-> new Item(new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
-    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new DynamicItem(DynamicContainerData.create("basic", 9, 1, false, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
+    public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new DynamicItem(DynamicContainerData.create(9, 1, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
 
     public static final RegistryObject<BlockEntityType<YarnStationBlockEntity>> YARN_STATION_BLOCK_ENTITY =
             (Config.experimentalModule.get().equals(true) && Config.backpackModule.get().equals(true))

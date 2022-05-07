@@ -1,7 +1,7 @@
-package com.algorithmlx.liaveres.common.util.container.yarn.slots;
+package com.algorithmlx.liaveres.common.container.slots;
 
 import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
-import com.algorithmlx.liaveres.common.util.container.yarn.inventory.YarnCraftInventory;
+import com.algorithmlx.liaveres.common.container.inventory.YarnCraftInventory;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
