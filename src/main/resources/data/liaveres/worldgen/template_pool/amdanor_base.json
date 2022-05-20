@@ -1,5 +1,5 @@
 {
-  "name": "liaveres:amdanor_base/start_pool",
+  "name": "liaveres:amdanor_base",
   "fallback": "minecraft:empty",
   "elements": [
     {

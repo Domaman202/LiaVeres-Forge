@@ -3,10 +3,8 @@ package com.algorithmlx.liaveres.common.setup;
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.CommandRegister;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import com.algorithmlx.liaveres.common.setup.registries.structures.StructureSetup;
 import com.algorithmlx.liaveres.common.world.levelgen.OreConfigured;
 import com.algorithmlx.liaveres.common.world.levelgen.OrePlacement;
-import com.algorithmlx.liaveres.common.world.levelgen.feature.StructureConfigured;
 import com.algorithmlx.liaveres.proxy.ClientProxy;
 import com.algorithmlx.liaveres.proxy.ServerProxy;
 import com.algorithmlx.liaveres.server.network.Network;
@@ -48,10 +46,6 @@ public class ModSetup {
     public static void init(final FMLCommonSetupEvent event) {
         Network.messageRegister();
         proxy.init();
-        event.enqueueWork(()-> {
-            StructureSetup.setupStructures();
-            StructureConfigured.registerConfiguredStructures();
-        });
         OreConfigured.register();
         OrePlacement.register();
     }

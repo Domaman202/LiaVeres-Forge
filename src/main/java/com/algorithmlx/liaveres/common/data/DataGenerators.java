@@ -1,6 +1,5 @@
-package com.algorithmlx.liaveres.common.data.generators;
+package com.algorithmlx.liaveres.common.data;
 
-import com.algorithmlx.liaveres.common.data.generators.advancement.Advancements;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

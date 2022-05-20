@@ -1,31 +1,56 @@
 package com.algorithmlx.liaveres.common.world.levelgen;
 
-import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import core.liquid.world.FeatureConfig;
-import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.core.Holder;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 
+import java.util.List;
+
 public class OreConfigured {
-    public static ConfiguredFeature<?,?> CRYSTALLITE;
-    public static ConfiguredFeature<?,?> CRYSTALLITE_DEEPSLATE;
-    public static ConfiguredFeature<?,?> CRYSTALLITE_NETHER;
-    public static ConfiguredFeature<?,?> CRYSTALLITE_END;
+    public static Holder<ConfiguredFeature<OreConfiguration,?>> CRYSTALLITE;
+    public static Holder<ConfiguredFeature<OreConfiguration,?>> CRYSTALLITE_DIM;
 
     public static void register() {
-        CRYSTALLITE = Feature.ORE.configured(new OreConfiguration(OreFeatures.STONE_ORE_REPLACEABLES, Registration.CRYSTALLITE.get().defaultBlockState(), 1));
-        CRYSTALLITE_DEEPSLATE = Feature.ORE.configured(new OreConfiguration(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, Registration.CRYSTALLITE.get().defaultBlockState(), 1));
-        CRYSTALLITE_NETHER = Feature.ORE.configured(new OreConfiguration(OreFeatures.NETHER_ORE_REPLACEABLES, Registration.CRYSTALLITE.get().defaultBlockState(), 4));
-        CRYSTALLITE_END = Feature.ORE.configured(new OreConfiguration(FeatureConfig.Fill.END_STONE, Registration.CRYSTALLITE.get().defaultBlockState(), 4));
+        CRYSTALLITE = FeatureUtils.register("crystalline_cluster",
+                Feature.ORE,
+                new OreConfiguration(List.of(
+                        OreConfiguration.target(
+                                OreFeatures.STONE_ORE_REPLACEABLES,
+                                Registration.CRYSTALLITE.get().defaultBlockState()
+                        ),
+                        OreConfiguration.target(
+                                OreFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                                Registration.CRYSTALLITE.get().defaultBlockState()
+                        )
+                ), 1)
+        );
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(LiaVeres.ModId, "crystalline_cluster"), CRYSTALLITE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(LiaVeres.ModId, "crystalline_cluster_deepslate"), CRYSTALLITE_DEEPSLATE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(LiaVeres.ModId, "crystalline_cluster_nether"), CRYSTALLITE_NETHER);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(LiaVeres.ModId, "crystalline_cluster_end"), CRYSTALLITE_END);
+        CRYSTALLITE_DIM = FeatureUtils.register(
+                "crystalline_cluster_dim",
+                Feature.ORE,
+                new OreConfiguration(
+                        List.of(
+                                OreConfiguration.target(
+                                        OreFeatures.NETHER_ORE_REPLACEABLES,
+                                        Registration.CRYSTALLITE.get().defaultBlockState()
+                                ),
+                                OreConfiguration.target(
+                                        OreFeatures.NETHERRACK,
+                                        Registration.CRYSTALLITE.get().defaultBlockState()
+                                ),
+                                OreConfiguration.target(
+                                        FeatureConfig.Fill.END_STONE,
+                                        Registration.CRYSTALLITE.get().defaultBlockState()
+                                )
+                        ),
+
+                        2
+                )
+        );
     }
 }

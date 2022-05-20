@@ -1,9 +1,13 @@
 package com.algorithmlx.liaveres.common.world.structures;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
+import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.CrashReport;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
@@ -15,7 +19,6 @@ import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import org.apache.logging.log4j.Level;
 import java.util.Optional;
 
 @SuppressWarnings("all")
@@ -60,7 +63,11 @@ public class AmdanorBaseStructure extends StructureFeature<JigsawConfiguration> 
 
 
         if(structurePiecesGenerator.isPresent()) {
-            LiaVeres.LOGGER.log(Level.DEBUG, "Rundown House at {}", blockpos);
+            LiaVeres.LOGGER.info(new TranslatableComponent("msg." + LiaVeres.ModId + ".structureLogging.amdanor").toString(), blockpos);
+        } else {
+            LiaVeres.LOGGER.error("Fatal. Reasion: Structure");
+            Minecraft.crash(new CrashReport("LiaVeres: Sorry! I Don't generate this("+ Registration.AMDANOR_BASE.get().getRegistryName().getPath() +"). Please, inform the mod developer",
+                    new Throwable("LiaVeres Generated CrashReport")));
         }
 
         return structurePiecesGenerator;

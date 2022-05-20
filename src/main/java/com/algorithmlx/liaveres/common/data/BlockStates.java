@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.data.generators;
+package com.algorithmlx.liaveres.common.data;
 
 
 import com.algorithmlx.liaveres.common.LiaVeres;

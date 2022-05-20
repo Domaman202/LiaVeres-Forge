@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.data.generators.advancement;
+package com.algorithmlx.liaveres.common.data;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
@@ -24,7 +24,7 @@ public class Advancements extends AdvancementGenerator implements Consumer<Consu
         Advancement main = Advancement.Builder.advancement().display(Registration.CRYSTALLINE.get(),
                         new TranslatableComponent("advancement." + LiaVeres.ModId + ".main"),
                         new TranslatableComponent("advancement." + LiaVeres.ModId + ".main.desc"),
-                        new ResourceLocation("minecraft", "textures/gui/advancements/backgrounds/stone.png"),
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"),
                         FrameType.TASK, true, true, false)
                 .addCriterion("crystalline", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.CRYSTALLINE.get()))
                 .save(advancementConsumer, m + "/main/main");
