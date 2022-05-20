@@ -22,7 +22,7 @@ public class YarnStationContainer extends BasedContainer {
         this.player = player;
 
         addSlot(new YarnInputSlot(playerInventory, 1, 25,17));
-        addSlot(new YarnInputSkeinSlot(playerInventory, 1, 25,53));
+        addSlot(new YarnInputSkeinSlot(playerInventory, 2, 25,53));
 
         makeInventorySlots(8, 64);
     }

@@ -40,6 +40,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.*;
 
+@SuppressWarnings("all")
 public class Registration {
     public static final DeferredRegister<Item> ITEM = DeferredRegister.create(ForgeRegistries.ITEMS, LiaVeres.ModId);
     public static final DeferredRegister<Block> BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS, LiaVeres.ModId);
@@ -113,8 +114,8 @@ public class Registration {
     public static final RegistryObject<Item> BASIC_BACKPACK = Config.backpackModule.get().equals(true) ? ITEM.register("basic_backpack", ()-> new DynamicItem(DynamicContainerData.create(9, 1, SoundEvents.ARMOR_EQUIP_CHAIN), new Item.Properties().tab(ModSetup.CLASSIC_TAB))) : null;
 
     public static final RegistryObject<BlockEntityType<YarnStationBlockEntity>> YARN_STATION_BLOCK_ENTITY =
-            (Config.experimentalModule.get().equals(true) && Config.backpackModule.get().equals(true))
-                    ? BLOCK_ENTITY.register("yarn_station",
+            (Config.experimentalModule.get().equals(true) && Config.backpackModule.get().equals(true)) ?
+                    BLOCK_ENTITY.register("yarn_station",
                     ()-> BlockEntityType.Builder.of(YarnStationBlockEntity::new, YARN_STATION.get()).build(null)) : null;
 
     public static final RegistryObject<MenuType<YarnStationContainer>> YARN_STATION_CONTAINER =
@@ -128,7 +129,9 @@ public class Registration {
 
     public static final RegistryObject<EntityType<AmdanorMob>> AMDANOR_SKELETON = ENTITY.register("amdanor_skeleton", ()-> EntityType.Builder.of(AmdanorMob::new, MobCategory.MONSTER).sized(0.55f, 1.5f).fireImmune().immuneTo(Blocks.WITHER_ROSE).clientTrackingRange(16).build("amdanor_skeleton"));
 
-    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE = Config.commonModule.get().equals(true) ? STRUCTURE.register("amdanor_base", ()-> new AmdanorBaseStructure(JigsawConfiguration.CODEC)) : null;
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> AMDANOR_BASE =
+            Config.commonModule.get().equals(true) ?
+                    STRUCTURE.register("amdanor_base", AmdanorBaseStructure::new) : null;
 
     public static final RegistryObject<LiquidRecipeSerializers<YarnRecipe>> YARN_RECIPE =
             (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) ? RECIPE.register("yarn",

@@ -1,15 +1,11 @@
 package com.algorithmlx.liaveres.common;
 
 import com.algorithmlx.liaveres.common.setup.Config;
-import com.algorithmlx.liaveres.common.setup.registries.structures.StructureListener;
-import com.algorithmlx.liaveres.common.world.structures.AmdanorBaseStructure;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import com.algorithmlx.liaveres.common.setup.registries.Registration;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -30,7 +26,6 @@ public class LiaVeres {
 
     public LiaVeres() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.CONFIG_COMMON, LiaVeres.ModId + "/config.toml");
 
@@ -38,8 +33,6 @@ public class LiaVeres {
 
         eventBus.addListener(ModSetup::init);
 
-        forgeEventBus.addListener(EventPriority.NORMAL, StructureListener::addDimensionalSpacing);
-        forgeEventBus.addListener(EventPriority.NORMAL, AmdanorBaseStructure::setupStructureSpawns);
         if (Config.experimentalModule.get().equals(true)) {
             LiaVeres.LOGGER.info("[LiaVeres Config] EXPERIMENTAL MODULE IS TRUE. WE CANNOT VOUCH FOR BUGS WITH THIS MODULE");
         } else if (Config.experimentalModule.get().equals(false)) {

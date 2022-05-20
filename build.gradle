@@ -19,6 +19,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
+String ForgeVersion = "${mc_version}-${forge_version}"
+String mappingVersion = "${mapps_ver}-${mc_version}"
 String lv_version = "${mc_version}-${type_version}${version_mod}"
 
 group = 'com.algorithmlx'
@@ -30,7 +32,7 @@ java {
 }
 
 minecraft {
-    mappings channel: 'parchment', version: "2021.12.19-1.18.1"
+    mappings channel: 'parchment', version: "${mappingVersion}"
 //    mappings channel: 'official', version: "1.18.1"
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -103,18 +105,21 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
-    flatDir {
-        dirs 'dep'
+
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.1.2'
+    minecraft "net.minecraftforge:forge:${ForgeVersion}"
 
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
-
-    implementation fg.deobf("core.liquid:liquid:${lc_version}")
+    implementation fg.deobf("curse.maven:liquidcore-606037:${lc_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }

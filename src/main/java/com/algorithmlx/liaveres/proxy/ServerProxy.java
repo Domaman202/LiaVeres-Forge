@@ -4,13 +4,13 @@ import core.liquid.network.proxy.Direction;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class ServerProxy extends Direction {
+public class ServerProxy implements Direction {
     @Override
     public void init() {
 
     }
 
-    public boolean isClientSide() {
+    public boolean clientSide() {
         return false;
     }
 
