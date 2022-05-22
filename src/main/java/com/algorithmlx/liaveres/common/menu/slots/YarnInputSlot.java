@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.container.slots;
+package com.algorithmlx.liaveres.common.menu.slots;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;

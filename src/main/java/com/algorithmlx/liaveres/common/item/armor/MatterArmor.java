@@ -1,8 +1,8 @@
 package com.algorithmlx.liaveres.common.item.armor;
 
-import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
+import com.algorithmlx.liaveres.common.item.material.LVArmorMaterial;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;

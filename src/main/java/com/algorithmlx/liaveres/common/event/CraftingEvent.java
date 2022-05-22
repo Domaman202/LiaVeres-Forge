@@ -1,7 +1,6 @@
 package com.algorithmlx.liaveres.common.event;
 
-import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

@@ -1,13 +1,12 @@
 package com.algorithmlx.liaveres.common.item.tool;
 
-import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
+import com.algorithmlx.liaveres.common.item.material.LVToolMaterial;
 import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;

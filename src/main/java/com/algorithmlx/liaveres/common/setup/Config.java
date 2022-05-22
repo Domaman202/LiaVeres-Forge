@@ -1,29 +1,29 @@
 package com.algorithmlx.liaveres.common.setup;
 
 import net.minecraftforge.common.ForgeConfigSpec;
+import org.apache.logging.log4j.Level;
 
 public class Config {
-    public static final ForgeConfigSpec.Builder LIAVERES_CONFIG = new ForgeConfigSpec.Builder();
-
-    public static final ForgeConfigSpec CONFIG_COMMON;
+    public static final ForgeConfigSpec.Builder CONFIG_BUILDER = new ForgeConfigSpec.Builder();
+    public static final ForgeConfigSpec COMMON_CFG;
 
     static {
-        LIAVERES_CONFIG.push("LiaVeres Config");
+        CONFIG_BUILDER.push("LiaVeres Config");
     }
 
-    public static final ForgeConfigSpec.ConfigValue<Boolean> commonModule = LIAVERES_CONFIG
-            .comment("Enable All items and blocks from common module").define("commonModule", true);
-    public static final ForgeConfigSpec.ConfigValue<Boolean> artifactModule = LIAVERES_CONFIG
-            .comment("Enable All artifacts from artifact module").define("artifactModule", true);
-    public static final ForgeConfigSpec.ConfigValue<Boolean> netheriteModule = LIAVERES_CONFIG
-            .comment("Enable All netherite items from netherite module").define("netheriteModule", true);
-    public static final ForgeConfigSpec.ConfigValue<Boolean> backpackModule = LIAVERES_CONFIG
-            .comment("Enable All backpacks from backpack module").define("backpackModule", true);
-    public static final ForgeConfigSpec.ConfigValue<Boolean> experimentalModule = LIAVERES_CONFIG
-            .comment("DON'T TOUCH ME").define("experimentalModule", false);
-
+    public static final ForgeConfigSpec.IntValue pickaxeExcavationRadius =
+            CONFIG_BUILDER
+                    .comment("Lia Pickaxe excavation radius.",
+                            "It working like this: ",
+                            "16 + 1 = 17; 17 * 2 = 34; 34 - 2 = 32 - pickaxe excavation radius")
+                    .defineInRange(
+                    "pickaxeExcavationRadius",
+                    16 + 1,
+                    2 + 1,
+                    64 + 1
+                    );
     static {
-        LIAVERES_CONFIG.pop();
-        CONFIG_COMMON = LIAVERES_CONFIG.build();
+        CONFIG_BUILDER.pop();
+        COMMON_CFG = CONFIG_BUILDER.build();
     }
 }

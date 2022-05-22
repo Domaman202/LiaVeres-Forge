@@ -68,5 +68,8 @@
   "advancement.liaveres.main.desc": "Get the Crystalline",
   "advancement.liaveres.get_key.desc": "Get Amdanor Unlocker key",
 
-  "developer.crash.desc": "You are a mod developer (and this only applies to AlgorithmLX), so I will do a crash;)"
+  "text.": "",
+
+  "developer.crash.desc": "You are a mod developer (and this only applies to AlgorithmLX), so I will do a crash;)",
+  "cfg1": "16 + 1 = 17; 17 * 2 = 34; 34 - 2 = 32 - pickaxe excavation radius"
 }

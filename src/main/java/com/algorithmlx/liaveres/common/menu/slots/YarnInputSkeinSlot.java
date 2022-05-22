@@ -1,6 +1,6 @@
-package com.algorithmlx.liaveres.common.container.slots;
+package com.algorithmlx.liaveres.common.menu.slots;
 
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;

@@ -1,11 +1,10 @@
 package com.algorithmlx.liaveres.common.item.armor;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.item.api.LVArmorMaterial;
+import com.algorithmlx.liaveres.common.item.material.LVArmorMaterial;
 import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import net.minecraft.ChatFormatting;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;

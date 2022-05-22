@@ -2,49 +2,24 @@ package com.algorithmlx.liaveres.common;
 
 import com.algorithmlx.liaveres.common.setup.Config;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.event.RegistryEvent;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Objects;
-
 @Mod(LiaVeres.ModId)
-@Mod.EventBusSubscriber(modid = LiaVeres.ModId, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LiaVeres {
     public static final String ModId = "liaveres";
     public static final Logger LOGGER = LogManager.getLogger(LiaVeres.ModId);
 
     public LiaVeres() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.CONFIG_COMMON, LiaVeres.ModId + "/config.toml");
-
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CFG, LiaVeres.ModId + "/config.toml");
         Registration.init();
-
         eventBus.addListener(ModSetup::init);
-
-        if (Config.experimentalModule.get().equals(true)) {
-            LiaVeres.LOGGER.info("[LiaVeres Config] EXPERIMENTAL MODULE IS TRUE. WE CANNOT VOUCH FOR BUGS WITH THIS MODULE");
-        } else if (Config.experimentalModule.get().equals(false)) {
-            LiaVeres.LOGGER.info("[LiaVeres Config] EXPERIMENTAL MODULE IS FALSE. LOADING MOD WITHOUT WARNING");
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
-        Registration.BLOCK.getEntries().stream().map(RegistryObject::get).forEach(block ->
-            event.getRegistry()
-                    .register(new BlockItem(block, new Item.Properties().tab(ModSetup.CLASSIC_TAB).fireResistant())
-                            .setRegistryName(Objects.requireNonNull(block.getRegistryName()))));
     }
 }

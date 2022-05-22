@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.common.block;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;

@@ -1,9 +1,7 @@
-package com.algorithmlx.liaveres.common.item.api;
+package com.algorithmlx.liaveres.common.item.material;
 
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
-import net.minecraft.util.LazyLoadedValue;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;

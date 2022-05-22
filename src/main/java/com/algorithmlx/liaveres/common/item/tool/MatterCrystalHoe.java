@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.item.tool;
 
-import com.algorithmlx.liaveres.common.item.api.LVToolMaterial;
+import com.algorithmlx.liaveres.common.item.material.LVToolMaterial;
 import com.algorithmlx.liaveres.common.setup.Constants;
 import com.algorithmlx.liaveres.common.setup.ModSetup;
 import net.minecraft.ChatFormatting;

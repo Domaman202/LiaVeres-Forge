@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.data;
 
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import core.liquid.objects.data.gen.LootTableProviderBase;
 import net.minecraft.data.DataGenerator;
 

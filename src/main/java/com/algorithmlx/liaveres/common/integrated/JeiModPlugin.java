@@ -1,7 +1,8 @@
 package com.algorithmlx.liaveres.common.integrated;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.integrated.jei.RecipeCategory;
+import com.algorithmlx.liaveres.common.integrated.jei.YarnRecipeCategory;
+import com.algorithmlx.liaveres.common.recipe.RecipeTypes;
 import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -22,7 +23,7 @@ public class JeiModPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new RecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new YarnRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -31,8 +32,7 @@ public class JeiModPlugin implements IModPlugin {
         if (world.isClientSide) {
             RecipeManager manager = world.getRecipeManager();
 
-
-            registration.addRecipes(manager.getAllRecipesFor(YarnRecipe.RECIPE_TYPE), new ResourceLocation(""));
+            registration.addRecipes(manager.getAllRecipesFor(RecipeTypes.YARN_RECIPE_TYPE), new ResourceLocation(LiaVeres.ModId, "jei_yarn"));
         }
     }
 }

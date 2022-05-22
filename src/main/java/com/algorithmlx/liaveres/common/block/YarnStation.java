@@ -2,7 +2,7 @@ package com.algorithmlx.liaveres.common.block;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
 import com.algorithmlx.liaveres.common.block.entity.YarnStationBlockEntity;
-import com.algorithmlx.liaveres.common.container.YarnStationContainer;
+import com.algorithmlx.liaveres.common.menu.YarnStationContainerMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -13,6 +13,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -22,11 +23,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings("all")
 public class YarnStation extends Block implements EntityBlock {
+    private static final Component CONTAINER_TITLE = new TranslatableComponent("container." + LiaVeres.ModId + ".yarn_station");
+
     public YarnStation() {
         super(BlockBehaviour.Properties.of(Material.WOOD)
                 .strength(5f, 5f)
@@ -35,7 +37,7 @@ public class YarnStation extends Block implements EntityBlock {
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof YarnStationBlockEntity) {
@@ -47,7 +49,7 @@ public class YarnStation extends Block implements EntityBlock {
 
                     @Override
                     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-                        return new YarnStationContainer(pContainerId, pLevel, pPos, pInventory, pPlayer);
+                        return new YarnStationContainerMenu(pContainerId, pInventory, ContainerLevelAccess.create(pLevel, pPos));
                     }
                 };
                 NetworkHooks.openGui((ServerPlayer) pPlayer, menuProvider, blockEntity.getBlockPos());

@@ -1,6 +1,6 @@
 package com.algorithmlx.liaveres.common.world.levelgen;
 
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import core.liquid.world.FeatureConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;

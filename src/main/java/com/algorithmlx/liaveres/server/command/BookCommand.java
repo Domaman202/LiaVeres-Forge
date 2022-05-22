@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 public class BookCommand implements Command<CommandSourceStack> {
     private static final BookCommand COMMAND = new BookCommand();
 
-    public static ArgumentBuilder<CommandSourceStack, ?> register(CommandDispatcher<CommandSourceStack> dspt) {
+    public static ArgumentBuilder<CommandSourceStack, ?> register() {
         return Commands.literal("liaBook")
                 .requires(css -> css.hasPermission(Commands.LEVEL_ADMINS))
                 .executes(COMMAND);

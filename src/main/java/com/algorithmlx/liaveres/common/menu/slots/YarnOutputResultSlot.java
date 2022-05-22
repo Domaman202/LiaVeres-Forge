@@ -1,7 +1,8 @@
-package com.algorithmlx.liaveres.common.container.slots;
+package com.algorithmlx.liaveres.common.menu.slots;
 
+import com.algorithmlx.liaveres.common.recipe.RecipeTypes;
 import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
-import com.algorithmlx.liaveres.common.container.inventory.YarnCraftInventory;
+import com.algorithmlx.liaveres.common.menu.container.YarnCraftContainer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -14,11 +15,11 @@ import net.minecraftforge.event.ForgeEventFactory;
 import java.util.Optional;
 
 public class YarnOutputResultSlot extends Slot {
-    private final YarnCraftInventory craftSlots;
+    private final YarnCraftContainer craftSlots;
     private final Player player;
     private int removeCount;
 
-    public YarnOutputResultSlot(Player player, YarnCraftInventory slot, Container pContainer, int pIndex, int pX, int pY) {
+    public YarnOutputResultSlot(Player player, YarnCraftContainer slot, Container pContainer, int pIndex, int pX, int pY) {
         super(pContainer, pIndex, pX, pY);
         this.craftSlots = slot;
         this.player = player;
@@ -66,9 +67,9 @@ public class YarnOutputResultSlot extends Slot {
     public void onTake(Player pPlayer, ItemStack pStack) {
         this.checkTakeAchievements(pStack);
         ForgeHooks.setCraftingPlayer(pPlayer);
-        Optional<YarnRecipe> recipe = pPlayer.getLevel().getRecipeManager().getRecipeFor(YarnRecipe.RECIPE_TYPE, this.craftSlots, pPlayer.level);
+        Optional<YarnRecipe> recipe = pPlayer.getLevel().getRecipeManager().getRecipeFor(RecipeTypes.YARN_RECIPE_TYPE, this.craftSlots, pPlayer.level);
 
-        NonNullList<ItemStack> nonNullList = pPlayer.level.getRecipeManager().getRemainingItemsFor(YarnRecipe.RECIPE_TYPE, this.craftSlots, pPlayer.level);
+        NonNullList<ItemStack> nonNullList = pPlayer.level.getRecipeManager().getRemainingItemsFor(RecipeTypes.YARN_RECIPE_TYPE, this.craftSlots, pPlayer.level);
         ForgeHooks.setCraftingPlayer(null);
         for (int integer = 0; integer < nonNullList.size(); ++integer) {
             ItemStack original = this.craftSlots.getItem(integer);

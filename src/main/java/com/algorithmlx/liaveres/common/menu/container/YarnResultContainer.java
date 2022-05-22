@@ -1,4 +1,4 @@
-package com.algorithmlx.liaveres.common.container.inventory;
+package com.algorithmlx.liaveres.common.menu.container;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import org.jetbrains.annotations.Nullable;
 
-public class YarnResultInventory implements Container, RecipeHolder {
+public class YarnResultContainer implements Container, RecipeHolder {
     private final NonNullList<ItemStack> itemStacks = NonNullList.withSize(1, ItemStack.EMPTY);
     @Nullable
     private Recipe<?> recipeUsed;
@@ -50,9 +50,7 @@ public class YarnResultInventory implements Container, RecipeHolder {
     }
 
     @Override
-    public void setChanged() {
-
-    }
+    public void setChanged() {}
 
     @Override
     public boolean stillValid(Player pPlayer) {

@@ -3,8 +3,7 @@ package com.algorithmlx.liaveres.proxy;
 import com.algorithmlx.liaveres.client.render.AmdanorMobRender;
 import com.algorithmlx.liaveres.client.screen.YarnStationScreen;
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.Config;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import core.liquid.network.proxy.Direction;
 import net.minecraft.CrashReport;
 import net.minecraft.client.Minecraft;
@@ -26,9 +25,9 @@ public class ClientProxy implements Direction {
     public static void doClient(final FMLClientSetupEvent event) {
         if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.getGameProfile().getName().equals("AlgorithmLX"))
             Minecraft.crash(new CrashReport(new TranslatableComponent("developer.crash.desc").toString(), new Throwable()));
-        if (Config.backpackModule.get().equals(true) && Config.experimentalModule.get().equals(true)) {
-            MenuScreens.register(Registration.YARN_STATION_CONTAINER.get(), YarnStationScreen::new);
-        }
+
+
+        MenuScreens.register(Registration.YARN_STATION_CONTAINER.get(), YarnStationScreen::new);
     }
 
     @SubscribeEvent

@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.common.block.entity;
 
-import com.algorithmlx.liaveres.common.recipe.YarnRecipe;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.recipe.RecipeTypes;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import core.liquid.objects.block.entity.AbstractRecipedBlockEntity;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
@@ -15,24 +15,25 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class YarnStationBlockEntity extends AbstractRecipedBlockEntity {
-    private final NonNullList<ItemStack> nonNullList = NonNullList.withSize(4, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> items;
     private static int yarnTag = 0;
     private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 
     public YarnStationBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(Registration.YARN_STATION_BLOCK_ENTITY.get(), pWorldPosition, pBlockState, YarnRecipe.RECIPE_TYPE);
+        super(Registration.YARN_STATION_BLOCK_ENTITY.get(), pWorldPosition, pBlockState, RecipeTypes.YARN_RECIPE_TYPE);
+        this.items = NonNullList.withSize(3, ItemStack.EMPTY);
     }
 
     @Override
     public void readTag(CompoundTag compoundTag, boolean b) {
         yarnTag = compoundTag.getInt("yarnTag");
-        ContainerHelper.loadAllItems(compoundTag, nonNullList);
+        ContainerHelper.saveAllItems(compoundTag, items);
     }
 
     @Override
     public void saveTag(CompoundTag compoundTag, boolean b) {
         compoundTag.putInt("yarnTag", yarnTag);
-        ContainerHelper.saveAllItems(compoundTag, nonNullList);
+        ContainerHelper.saveAllItems(compoundTag, items);
     }
 
     @Override
@@ -43,9 +44,8 @@ public class YarnStationBlockEntity extends AbstractRecipedBlockEntity {
         }
     }
 
-    @Nullable
     @Override
-    public Recipe<?> getRecipeUsed() {
-        return null;
+    public @Nullable Recipe<?> getRecipeUsed() {
+        return super.getRecipeUsed();
     }
 }

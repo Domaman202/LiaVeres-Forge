@@ -112,6 +112,10 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    flatDir {
+        dirs('dep')
+    }
 }
 
 dependencies {
@@ -119,7 +123,7 @@ dependencies {
 
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
-    implementation fg.deobf("curse.maven:liquidcore-606037:${lc_version}")
+    implementation fg.deobf("core:liquid:${mc_version}_${lc_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }

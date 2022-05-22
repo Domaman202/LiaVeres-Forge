@@ -1,7 +1,7 @@
 package com.algorithmlx.liaveres.common.data;
 
 import com.algorithmlx.liaveres.common.LiaVeres;
-import com.algorithmlx.liaveres.common.setup.registries.Registration;
+import com.algorithmlx.liaveres.common.setup.Registration;
 import core.liquid.objects.data.gen.AdvancementGenerator;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
@@ -30,6 +30,6 @@ public class Advancements extends AdvancementGenerator implements Consumer<Consu
                 .save(advancementConsumer, m + "/main/main");
 
         advancement(main, Registration.AMDANOR_UNLOCKER_KEY.get(), "get_key", FrameType.TASK, true, true, false, m);
-
+        advancement(main, Registration.MATTER_CRYSTAL.get(), "matter_crystal", FrameType.CHALLENGE, true, true, false, m);
     }
 }
